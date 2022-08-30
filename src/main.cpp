@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	const ListValue* output = dynamic_cast<const ListValue*>(programBlock->Accept(visitor));	
     for (const Value* val : output->value)
     {
-        printf("%d", val->get_value());
+        printf("%d", any_cast<int>(val->get_value()));
     }
 	return 0;
 }

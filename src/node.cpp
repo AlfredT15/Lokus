@@ -63,11 +63,7 @@ void NFunctionDeclaration::Accept(const VisitorVoid *visitor) const
 const 
 Value* NInteger::Accept(const VisitorType *visitor) const
 {
-    const Value* temp = visitor->VisitNInteger(this);
-    int temp2 = temp->get_value();
-    const Value* temp3 = dynamic_cast<const IntValue*>(temp);
-    int temp4 = temp3->get_value();
-    return temp;
+    return visitor->VisitNInteger(this);
 };
 const Value* NDouble::Accept(const VisitorType *visitor) const
 {

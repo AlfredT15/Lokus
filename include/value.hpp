@@ -1,6 +1,7 @@
 #ifndef VALUE_H
 #define VALUE_H
 
+// #include <boost/any.hpp>
 #include <string>
 
 class Value;
@@ -28,20 +29,20 @@ public:
     virtual ~Value() {}
 
     // Arithmetic
-    const Value* added_to(const Value* other) const;
-    const Value* subbed_by(const Value* other) const;
-    const Value* multiplied_by(const Value* other) const;
-    const Value* divided_by(const Value* other) const;
-    //Comparison
-    const Value* equal_to(const Value* other) const;
-    const Value* not_equal_to(const Value* other) const;
-    const Value* less_than(const Value* other) const;
-    const Value* greater_than(const Value* other) const;
-    const Value* less_than_or_equal_to(const Value* other) const;
-    const Value* greater_than_or_equal_to(const Value* other) const;
+    virtual const Value* operator+(const Value* other) const = 0;
+    virtual const Value* operator-(const Value* other) const = 0;
+    virtual const Value* operator*(const Value* other) const = 0;
+    virtual const Value* operator/(const Value* other) const = 0;
+    // Comparison
+    virtual const Value* operator==(const Value* other) const = 0;
+    virtual const Value* operator!=(const Value* other) const = 0;
+    virtual const Value* operator<(const Value* other) const = 0;
+    virtual const Value* operator>(const Value* other) const = 0;
+    virtual const Value* operator<=(const Value* other) const = 0;
+    virtual const Value* operator>=(const Value* other) const = 0;
     // Internal
-    int get_value() const {return 0;}
-    bool get_isError() const {return false;}
+    virtual const void* get_value() const = 0;
+    virtual const bool get_isError() const = 0;
 };
 
 class ErrorValue : public Value
@@ -53,9 +54,31 @@ public:
 
     ErrorValue(const std::string &value) : value(value) { }
 
+    // Arithmetic
+    const ErrorValue* operator+(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator-(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator*(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator/(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    // Comparison
+    const ErrorValue* operator==(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator!=(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator<(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator>(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator<=(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator>=(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
     // Internal
-    const std::string& get_value() const;
-    const bool& get_isError() const;
+    const void* get_value() const override {return 0;};
+    const bool get_isError() const override {return false;};
 };
 
 class NumericValue : public Value
@@ -71,26 +94,20 @@ public:
     IntValue(const int &value) : value(value) { }
 
     // Arithmetic
-    // Ints
-    const IntValue* added_to(const IntValue* other) const;
-    const IntValue* subbed_by(const IntValue* other) const;
-    const IntValue* multiplied_by(const IntValue* other) const;
-    const IntValue* divided_by(const IntValue* other) const;
-    // Doubles
-    const DoubleValue* added_to(const DoubleValue* other) const;
-    const DoubleValue* subbed_by(const DoubleValue* other) const;
-    const DoubleValue* multiplied_by(const DoubleValue* other) const;
-    const DoubleValue* divided_by(const DoubleValue* other) const;
-    //Comparison
-    const BoolValue* equal_to(const IntValue* other) const;
-    const BoolValue* not_equal_to(const IntValue* other) const;
-    const BoolValue* less_than(const IntValue* other) const;
-    const BoolValue* greater_than(const IntValue* other) const;
-    const BoolValue* less_than_or_equal_to(const IntValue* other) const;
-    const BoolValue* greater_than_or_equal_to(const IntValue* other) const;
+    const Value* operator+(const Value* other) const override;
+    const Value* operator-(const Value* other) const override;
+    const Value* operator*(const Value* other) const override;
+    const Value* operator/(const Value* other) const override;
+    // Comparison
+    const Value* operator==(const Value* other) const override;
+    const Value* operator!=(const Value* other) const override;
+    const Value* operator<(const Value* other) const override;
+    const Value* operator>(const Value* other) const override;
+    const Value* operator<=(const Value* other) const override;
+    const Value* operator>=(const Value* other) const override;
     // Internal
-    const int& get_value() const;
-    const bool& get_isError() const;
+    const void* get_value() const override;
+    const bool get_isError() const override;
 };
 
 class DoubleValue : public NumericValue
@@ -103,26 +120,20 @@ public:
     DoubleValue(const double &value) : value(value) { }
 
     // Arithmetic
-    // Doubles
-    const DoubleValue* added_to(const DoubleValue* other) const;
-    const DoubleValue* subbed_by(const DoubleValue* other) const;
-    const DoubleValue* multiplied_by(const DoubleValue* other) const;
-    const DoubleValue* divided_by(const DoubleValue* other) const;
-    // Ints
-    const DoubleValue* added_to(const IntValue* other) const;
-    const DoubleValue* subbed_by(const IntValue* other) const;
-    const DoubleValue* multiplied_by(const IntValue* other) const;
-    const DoubleValue* divided_by(const IntValue* other) const;
-    //Comparison
-    const BoolValue* equal_to(const DoubleValue* other) const;
-    const BoolValue* not_equal_to(const DoubleValue* other) const;
-    const BoolValue* less_than(const DoubleValue* other) const;
-    const BoolValue* greater_than(const DoubleValue* other) const;
-    const BoolValue* less_than_or_equal_to(const DoubleValue* other) const;
-    const BoolValue* greater_than_or_equal_to(const DoubleValue* other) const;
+    const Value* operator+(const Value* other) const override;
+    const Value* operator-(const Value* other) const override;
+    const Value* operator*(const Value* other) const override;
+    const Value* operator/(const Value* other) const override;
+    // Comparison
+    const Value* operator==(const Value* other) const override;
+    const Value* operator!=(const Value* other) const override;
+    const Value* operator<(const Value* other) const override;
+    const Value* operator>(const Value* other) const override;
+    const Value* operator<=(const Value* other) const override;
+    const Value* operator>=(const Value* other) const override;
     // Internal
-    const double& get_value() const;
-    const bool& get_isError() const;
+    const void* get_value() const override;
+    const bool get_isError() const override;
 };
 
 class BoolValue : public Value
@@ -134,12 +145,29 @@ public:
 
     BoolValue(const bool &value) : value(value) { }
 
-    //Comparison
-    const BoolValue* equal_to(const BoolValue* other) const;
-    const BoolValue* not_equal_to(const BoolValue* other) const;
+    // Arithmetic
+    const ErrorValue* operator+(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator-(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator*(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator/(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    // Comparison
+    const Value* operator==(const Value* other) const override;
+    const Value* operator!=(const Value* other) const override;
+    const ErrorValue* operator<(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator>(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator<=(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator>=(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
     // Internal
-    const bool& get_value() const;
-    const bool& get_isError() const;
+    const void* get_value() const override;
+    const bool get_isError() const override;
 };
 
 class StringValue : public Value
@@ -152,14 +180,26 @@ public:
     StringValue(const std::string &value) : value(value) { }
 
     // Arithmetic
-    const StringValue* added_to(const StringValue* other) const;
-    const Value* multiplied_by(const IntValue* other) const;
-    //Comparison
-    const BoolValue* equal_to(const StringValue* other) const;
-    const BoolValue* not_equal_to(const StringValue* other) const;
+    const Value* operator+(const Value* other) const override;
+    const ErrorValue* operator-(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const Value* operator*(const Value* other) const override;
+    const ErrorValue* operator/(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    // Comparison
+    const Value* operator==(const Value* other) const override;
+    const Value* operator!=(const Value* other) const override;
+    const ErrorValue* operator<(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator>(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator<=(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator>=(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
     // Internal
-    const std::string& get_value() const;
-    const bool& get_isError() const;
+    const void* get_value() const override;
+    const bool get_isError() const override;
 };
 
 class IdentifierValue : public Value
@@ -173,25 +213,21 @@ public:
     IdentifierValue(const std::string &name) : name(name) { }
 
     // Arithmetic
-    // String
-    const Value* added_to(const StringValue* other) const;
-    const Value* multiplied_by(const IntValue* other) const;
-    // Int
-    const Value* added_to(const NumericValue* other) const;
-    const Value* subbed_by(const NumericValue* other) const;
-    const Value* multiplied_by(const NumericValue* other) const;
-    const Value* divided_by(const NumericValue* other) const;
-    //Comparison
-    const Value* equal_to(const Value* other) const;
-    const Value* not_equal_to(const Value* other) const;
-    const Value* less_than(const Value* other) const;
-    const Value* greater_than(const Value* other) const;
-    const Value* less_than_or_equal_to(const Value* other) const;
-    const Value* greater_than_or_equal_to(const Value* other) const;
+    const Value* operator+(const Value* other) const override;
+    const Value* operator-(const Value* other) const override;
+    const Value* operator*(const Value* other) const override;
+    const Value* operator/(const Value* other) const override;
+    // Comparison
+    const Value* operator==(const Value* other) const override;
+    const Value* operator!=(const Value* other) const override;
+    const Value* operator<(const Value* other) const override;
+    const Value* operator>(const Value* other) const override;
+    const Value* operator<=(const Value* other) const override;
+    const Value* operator>=(const Value* other) const override;
     // Internal
     void set_value(Value* other);
-    const Value* get_value() const;
-    const bool& get_isError() const;
+    const void* get_value() const override;
+    const bool get_isError() const override;
 };
 
 class OperatorValue : public Value
@@ -202,9 +238,31 @@ public:
     const bool isError = false;
 
     OperatorValue(const OperationType &value) : value(value) { }
+    // Arithmetic
+    const ErrorValue* operator+(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator-(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator*(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator/(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    // Comparison
+    const ErrorValue* operator==(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator!=(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator<(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator>(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator<=(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator>=(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
     // Internal
-    const OperationType& get_value() const;
-    const bool& get_isError() const;
+    const void* get_value() const override;
+    const bool get_isError() const override;
 };
 
 class ListValue : public Value
@@ -216,16 +274,23 @@ public:
 
     ListValue(ValueVec &value) : value(value) { }
     // Arithmetic
-    const Value* added_to(const ListValue* other) const;
-    const Value* subbed_by(const ListValue* other) const;
-    const Value* multiplied_by(const ListValue* other) const;
-    const Value* divided_by(const ListValue* other) const;
+    const Value* operator+(const Value* other) const override;
+    const ErrorValue* operator-(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator*(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
+    const ErrorValue* operator/(const Value* other) const override
+        {return new ErrorValue("Operator not implemented");};
     // Comparison
-    const Value* equal_to(const ListValue* other) const;
-    const Value* not_equal_to(const ListValue* other) const;
+    const Value* operator==(const Value* other) const override;
+    const Value* operator!=(const Value* other) const override;
+    const Value* operator<(const Value* other) const override;
+    const Value* operator>(const Value* other) const override;
+    const Value* operator<=(const Value* other) const override;
+    const Value* operator>=(const Value* other) const override;
     // Internal
-    const ValueVec& get_value() const;
-    const bool& get_isError() const;
+    const void* get_value() const override;
+    const bool get_isError() const override;
 };
 
 #endif

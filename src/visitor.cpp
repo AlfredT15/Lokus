@@ -115,6 +115,7 @@ const Value* InterpretVisitor::VisitNMethodCall(const NMethodCall *element) cons
 const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *element) const
 {
     const Value* lhs_val = element->lhs.Accept(this);
+    int temp = any_cast<int>(lhs_val->get_value());
     const Value* rhs_val = element->rhs.Accept(this);
     const OperatorValue* op_val = dynamic_cast<const OperatorValue*>(element->op.Accept(this));
     switch (op_val->value)
