@@ -44,7 +44,7 @@
    we call an ident (defined by union type ident) we are really
    calling an (NIdentifier*). It makes the compiler happy.
  */
-%type <ident> ident
+%type <ident> ident data_type_and_ident
 %type <op> op
 %type <expr> numeric expr 
 %type <varvec> func_decl_args
@@ -79,22 +79,25 @@ block : LBRACE stmts RBRACE { $$ = $2; }
 	  | LBRACE RBRACE { $$ = new NBlock(); }
 	  ;
 
-var_decl : DATA_TYPE ident { $$ = new NVariableDeclaration(*$1, *$2); delete $1;}
-		 | DATA_TYPE ident EQ expr { $$ = new NVariableDeclaration(*$1, *$2, $4); delete $1;}
+var_decl : data_type_and_ident { $$ = new NVariableDeclaration(*$1); }
+		 | data_type_and_ident EQ expr { $$ = new NVariableDeclaration(*$1, $3); }
 		 ;
 
-extern_decl : EXTERN DATA_TYPE ident LPAREN func_decl_args RPAREN
-                { $$ = new NExternDeclaration(*$2, *$3, *$5); delete $5; delete $2;}
+extern_decl : EXTERN data_type_and_ident LPAREN func_decl_args RPAREN
+                { $$ = new NExternDeclaration(*$2,*$4); delete $4;}
             ;
 
-func_decl : DATA_TYPE ident LPAREN func_decl_args RPAREN block 
-			{ $$ = new NFunctionDeclaration(*$1, *$2, *$4, *$6); delete $4; delete $1; }
+func_decl : data_type_and_ident LPAREN func_decl_args RPAREN block 
+			{ $$ = new NFunctionDeclaration(*$1, *$3, *$5); delete $3; }
 		  ;
 	
 func_decl_args : /*blank*/  { $$ = new VariableList(); }
 		  | var_decl { $$ = new VariableList(); $$->push_back($<var_decl>1); }
 		  | func_decl_args COMMA var_decl { $1->push_back($<var_decl>3); }
 		  ;
+
+data_type_and_ident : DATA_TYPE IDENTIFIER { $$ = new NIdentifier(*$1, *$2); delete $1; delete $2;}
+					;
 
 ident : IDENTIFIER { $$ = new NIdentifier(*$1); delete $1; }
 	  ;

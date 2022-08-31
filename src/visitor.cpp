@@ -102,11 +102,34 @@ const Value* InterpretVisitor::VisitNOperator(const NOperator *element, Context*
 }
 const Value* InterpretVisitor::VisitNMethodCall(const NMethodCall *element, Context* context) const
 {
-    element->id.Accept(this, context);
+    const IdentifierValue* id = dynamic_cast<const IdentifierValue*>(element->id.Accept(this, context));
+    const Value* val = context->find_value(id->value);
+    if (val->get_isError())
+        return val;
+    const FunctionValue* func_val = dynamic_cast<const FunctionValue*>(val);
+    if (!func_val)
+        return new ErrorValue(id->value + " is not a callable function.");
+
+    ValueVec arg_values;
     for (NExpression* expr : element->arguments)
     {
-        expr->Accept(this, context);
+        arg_values.push_back(expr->Accept(this, context));
     }
+
+    if (func_val->arg_values.size() != arg_values.size())
+    {
+        return new ErrorValue(id->value + " expects " + std::to_string(func_val->arg_values.size()) 
+                        + "arguments. " + std::to_string(arg_values.size()) + " were provided");
+    }
+
+    for (int i = 0; i < func_val->arg_values.size(); i++)
+    {
+        if (func_val->arg_values[i]->get_type() != arg_values[i]->get_type())
+        {
+
+        }
+    }
+
     return new ErrorValue("NOT IMPLEMENTED");
 }
 const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *element, Context* context) const
@@ -118,9 +141,17 @@ const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *eleme
     const IdentifierValue* lhs_id = dynamic_cast<const IdentifierValue*>(lhs_val);
     const IdentifierValue* rhs_id = dynamic_cast<const IdentifierValue*>(rhs_val);
     if (lhs_id)
+    {
         lhs_val = context->find_value(lhs_id->value);
+        if (lhs_val->get_isError())
+            return rhs_val;
+    }
     if (rhs_id)
+    {
         rhs_val = context->find_value(rhs_id->value);
+        if (rhs_val->get_isError())
+            return rhs_val;
+    }
 
     switch (op_val->value)
     {
@@ -148,15 +179,15 @@ const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *eleme
 }
 const Value* InterpretVisitor::VisitNAssignment(const NAssignment *element, Context* context) const
 {
-    const IdentifierValue* lhs_val = dynamic_cast<const IdentifierValue*>
+    const IdentifierValue* lhs_id = dynamic_cast<const IdentifierValue*>
                                         (element->lhs.Accept(this, context));
     const Value* rhs_val = element->rhs.Accept(this, context);
     if (rhs_val->get_isError())
         return rhs_val;
-    const bool variable_set = context->set_value(lhs_val, rhs_val);
+    const bool variable_set = context->set_value(lhs_id, rhs_val);
     if (!variable_set)
-        return new ErrorValue(lhs_val->value + " does not exist in this scope");
-    return lhs_val;
+        return new ErrorValue(lhs_id->value + " does not exist in this scope");
+    return lhs_id;
 }
 const Value* InterpretVisitor::VisitNBlock(const NBlock *element, Context* context) const
 {
@@ -191,7 +222,7 @@ const Value* InterpretVisitor::VisitNVariableDeclaration(const NVariableDeclarat
             if (val->get_isError())
                 return val;
         }
-        if (!(element->type == val->get_type()))
+        if (id->type != val->get_type())
             return new ErrorValue("Incompatible types");
     }
     const bool variable_set = context->set_value(id, val);
@@ -216,6 +247,7 @@ const Value* InterpretVisitor::VisitNFunctionDeclaration(const NFunctionDeclarat
     {
         arg_values.push_back(dec->Accept(this, context));
     }
-    element->block.Accept(this, context);
-    return new ErrorValue("NOT IMPLEMENTED");
+    const FunctionValue* func_val = new FunctionValue(arg_values, context, element->block);
+    return func_val;
+    // return new ErrorValue("NOT IMPLEMENTED");
 }

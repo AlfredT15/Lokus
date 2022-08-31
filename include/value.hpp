@@ -3,37 +3,14 @@
 
 #include <string>
 #include <vector>
-// #include "node.hpp"
+#include "context.hpp"
+#include "enum.hpp"
 
 class Value;
 class DoubleValue;
 class BoolValue;
-
-enum DataType
-{
-	INT_DTYPE,
-	FLOAT_DTYPE,
-	STRING_DTYPE,
-	CHAR_DTYPE,
-	BOOL_DTYPE,
-	VOID_DTYPE,
-	LIST_DTYPE,
-	ERROR_DTYPE
-};
-
-enum OperationType
-{
-    ADD_TYPE,
-    SUB_TYPE,
-    MUL_TYPE,
-    DIV_TYPE,
-    EE_TYPE,
-    NE_TYPE,
-    LT_TYPE,
-    GT_TYPE,
-    LTE_TYPE,
-    GTE_TYPE
-};
+class NBlock;
+class Context;
 
 typedef std::vector<const Value*> ValueVec;
 
@@ -231,10 +208,12 @@ class IdentifierValue : public Value
 public:
     // Data
     std::string value;
+    DataType type;
     const bool isError = false;
-    const DataType type = DataType::STRING_DTYPE;
 
-    IdentifierValue(const std::string &value) : value(value) { }
+    IdentifierValue(const std::string &value, const DataType type) 
+                    : value(value), type(type) { }
+    IdentifierValue(const std::string &value) : value(value), type(DataType::TNI) {}
 
     // Arithmetic
     const Value* added_to(const Value* other) const override
@@ -336,7 +315,43 @@ public:
 class FunctionValue : public Value
 {
     public:
-        FunctionValue(const ValueVec &arg_values, Context* funtion_context)
-}
+        const bool isError = false;
+        const DataType type = DataType::FUNC_DTYPE;
+        const ValueVec &arg_values;
+        Context* function_context;
+        NBlock &block;
+        FunctionValue(const ValueVec &arg_values, Context* funtion_context, NBlock &block)
+                : arg_values(arg_values), function_context(function_context), block(block) {}
+
+        // Arithmetic
+        const Value* added_to(const Value* other) const override
+            {return new ErrorValue("Addition operator not implemented for functions");};
+        const Value* subbed_by(const Value* other) const override
+            {return new ErrorValue("Subtraction operator not implemented for functions");};
+        const Value* multiplied_by(const Value* other) const override
+            {return new ErrorValue("Multiplication operator not implemented for functions");};
+        const Value* divided_by(const Value* other) const override
+            {return new ErrorValue("Division operator not implemented for functions");};
+        // Comparison
+        const Value* equal_to(const Value* other) const override
+            {return new ErrorValue("Equality operator not implemented for functions");};
+        const Value* not_equal_to(const Value* other) const override
+            {return new ErrorValue("Not Equal operator not implemented for functions");};
+        const Value* less_than(const Value* other) const override
+            {return new ErrorValue("Less than operator not implemented for functions");};
+        const Value* greater_than(const Value* other) const override
+            {return new ErrorValue("Greater than operator not implemented for functions");};
+        const Value* less_than_or_equal_to(const Value* other) const override
+            {return new ErrorValue("Less than or equal to operator not implemented for functions");};
+        const Value* greater_than_or_equal_to(const Value* other) const override
+            {return new ErrorValue("Greater than or equal to operator not implemented for functions");};
+        // Internal
+        const void* get_value() const override
+            {return this;};
+        const bool get_isError() const override
+            {return this->isError;};
+        const DataType& get_type() const override
+            {return this->type;};
+};
 
 #endif

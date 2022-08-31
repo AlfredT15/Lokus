@@ -7,6 +7,7 @@
 #include "visitor.hpp"
 #include "value.hpp"
 #include "context.hpp"
+#include "enum.hpp"
 
 class VisitorVoid;
 class VisitorType;
@@ -15,8 +16,9 @@ class NStatement;
 class NExpression;
 class NVariableDeclaration;
 
-enum DataType;
-enum OperationType;
+class IntValue;
+class DoubleValue;
+class IdentifierValue;
 
 typedef std::vector<NStatement*> StatementList;
 typedef std::vector<NExpression*> ExpressionList;
@@ -57,9 +59,20 @@ public:
 };
 
 class NIdentifier : public NExpression {
+private:
+	DMap dTypeMap = {
+	{"int", DataType::INT_DTYPE},
+	{"float", DataType::FLOAT_DTYPE},
+	{"string", DataType::STRING_DTYPE},
+	{"char", DataType::CHAR_DTYPE},
+	{"bool", DataType::BOOL_DTYPE},
+	{"void", DataType::VOID_DTYPE},
+	};
 public:
 	IdentifierValue* value;
-	NIdentifier(const std::string& value) : value(new IdentifierValue(value)) { }
+	NIdentifier(const std::string &value) : value(new IdentifierValue(value, DataType::TNI)) { }
+	NIdentifier(const std::string &value, const std::string &type) 
+			: value(new IdentifierValue(value, dTypeMap[type])) { }
 
     void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
@@ -152,68 +165,36 @@ public:
 };
 
 class NVariableDeclaration : public NStatement {
-private:
-	DMap dTypeMap = {
-	{"int", DataType::INT_DTYPE},
-	{"float", DataType::FLOAT_DTYPE},
-	{"string", DataType::STRING_DTYPE},
-	{"char", DataType::CHAR_DTYPE},
-	{"bool", DataType::BOOL_DTYPE},
-	{"void", DataType::VOID_DTYPE},
-	};
 public:
-	DataType type;
 	NIdentifier& id;
 	NExpression *assignmentExpr;
-	NVariableDeclaration(const std::string& type, NIdentifier& id) :
-		type(dTypeMap[type]), id(id) { assignmentExpr = NULL; }
-	NVariableDeclaration(const std::string& type, NIdentifier& id, NExpression *assignmentExpr) :
-		type(dTypeMap[type]), id(id), assignmentExpr(assignmentExpr) { }
+	NVariableDeclaration(NIdentifier& id) :
+		 id(id) { assignmentExpr = NULL; }
+	NVariableDeclaration(NIdentifier& id, NExpression *assignmentExpr) :
+		id(id), assignmentExpr(assignmentExpr) { }
 
     void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NExternDeclaration : public NStatement {
-private:
-	DMap dTypeMap = {
-	{"int", DataType::INT_DTYPE},
-	{"float", DataType::FLOAT_DTYPE},
-	{"string", DataType::STRING_DTYPE},
-	{"char", DataType::CHAR_DTYPE},
-	{"bool", DataType::BOOL_DTYPE},
-	{"void", DataType::VOID_DTYPE},
-	};
 public:
-    const DataType type;
     const NIdentifier& id;
     VariableList arguments;
-    NExternDeclaration(const std::string& type, const NIdentifier& id,
-            const VariableList& arguments) :
-        type(dTypeMap[type]), id(id), arguments(arguments) {}
+    NExternDeclaration(const NIdentifier& id, const VariableList& arguments) :
+        id(id), arguments(arguments) {}
 
     void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NFunctionDeclaration : public NStatement {
-private:
-	DMap dTypeMap = {
-	{"int", DataType::INT_DTYPE},
-	{"float", DataType::FLOAT_DTYPE},
-	{"string", DataType::STRING_DTYPE},
-	{"char", DataType::CHAR_DTYPE},
-	{"bool", DataType::BOOL_DTYPE},
-	{"void", DataType::VOID_DTYPE},
-	};
 public:
-	const DataType type;
 	const NIdentifier& id;
 	VariableList arguments;
 	NBlock& block;
-	NFunctionDeclaration(const std::string& type, const NIdentifier& id, 
-			const VariableList& arguments, NBlock& block) :
-		type(dTypeMap[type]), id(id), arguments(arguments), block(block) { }
+	NFunctionDeclaration(const NIdentifier& id, const VariableList& arguments, NBlock& block) :
+		id(id), arguments(arguments), block(block) { }
 
     void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;

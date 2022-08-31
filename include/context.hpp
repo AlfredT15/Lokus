@@ -4,6 +4,9 @@
 #include <map>
 #include "value.hpp"
 
+class Value;
+class IdentifierValue;
+
 typedef std::map<const std::string, const Value*> SymbolTable;
 
 class Context

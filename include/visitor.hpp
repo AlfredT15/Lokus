@@ -20,6 +20,9 @@ class NVariableDeclaration;
 class NExternDeclaration;
 class NFunctionDeclaration;
 
+class Value;
+class Context;
+
 class Visitor
 {
     public:
