@@ -333,10 +333,10 @@ public:
 };
 
 
-class FunctionValue : public Value
-{
-    public:
-        FunctionValue(const ValueVec &arg_values, Context* funtion_context)
-}
+// class FunctionValue : public Value
+// {
+//     public:
+//         FunctionValue(const ValueVec &arg_values, Context* funtion_context)
+// };
 
 #endif
