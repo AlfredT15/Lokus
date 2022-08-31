@@ -87,14 +87,13 @@ union YYSTYPE
 	NStatement *stmt;
 	NIdentifier *ident;
 	NOperator *op;
-  	NIdentifier *data_type;
 	NVariableDeclaration *var_decl;
 	std::vector<NVariableDeclaration*> *varvec;
 	std::vector<NExpression*> *exprvec;
 	std::string *string;
 	int token;
 
-#line 98 "src/syntax.hpp"
+#line 97 "src/syntax.hpp"
 
 };
 typedef union YYSTYPE YYSTYPE;

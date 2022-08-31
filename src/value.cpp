@@ -14,6 +14,10 @@ const bool ErrorValue::get_isError() const
 {
     return this->isError;
 }
+const DataType& ErrorValue::get_type() const
+{
+    return this->type;
+}
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // IntValue
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -113,6 +117,10 @@ const bool IntValue::get_isError() const
 {
     return this->isError;
 }
+const DataType& IntValue::get_type() const
+{
+    return this->type;
+}
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // DoubleValue
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -188,6 +196,10 @@ const bool DoubleValue::get_isError() const
 {
     return this->isError;
 }
+const DataType& DoubleValue::get_type() const
+{
+    return this->type;
+}
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // BoolValue
@@ -214,6 +226,10 @@ const void* BoolValue::get_value() const
 const bool BoolValue::get_isError() const
 {
     return this->isError;
+}
+const DataType& BoolValue::get_type() const
+{
+    return this->type;
 }
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // StringValue
@@ -264,22 +280,26 @@ const bool StringValue::get_isError() const
 {
     return this->isError;
 }
+const DataType& StringValue::get_type() const
+{
+    return this->type;
+}
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // IdentifierValue
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 
 // Internal
-void IdentifierValue::set_value(Value* other)
-{
-    this->value = other;
-}
 const void* IdentifierValue::get_value() const
 {
-    return this->value;
+    return &this->value;
 }
 const bool IdentifierValue::get_isError() const
 {
     return this->isError;
+}
+const DataType& IdentifierValue::get_type() const
+{
+    return this->type;
 }
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // OperatorValue
@@ -293,6 +313,10 @@ const void* OperatorValue::get_value() const
 const bool OperatorValue::get_isError() const
 {
     return this->isError;
+}
+const DataType& OperatorValue::get_type() const
+{
+    return this->type;
 }
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // ListValue
@@ -536,4 +560,8 @@ const void* ListValue::get_value() const
 const bool ListValue::get_isError() const
 {
     return this->isError;
+}
+const DataType& ListValue::get_type() const
+{
+    return this->type;
 }

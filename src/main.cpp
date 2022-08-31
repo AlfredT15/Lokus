@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../include/node.hpp"
 #include "../include/visitor.hpp"
+#include "../include/context.hpp"
 
 using namespace std;
 
@@ -23,7 +24,8 @@ int main(int argc, char **argv)
 	yyparse();
     // const PrintVisitor *visitor = new PrintVisitor();
     const InterpretVisitor *visitor = new InterpretVisitor();
-    const Value* out = programBlock->Accept(visitor);
+    Context* master_context = new Context();
+    const Value* out = programBlock->Accept(visitor, master_context);
     if (out->get_isError())
     {
         printf("%s", (*((std::string*)out->get_value())).c_str());
@@ -32,7 +34,12 @@ int main(int argc, char **argv)
 	const ListValue* output = dynamic_cast<const ListValue*>(out);	
     for (const Value* val : output->value)
     {
-        if (dynamic_cast<const IntValue*>(val))
+        if (dynamic_cast<const ErrorValue*>(val))
+        {
+            printf("%s\n", (*((std::string*)val->get_value())).c_str());
+            return 0;
+        }
+        else if (dynamic_cast<const IntValue*>(val))
             printf("%d\n", *((int*)val->get_value()));
         else if (dynamic_cast<const DoubleValue*>(val))
             printf("%f\n", *((double*)val->get_value()));

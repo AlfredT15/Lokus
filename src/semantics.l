@@ -15,10 +15,11 @@ whitespace      [ \t\r\v\f]
 linefeed        \n
 
 %%
-"void"  |
-"int"   |
-"char"  |
-"bool"  |
+"void"      |
+"int"       |
+"char"      |
+"bool"      |
+"string"    |
 "float"                                         SAVE_TOKEN; return DATA_TYPE;
 
 "extern"                                        return TOKEN(EXTERN);

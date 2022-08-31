@@ -20,7 +20,6 @@
 	NStatement *stmt;
 	NIdentifier *ident;
 	NOperator *op;
-  	NIdentifier *data_type;
 	NVariableDeclaration *var_decl;
 	std::vector<NVariableDeclaration*> *varvec;
 	std::vector<NExpression*> *exprvec;
@@ -47,7 +46,6 @@
  */
 %type <ident> ident
 %type <op> op
-%type <data_type> data_type;
 %type <expr> numeric expr 
 %type <varvec> func_decl_args
 %type <exprvec> call_args
@@ -81,19 +79,17 @@ block : LBRACE stmts RBRACE { $$ = $2; }
 	  | LBRACE RBRACE { $$ = new NBlock(); }
 	  ;
 
-var_decl : data_type ident { $$ = new NVariableDeclaration(*$1, *$2); }
-		 | data_type ident EQ expr { $$ = new NVariableDeclaration(*$1, *$2, $4); }
+var_decl : DATA_TYPE ident { $$ = new NVariableDeclaration(*$1, *$2); delete $1;}
+		 | DATA_TYPE ident EQ expr { $$ = new NVariableDeclaration(*$1, *$2, $4); delete $1;}
 		 ;
 
-extern_decl : EXTERN data_type ident LPAREN func_decl_args RPAREN
-                { $$ = new NExternDeclaration(*$2, *$3, *$5); delete $5; }
+extern_decl : EXTERN DATA_TYPE ident LPAREN func_decl_args RPAREN
+                { $$ = new NExternDeclaration(*$2, *$3, *$5); delete $5; delete $2;}
             ;
 
-func_decl : data_type ident LPAREN func_decl_args RPAREN block 
-			{ $$ = new NFunctionDeclaration(*$1, *$2, *$4, *$6); delete $4; }
+func_decl : DATA_TYPE ident LPAREN func_decl_args RPAREN block 
+			{ $$ = new NFunctionDeclaration(*$1, *$2, *$4, *$6); delete $4; delete $1; }
 		  ;
-
-data_type : DATA_TYPE { $$ = new NIdentifier(*$1); delete $1; }
 	
 func_decl_args : /*blank*/  { $$ = new VariableList(); }
 		  | var_decl { $$ = new VariableList(); $$->push_back($<var_decl>1); }

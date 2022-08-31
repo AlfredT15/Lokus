@@ -1,8 +1,0 @@
-all: bison flex
-	g++ main.cpp visitor.cpp node.cpp syntax.cpp semantics.cpp -lfl -o lokus
-
-bison: 
-	bison -d -o syntax.cpp syntax.y
-
-flex: bison
-	flex -o semantics.cpp semantics.l

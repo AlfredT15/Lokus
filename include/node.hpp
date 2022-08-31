@@ -6,6 +6,7 @@
 #include <map>
 #include "visitor.hpp"
 #include "value.hpp"
+#include "context.hpp"
 
 class VisitorVoid;
 class VisitorType;
@@ -13,19 +14,22 @@ class Value;
 class NStatement;
 class NExpression;
 class NVariableDeclaration;
+
+enum DataType;
 enum OperationType;
 
 typedef std::vector<NStatement*> StatementList;
 typedef std::vector<NExpression*> ExpressionList;
 typedef std::vector<NVariableDeclaration*> VariableList;
-
 typedef std::map<std::string, OperationType> TypeMap;
+typedef std::map<std::string, DataType> DMap;
+
 
 class Node {
 public:
 	virtual ~Node() {}
     virtual void Accept(const VisitorVoid *visitor) const = 0;
-	virtual const Value* Accept(const VisitorType *visitor) const = 0;
+	virtual const Value* Accept(const VisitorType *visitor, Context *context) const = 0;
 };
 
 class NExpression : public Node {
@@ -40,7 +44,7 @@ public:
 	NInteger(const int &value) : value(new IntValue(value)) {}
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NDouble : public NExpression {
@@ -49,7 +53,7 @@ public:
 	NDouble(const double &value) : value(new DoubleValue(value)) { }
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NIdentifier : public NExpression {
@@ -58,7 +62,7 @@ public:
 	NIdentifier(const std::string& value) : value(new IdentifierValue(value)) { }
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NOperator : public NExpression {
@@ -80,7 +84,7 @@ public:
 	NOperator(const std::string& value) : value(new OperatorValue(opType[value])) { }
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NMethodCall : public NExpression {
@@ -92,7 +96,7 @@ public:
 	NMethodCall(const NIdentifier& id) : id(id) { }
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NBinaryOperator : public NExpression {
@@ -104,7 +108,7 @@ public:
 		lhs(lhs), rhs(rhs), op(op) { }
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NAssignment : public NExpression {
@@ -115,7 +119,7 @@ public:
 		lhs(lhs), rhs(rhs) { }
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NBlock : public NExpression {
@@ -124,7 +128,7 @@ public:
 	NBlock() { }
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NExpressionStatement : public NStatement {
@@ -134,7 +138,7 @@ public:
 		expression(expression) { }
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NReturnStatement : public NStatement {
@@ -144,48 +148,75 @@ public:
 		expression(expression) { }
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NVariableDeclaration : public NStatement {
+private:
+	DMap dTypeMap = {
+	{"int", DataType::INT_DTYPE},
+	{"float", DataType::FLOAT_DTYPE},
+	{"string", DataType::STRING_DTYPE},
+	{"char", DataType::CHAR_DTYPE},
+	{"bool", DataType::BOOL_DTYPE},
+	{"void", DataType::VOID_DTYPE},
+	};
 public:
-	const NIdentifier& type;
+	DataType type;
 	NIdentifier& id;
 	NExpression *assignmentExpr;
-	NVariableDeclaration(const NIdentifier& type, NIdentifier& id) :
-		type(type), id(id) { assignmentExpr = NULL; }
-	NVariableDeclaration(const NIdentifier& type, NIdentifier& id, NExpression *assignmentExpr) :
-		type(type), id(id), assignmentExpr(assignmentExpr) { }
+	NVariableDeclaration(const std::string& type, NIdentifier& id) :
+		type(dTypeMap[type]), id(id) { assignmentExpr = NULL; }
+	NVariableDeclaration(const std::string& type, NIdentifier& id, NExpression *assignmentExpr) :
+		type(dTypeMap[type]), id(id), assignmentExpr(assignmentExpr) { }
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NExternDeclaration : public NStatement {
+private:
+	DMap dTypeMap = {
+	{"int", DataType::INT_DTYPE},
+	{"float", DataType::FLOAT_DTYPE},
+	{"string", DataType::STRING_DTYPE},
+	{"char", DataType::CHAR_DTYPE},
+	{"bool", DataType::BOOL_DTYPE},
+	{"void", DataType::VOID_DTYPE},
+	};
 public:
-    const NIdentifier& type;
+    const DataType type;
     const NIdentifier& id;
     VariableList arguments;
-    NExternDeclaration(const NIdentifier& type, const NIdentifier& id,
+    NExternDeclaration(const std::string& type, const NIdentifier& id,
             const VariableList& arguments) :
-        type(type), id(id), arguments(arguments) {}
+        type(dTypeMap[type]), id(id), arguments(arguments) {}
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 class NFunctionDeclaration : public NStatement {
+private:
+	DMap dTypeMap = {
+	{"int", DataType::INT_DTYPE},
+	{"float", DataType::FLOAT_DTYPE},
+	{"string", DataType::STRING_DTYPE},
+	{"char", DataType::CHAR_DTYPE},
+	{"bool", DataType::BOOL_DTYPE},
+	{"void", DataType::VOID_DTYPE},
+	};
 public:
-	const NIdentifier& type;
+	const DataType type;
 	const NIdentifier& id;
 	VariableList arguments;
 	NBlock& block;
-	NFunctionDeclaration(const NIdentifier& type, const NIdentifier& id, 
+	NFunctionDeclaration(const std::string& type, const NIdentifier& id, 
 			const VariableList& arguments, NBlock& block) :
-		type(type), id(id), arguments(arguments), block(block) { }
+		type(dTypeMap[type]), id(id), arguments(arguments), block(block) { }
 
     void Accept(const VisitorVoid *visitor) const override;
-	const Value* Accept(const VisitorType *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
 #endif

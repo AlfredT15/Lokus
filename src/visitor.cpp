@@ -16,7 +16,7 @@ void PrintVisitor::VisitNDouble(const NDouble *element) const
 }
 void PrintVisitor::VisitNIdentifier(const NIdentifier *element) const
 {
-    printf("identifier: %s \n", element->value->name.c_str());
+    printf("identifier: %s \n", element->value->value.c_str());
 }
 void PrintVisitor::VisitNOperator(const NOperator *element) const
 {
@@ -59,13 +59,11 @@ void PrintVisitor::VisitNReturnStatement(const NReturnStatement *element) const
 }
 void PrintVisitor::VisitNVariableDeclaration(const NVariableDeclaration *element) const
 {
-    element->type.Accept(this);
     element->id.Accept(this);
     element->assignmentExpr->Accept(this);
 }
 void PrintVisitor::VisitNExternDeclaration(const NExternDeclaration *element) const
 {
-    element->type.Accept(this);
     element->id.Accept(this);
     for (NVariableDeclaration* dec : element->arguments)
     {
@@ -74,7 +72,6 @@ void PrintVisitor::VisitNExternDeclaration(const NExternDeclaration *element) co
 }
 void PrintVisitor::VisitNFunctionDeclaration(const NFunctionDeclaration *element) const
 {
-    element->type.Accept(this);
     element->id.Accept(this);
     for (NVariableDeclaration* dec : element->arguments)
     {
@@ -87,36 +84,44 @@ void PrintVisitor::VisitNFunctionDeclaration(const NFunctionDeclaration *element
 // InterpretVisitor
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 
-const Value* InterpretVisitor::VisitNInteger(const NInteger *element) const
+const Value* InterpretVisitor::VisitNInteger(const NInteger *element, Context* context) const
 {
     return element->value;
 }
-const Value* InterpretVisitor::VisitNDouble(const NDouble *element) const
+const Value* InterpretVisitor::VisitNDouble(const NDouble *element, Context* context) const
 {
     return element->value;
 }
-const Value* InterpretVisitor::VisitNIdentifier(const NIdentifier *element) const
+const Value* InterpretVisitor::VisitNIdentifier(const NIdentifier *element, Context* context) const
 {
     return element->value;
 }
-const Value* InterpretVisitor::VisitNOperator(const NOperator *element) const
+const Value* InterpretVisitor::VisitNOperator(const NOperator *element, Context* context) const
 {
     return element->value;
 }
-const Value* InterpretVisitor::VisitNMethodCall(const NMethodCall *element) const
+const Value* InterpretVisitor::VisitNMethodCall(const NMethodCall *element, Context* context) const
 {
-    element->id.Accept(this);
+    element->id.Accept(this, context);
     for (NExpression* expr : element->arguments)
     {
-        expr->Accept(this);
+        expr->Accept(this, context);
     }
     return new ErrorValue("NOT IMPLEMENTED");
 }
-const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *element) const
+const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *element, Context* context) const
 {
-    const Value* lhs_val = element->lhs.Accept(this);
-    const Value* rhs_val = element->rhs.Accept(this);
-    const OperatorValue* op_val = dynamic_cast<const OperatorValue*>(element->op.Accept(this));
+    const Value* lhs_val = element->lhs.Accept(this, context);
+    const Value* rhs_val = element->rhs.Accept(this, context);
+    const OperatorValue* op_val = dynamic_cast<const OperatorValue*>(element->op.Accept(this, context));
+
+    const IdentifierValue* lhs_id = dynamic_cast<const IdentifierValue*>(lhs_val);
+    const IdentifierValue* rhs_id = dynamic_cast<const IdentifierValue*>(rhs_val);
+    if (lhs_id)
+        lhs_val = context->find_value(lhs_id->value);
+    if (rhs_id)
+        rhs_val = context->find_value(rhs_id->value);
+
     switch (op_val->value)
     {
     case OperationType::ADD_TYPE:
@@ -141,56 +146,76 @@ const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *eleme
         return lhs_val->greater_than_or_equal_to(rhs_val);
     }   
 }
-const Value* InterpretVisitor::VisitNAssignment(const NAssignment *element) const
+const Value* InterpretVisitor::VisitNAssignment(const NAssignment *element, Context* context) const
 {
-    element->lhs.Accept(this);
-    printf(" = ");
-    element->rhs.Accept(this); 
-    return new ErrorValue("NOT IMPLEMENTED");
+    const IdentifierValue* lhs_val = dynamic_cast<const IdentifierValue*>
+                                        (element->lhs.Accept(this, context));
+    const Value* rhs_val = element->rhs.Accept(this, context);
+    if (rhs_val->get_isError())
+        return rhs_val;
+    const bool variable_set = context->set_value(lhs_val, rhs_val);
+    if (!variable_set)
+        return new ErrorValue(lhs_val->value + " does not exist in this scope");
+    return lhs_val;
 }
-const Value* InterpretVisitor::VisitNBlock(const NBlock *element) const
+const Value* InterpretVisitor::VisitNBlock(const NBlock *element, Context* context) const
 {
     ValueVec value;
+    Context* new_context = new Context(context);
     for (NStatement* stmnt : element->statements)
     {
-        value.push_back(stmnt->Accept(this));
+        value.push_back(stmnt->Accept(this, new_context));
     }
     return new ListValue(value);
 }
-const Value* InterpretVisitor::VisitNExpressionStatement(const NExpressionStatement *element) const
+const Value* InterpretVisitor::VisitNExpressionStatement(const NExpressionStatement *element, Context* context) const
 {
-    return element->expression.Accept(this);
+    return element->expression.Accept(this, context);
 }
-const Value* InterpretVisitor::VisitNReturnStatement(const NReturnStatement *element) const
+const Value* InterpretVisitor::VisitNReturnStatement(const NReturnStatement *element, Context* context) const
 {
-    element->expression.Accept(this);
+    element->expression.Accept(this, context);
     return new ErrorValue("NOT IMPLEMENTED");
 }
-const Value* InterpretVisitor::VisitNVariableDeclaration(const NVariableDeclaration *element) const
+const Value* InterpretVisitor::VisitNVariableDeclaration(const NVariableDeclaration *element, Context* context) const
 {
-    element->type.Accept(this);
-    element->id.Accept(this);
-    element->assignmentExpr->Accept(this);
-    return new ErrorValue("NOT IMPLEMENTED");
+    const IdentifierValue* id = dynamic_cast<const IdentifierValue*>(element->id.Accept(this, context));
+    const Value* val;
+    if (element->assignmentExpr)
+    {
+        val = element->assignmentExpr->Accept(this, context);
+        const IdentifierValue* id2 = dynamic_cast<const IdentifierValue*>(val);
+        if (id2)
+        {
+            val = context->find_value(id2->value);
+            if (val->get_isError())
+                return val;
+        }
+        if (!(element->type == val->get_type()))
+            return new ErrorValue("Incompatible types");
+    }
+    const bool variable_set = context->set_value(id, val);
+    if (!variable_set)
+        return new ErrorValue("Error initializing " + id->value);
+    return id;
 }
-const Value* InterpretVisitor::VisitNExternDeclaration(const NExternDeclaration *element) const
+const Value* InterpretVisitor::VisitNExternDeclaration(const NExternDeclaration *element, Context* context) const
 {
-    element->type.Accept(this);
-    element->id.Accept(this);
+    element->id.Accept(this, context);
     for (NVariableDeclaration* dec : element->arguments)
     {
-        dec->Accept(this);
+        dec->Accept(this, context);
     }
     return new ErrorValue("NOT IMPLEMENTED");
 }
-const Value* InterpretVisitor::VisitNFunctionDeclaration(const NFunctionDeclaration *element) const
+const Value* InterpretVisitor::VisitNFunctionDeclaration(const NFunctionDeclaration *element, Context* context) const
 {
-    element->type.Accept(this);
-    element->id.Accept(this);
+    const IdentifierValue* id = dynamic_cast<const IdentifierValue*>(element->id.Accept(this, context));
+    ValueVec arg_values;
     for (NVariableDeclaration* dec : element->arguments)
     {
-        dec->Accept(this);
+        arg_values.push_back(dec->Accept(this, context));
     }
-    element->block.Accept(this);
+    element->block.Accept(this, context);
     return new ErrorValue("NOT IMPLEMENTED");
 }

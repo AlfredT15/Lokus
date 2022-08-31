@@ -3,6 +3,7 @@
 
 #include "node.hpp"
 #include "value.hpp"
+#include "context.hpp"
 
 // node.hpp
 class NInteger;
@@ -29,19 +30,19 @@ class VisitorType : public Visitor
 {
     public:
         virtual ~VisitorType() {}
-        virtual const Value* VisitNInteger(const NInteger *element) const = 0;
-        virtual const Value* VisitNDouble(const NDouble *element) const = 0;
-        virtual const Value* VisitNIdentifier(const NIdentifier *element) const = 0;
-        virtual const Value* VisitNOperator(const NOperator *element) const = 0;
-        virtual const Value* VisitNMethodCall(const NMethodCall *element) const = 0;
-        virtual const Value* VisitNBinaryOperator(const NBinaryOperator *element) const = 0;
-        virtual const Value* VisitNAssignment(const NAssignment *element) const = 0;
-        virtual const Value* VisitNBlock(const NBlock *element) const = 0;
-        virtual const Value* VisitNExpressionStatement(const NExpressionStatement *element) const = 0;
-        virtual const Value* VisitNReturnStatement(const NReturnStatement *element) const = 0;
-        virtual const Value* VisitNVariableDeclaration(const NVariableDeclaration *element) const = 0;
-        virtual const Value* VisitNExternDeclaration(const NExternDeclaration *element) const = 0;
-        virtual const Value* VisitNFunctionDeclaration(const NFunctionDeclaration *element) const = 0;
+        virtual const Value* VisitNInteger(const NInteger *element, Context* context) const = 0;
+        virtual const Value* VisitNDouble(const NDouble *element, Context* context) const = 0;
+        virtual const Value* VisitNIdentifier(const NIdentifier *element, Context* context) const = 0;
+        virtual const Value* VisitNOperator(const NOperator *element, Context* context) const = 0;
+        virtual const Value* VisitNMethodCall(const NMethodCall *element, Context* context) const = 0;
+        virtual const Value* VisitNBinaryOperator(const NBinaryOperator *element, Context* context) const = 0;
+        virtual const Value* VisitNAssignment(const NAssignment *element, Context* context) const = 0;
+        virtual const Value* VisitNBlock(const NBlock *element, Context* context) const = 0;
+        virtual const Value* VisitNExpressionStatement(const NExpressionStatement *element, Context* context) const = 0;
+        virtual const Value* VisitNReturnStatement(const NReturnStatement *element, Context* context) const = 0;
+        virtual const Value* VisitNVariableDeclaration(const NVariableDeclaration *element, Context* context) const = 0;
+        virtual const Value* VisitNExternDeclaration(const NExternDeclaration *element, Context* context) const = 0;
+        virtual const Value* VisitNFunctionDeclaration(const NFunctionDeclaration *element, Context* context) const = 0;
 };
 
 class VisitorVoid : public Visitor
@@ -84,19 +85,19 @@ class PrintVisitor: public VisitorVoid
 class InterpretVisitor: public VisitorType
 {
     public:
-        const Value* VisitNInteger(const NInteger *element) const override;
-        const Value* VisitNDouble(const NDouble *element) const override;
-        const Value* VisitNIdentifier(const NIdentifier *element) const override;
-        const Value* VisitNOperator(const NOperator *element) const override;
-        const Value* VisitNMethodCall(const NMethodCall *element) const override;
-        const Value* VisitNBinaryOperator(const NBinaryOperator *element) const override;
-        const Value* VisitNAssignment(const NAssignment *element) const override;
-        const Value* VisitNBlock(const NBlock *element) const override;
-        const Value* VisitNExpressionStatement(const NExpressionStatement *element) const override;
-        const Value* VisitNReturnStatement(const NReturnStatement *element) const override;
-        const Value* VisitNVariableDeclaration(const NVariableDeclaration *element) const override;
-        const Value* VisitNExternDeclaration(const NExternDeclaration *element) const override;
-        const Value* VisitNFunctionDeclaration(const NFunctionDeclaration *element) const override;
+        const Value* VisitNInteger(const NInteger *element, Context* context) const override;
+        const Value* VisitNDouble(const NDouble *element, Context* context) const override;
+        const Value* VisitNIdentifier(const NIdentifier *element, Context* context) const override;
+        const Value* VisitNOperator(const NOperator *element, Context* context) const override;
+        const Value* VisitNMethodCall(const NMethodCall *element, Context* context) const override;
+        const Value* VisitNBinaryOperator(const NBinaryOperator *element, Context* context) const override;
+        const Value* VisitNAssignment(const NAssignment *element, Context* context) const override;
+        const Value* VisitNBlock(const NBlock *element, Context* context) const override;
+        const Value* VisitNExpressionStatement(const NExpressionStatement *element, Context* context) const override;
+        const Value* VisitNReturnStatement(const NReturnStatement *element, Context* context) const override;
+        const Value* VisitNVariableDeclaration(const NVariableDeclaration *element, Context* context) const override;
+        const Value* VisitNExternDeclaration(const NExternDeclaration *element, Context* context) const override;
+        const Value* VisitNFunctionDeclaration(const NFunctionDeclaration *element, Context* context) const override;
 };
 
 

@@ -2,12 +2,24 @@
 #define VALUE_H
 
 #include <string>
+#include <vector>
+// #include "node.hpp"
 
 class Value;
 class DoubleValue;
 class BoolValue;
 
-typedef std::vector<const Value*> ValueVec;
+enum DataType
+{
+	INT_DTYPE,
+	FLOAT_DTYPE,
+	STRING_DTYPE,
+	CHAR_DTYPE,
+	BOOL_DTYPE,
+	VOID_DTYPE,
+	LIST_DTYPE,
+	ERROR_DTYPE
+};
 
 enum OperationType
 {
@@ -22,6 +34,8 @@ enum OperationType
     LTE_TYPE,
     GTE_TYPE
 };
+
+typedef std::vector<const Value*> ValueVec;
 
 class Value {
 public:
@@ -42,6 +56,7 @@ public:
     // Internal
     virtual const void* get_value() const = 0;
     virtual const bool get_isError() const = 0;
+    virtual const DataType& get_type() const = 0;
 };
 
 class ErrorValue : public Value
@@ -50,6 +65,7 @@ public:
     // Data
     std::string value;
     const bool isError = true;
+    const DataType type = DataType::ERROR_DTYPE;
 
     ErrorValue(const std::string &value) : value(value) { }
 
@@ -78,6 +94,7 @@ public:
     // Internal
     const void* get_value() const override;
     const bool get_isError() const override;
+    const DataType& get_type() const override;
 };
 
 class NumericValue : public Value
@@ -89,6 +106,7 @@ public:
     // Data
     int value;
     const bool isError = false;
+    const DataType type = DataType::INT_DTYPE;
 
     IntValue(const int &value) : value(value) { }
 
@@ -107,6 +125,7 @@ public:
     // Internal
     const void* get_value() const override;
     const bool get_isError() const override;
+    const DataType& get_type() const override;
 };
 
 class DoubleValue : public NumericValue
@@ -115,6 +134,7 @@ public:
     // Data
     double value;
     const bool isError = false;
+    const DataType type = DataType::FLOAT_DTYPE;
 
     DoubleValue(const double &value) : value(value) { }
 
@@ -133,6 +153,7 @@ public:
     // Internal
     const void* get_value() const override;
     const bool get_isError() const override;
+    const DataType& get_type() const override;
 };
 
 class BoolValue : public Value
@@ -141,6 +162,7 @@ public:
     // Data
     bool value;
     const bool isError = false;
+    const DataType type = DataType::BOOL_DTYPE;
 
     BoolValue(const bool &value) : value(value) { }
 
@@ -167,6 +189,7 @@ public:
     // Internal
     const void* get_value() const override;
     const bool get_isError() const override;
+    const DataType& get_type() const override;
 };
 
 class StringValue : public Value
@@ -175,6 +198,7 @@ public:
     // Data
     std::string value;
     const bool isError = false;
+    const DataType type = DataType::STRING_DTYPE;
 
     StringValue(const std::string &value) : value(value) { }
 
@@ -199,17 +223,18 @@ public:
     // Internal
     const void* get_value() const override;
     const bool get_isError() const override;
+    const DataType& get_type() const override;
 };
 
 class IdentifierValue : public Value
 {
 public:
     // Data
-    std::string name;
-    Value* value;
+    std::string value;
     const bool isError = false;
+    const DataType type = DataType::STRING_DTYPE;
 
-    IdentifierValue(const std::string &name) : name(name) { }
+    IdentifierValue(const std::string &value) : value(value) { }
 
     // Arithmetic
     const Value* added_to(const Value* other) const override
@@ -234,9 +259,9 @@ public:
     const Value* greater_than_or_equal_to(const Value* other) const override
         {return new ErrorValue("Greater than or equal to operator not implemented for Identifiers");};
     // Internal
-    void set_value(Value* other);
     const void* get_value() const override;
     const bool get_isError() const override;
+    const DataType& get_type() const override;
 };
 
 class OperatorValue : public Value
@@ -245,6 +270,7 @@ public:
     // Data
     OperationType value;
     const bool isError = false;
+    const DataType type = DataType::VOID_DTYPE;
 
     OperatorValue(const OperationType &value) : value(value) { }
     // Arithmetic
@@ -272,6 +298,7 @@ public:
     // Internal
     const void* get_value() const override;
     const bool get_isError() const override;
+    const DataType& get_type() const override;
 };
 
 class ListValue : public Value
@@ -280,6 +307,7 @@ public:
     //Data
     ValueVec value;
     const bool isError = false;
+    const DataType type = DataType::LIST_DTYPE;
 
     ListValue(ValueVec &value) : value(value) { }
     // Arithmetic
@@ -301,6 +329,14 @@ public:
     // Internal
     const void* get_value() const override;
     const bool get_isError() const override;
+    const DataType& get_type() const override;
 };
+
+
+class FunctionValue : public Value
+{
+    public:
+        FunctionValue(const ValueVec &arg_values, Context* funtion_context)
+}
 
 #endif
