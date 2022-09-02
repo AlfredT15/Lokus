@@ -365,4 +365,44 @@ class FunctionValue : public Value
             {return this->type;};
 };
 
+
+class ReturnValue : public Value
+{
+    public:
+        const bool isError = false;
+        const Value* value;
+        const DataType type;
+        ReturnValue(const Value* value) : value(value), type(value->get_type()) {}
+
+        // Arithmetic
+        const Value* added_to(const Value* other) const override
+            {return new ErrorValue("Addition operator not implemented for a return value");};
+        const Value* subbed_by(const Value* other) const override
+            {return new ErrorValue("Subtraction operator not implemented for a return value");};
+        const Value* multiplied_by(const Value* other) const override
+            {return new ErrorValue("Multiplication operator not implemented for a return value");};
+        const Value* divided_by(const Value* other) const override
+            {return new ErrorValue("Division operator not implemented for a return value");};
+        // Comparison
+        const Value* equal_to(const Value* other) const override
+            {return new ErrorValue("Equality operator not implemented for a return value");};
+        const Value* not_equal_to(const Value* other) const override
+            {return new ErrorValue("Not Equal operator not implemented for a return value");};
+        const Value* less_than(const Value* other) const override
+            {return new ErrorValue("Less than operator not implemented for a return value");};
+        const Value* greater_than(const Value* other) const override
+            {return new ErrorValue("Greater than operator not implemented for a return value");};
+        const Value* less_than_or_equal_to(const Value* other) const override
+            {return new ErrorValue("Less than or equal to operator not implemented for a return value");};
+        const Value* greater_than_or_equal_to(const Value* other) const override
+            {return new ErrorValue("Greater than or equal to operator not implemented for a return value");};
+        // Internal
+        const void* get_value() const override
+            {return this->value;};
+        const bool get_isError() const override
+            {return this->isError;};
+        const DataType& get_type() const override
+            {return this->type;};
+};
+
 #endif

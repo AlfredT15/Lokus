@@ -202,7 +202,11 @@ const Value* InterpretVisitor::VisitNBlock(const NBlock *element, Context* conte
     // Context* new_context = new Context(context);
     for (NStatement* stmnt : element->statements)
     {
-        value.push_back(stmnt->Accept(this, context));
+        const Value* val = stmnt->Accept(this, context);
+        const ReturnValue* ret = dynamic_cast<const ReturnValue*>(val);
+        if (ret)
+            return ret->value;
+        value.push_back(val);
     }
     return new ListValue(value);
 }
@@ -212,8 +216,14 @@ const Value* InterpretVisitor::VisitNExpressionStatement(const NExpressionStatem
 }
 const Value* InterpretVisitor::VisitNReturnStatement(const NReturnStatement *element, Context* context) const
 {
-    element->expression.Accept(this, context);
-    return new ErrorValue("NOT IMPLEMENTED");
+    const Value* value = element->expression.Accept(this, context);
+    const IdentifierValue* id = dynamic_cast<const IdentifierValue*>(value);
+
+    if (id)
+    {
+        value = context->find_value(id->value);
+    }
+    return new ReturnValue(value);
 }
 const Value* InterpretVisitor::VisitNVariableDeclaration(const NVariableDeclaration *element, Context* context) const
 {
