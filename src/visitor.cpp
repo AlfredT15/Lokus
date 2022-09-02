@@ -110,27 +110,34 @@ const Value* InterpretVisitor::VisitNMethodCall(const NMethodCall *element, Cont
     if (!func_val)
         return new ErrorValue(id->value + " is not a callable function.");
 
-    ValueVec arg_values;
+    ValueVec arg_vals;
     for (NExpression* expr : element->arguments)
     {
-        arg_values.push_back(expr->Accept(this, context));
+        arg_vals.push_back(expr->Accept(this, context));
     }
 
-    if (func_val->arg_values.size() != arg_values.size())
+    if (func_val->arg_values->size() != arg_vals.size())
     {
-        return new ErrorValue(id->value + " expects " + std::to_string(func_val->arg_values.size()) 
-                        + "arguments. " + std::to_string(arg_values.size()) + " were provided");
+        return new ErrorValue(id->value + " expects " + std::to_string(func_val->arg_values->size()) 
+                        + "arguments. " + std::to_string(arg_vals.size()) + " were provided");
     }
 
-    for (int i = 0; i < func_val->arg_values.size(); i++)
+    for (int i = 0; i < func_val->arg_values->size(); i++)
     {
-        if (func_val->arg_values[i]->get_type() != arg_values[i]->get_type())
-        {
-
-        }
+        if (func_val->arg_values->at(i)->get_type() != arg_vals[i]->get_type())
+            return new ErrorValue("Parameter number " + std::to_string(i+1) + " expects a different type");
+    }
+    for (int i = 0; i < func_val->arg_values->size(); i++)
+    {
+        const IdentifierValue* id2 = dynamic_cast<const IdentifierValue*>(func_val->arg_values->at(i));
+        if (!id2)
+            return new ErrorValue("Something is wrong");
+        bool var_set = func_val->function_context->set_value(id2, arg_vals.at(i));
+        if (!var_set)
+            return new ErrorValue("Expected a different type in arguments passed");
     }
 
-    return new ErrorValue("NOT IMPLEMENTED");
+    return func_val->block.Accept(this, func_val->function_context);
 }
 const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *element, Context* context) const
 {
@@ -192,10 +199,10 @@ const Value* InterpretVisitor::VisitNAssignment(const NAssignment *element, Cont
 const Value* InterpretVisitor::VisitNBlock(const NBlock *element, Context* context) const
 {
     ValueVec value;
-    Context* new_context = new Context(context);
+    // Context* new_context = new Context(context);
     for (NStatement* stmnt : element->statements)
     {
-        value.push_back(stmnt->Accept(this, new_context));
+        value.push_back(stmnt->Accept(this, context));
     }
     return new ListValue(value);
 }
@@ -215,6 +222,8 @@ const Value* InterpretVisitor::VisitNVariableDeclaration(const NVariableDeclarat
     if (element->assignmentExpr)
     {
         val = element->assignmentExpr->Accept(this, context);
+        if (val->get_isError())
+            return val;
         const IdentifierValue* id2 = dynamic_cast<const IdentifierValue*>(val);
         if (id2)
         {
@@ -242,12 +251,16 @@ const Value* InterpretVisitor::VisitNExternDeclaration(const NExternDeclaration 
 const Value* InterpretVisitor::VisitNFunctionDeclaration(const NFunctionDeclaration *element, Context* context) const
 {
     const IdentifierValue* id = dynamic_cast<const IdentifierValue*>(element->id.Accept(this, context));
-    ValueVec arg_values;
+    ValueVec* arg_values = new ValueVec;
     for (NVariableDeclaration* dec : element->arguments)
     {
-        arg_values.push_back(dec->Accept(this, context));
+        arg_values->push_back(dec->Accept(this, context));
     }
-    const FunctionValue* func_val = new FunctionValue(arg_values, context, element->block);
+    Context* new_context = new Context(context);
+    const FunctionValue* func_val = new FunctionValue(arg_values, new_context, element->block, id->type);
+
+    context->set_value(id, func_val);
+
     return func_val;
     // return new ErrorValue("NOT IMPLEMENTED");
 }

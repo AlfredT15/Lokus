@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 #include "context.hpp"
 #include "enum.hpp"
 
@@ -13,6 +14,7 @@ class NBlock;
 class Context;
 
 typedef std::vector<const Value*> ValueVec;
+typedef std::map<std::string, DataType> DMap;
 
 class Value {
 public:
@@ -205,14 +207,23 @@ public:
 
 class IdentifierValue : public Value
 {
+private:
+	DMap dTypeMap = {
+	{"int", DataType::INT_DTYPE},
+	{"float", DataType::FLOAT_DTYPE},
+	{"string", DataType::STRING_DTYPE},
+	{"char", DataType::CHAR_DTYPE},
+	{"bool", DataType::BOOL_DTYPE},
+	{"void", DataType::VOID_DTYPE},
+	};
 public:
     // Data
     std::string value;
     DataType type;
     const bool isError = false;
 
-    IdentifierValue(const std::string &value, const DataType type) 
-                    : value(value), type(type) { }
+    IdentifierValue(const std::string &type, const std::string &value) 
+                    : value(value), type(dTypeMap[type]) { }
     IdentifierValue(const std::string &value) : value(value), type(DataType::TNI) {}
 
     // Arithmetic
@@ -316,12 +327,12 @@ class FunctionValue : public Value
 {
     public:
         const bool isError = false;
-        const DataType type = DataType::FUNC_DTYPE;
-        const ValueVec &arg_values;
+        const DataType type;
+        ValueVec* arg_values;
         Context* function_context;
         NBlock &block;
-        FunctionValue(const ValueVec &arg_values, Context* funtion_context, NBlock &block)
-                : arg_values(arg_values), function_context(function_context), block(block) {}
+        FunctionValue(ValueVec* arg_values, Context* function_context, NBlock &block, const DataType type)
+                : arg_values(arg_values), function_context(function_context), block(block), type(type) {}
 
         // Arithmetic
         const Value* added_to(const Value* other) const override

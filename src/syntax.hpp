@@ -38,7 +38,7 @@
 # define YY_YY_SRC_SYNTAX_HPP_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
-# define YYDEBUG 0
+# define YYDEBUG 1
 #endif
 #if YYDEBUG
 extern int yydebug;
@@ -70,8 +70,7 @@ extern int yydebug;
     COMMA = 276,
     DOT = 277,
     RETURN = 278,
-    EXTERN = 279,
-    END_LINE = 280
+    EXTERN = 279
   };
 #endif
 
@@ -79,7 +78,7 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 16 "src/syntax.y"
+#line 17 "src/syntax.y"
 
 	Node *node;
 	NBlock *block;
@@ -93,7 +92,7 @@ union YYSTYPE
 	std::string *string;
 	int token;
 
-#line 97 "src/syntax.hpp"
+#line 96 "src/syntax.hpp"
 
 };
 typedef union YYSTYPE YYSTYPE;

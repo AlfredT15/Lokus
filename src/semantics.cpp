@@ -889,7 +889,7 @@ case 29:
 /* rule 29 can match eol */
 YY_RULE_SETUP
 #line 58 "src/semantics.l"
-{line_num++; return END_LINE;}
+{line_num++;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP

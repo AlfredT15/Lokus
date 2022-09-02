@@ -5,6 +5,7 @@
   #include <vector>
 	NBlock *programBlock; /* the top level root node of our final AST */
 
+	#define YYERROR_VERBOSE 1
 	extern int yylex();
 	extern int line_num;
 
@@ -37,7 +38,7 @@
 %token <token>  EQ
 %token <token>  LPAREN RPAREN LBRACE RBRACE COMMA DOT
 %token <token>  RETURN EXTERN
-%token          END_LINE
+// %token          END_LINE
 
 /* Define the type of node our nonterminal symbols represent.
    The types refer to the %union declaration above. Ex: when
@@ -64,11 +65,15 @@
 
 program : stmts { programBlock = $1; }
 		;
+
 		
 stmts : stmt { $$ = new NBlock(); $$->statements.push_back($<stmt>1); }
-	  | stmts END_LINE stmt { $1->statements.push_back($<stmt>3); }
-    | stmts END_LINE
+	  | stmts stmt { $1->statements.push_back($<stmt>2); }
+	//   | stmts END_LINE
 	  ;
+
+// stmts : END_LINE stmt
+// 	  ;
 
 stmt : var_decl | func_decl | extern_decl
 	 | expr { $$ = new NExpressionStatement(*$1); }

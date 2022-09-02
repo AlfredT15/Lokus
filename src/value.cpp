@@ -130,24 +130,32 @@ const Value* DoubleValue::added_to(const Value* other) const
 {
     if (dynamic_cast<const DoubleValue*>(other))
         return new DoubleValue(this->value + *((double*)other->get_value()));
+    else if (dynamic_cast<const IntValue*>(other))
+        return new DoubleValue(this->value + *((int*)other->get_value()));
     return new ErrorValue("'+' is not defined between the two types");
 }
 const Value* DoubleValue::subbed_by(const Value* other) const
 {
     if (dynamic_cast<const DoubleValue*>(other))
         return new DoubleValue(this->value - *((double*)other->get_value()));
+    else if (dynamic_cast<const IntValue*>(other))
+        return new DoubleValue(this->value - *((int*)other->get_value()));
     return new ErrorValue("'-' is not defined between the two types");
 }
 const Value* DoubleValue::multiplied_by(const Value* other) const
 {
     if (dynamic_cast<const DoubleValue*>(other))
         return new DoubleValue(this->value * *((double*)other->get_value()));
+    else if (dynamic_cast<const IntValue*>(other))
+        return new DoubleValue(this->value * *((int*)other->get_value()));
     return new ErrorValue("'*' is not defined between the two types");
 }
 const Value* DoubleValue::divided_by(const Value* other) const
 {
     if (dynamic_cast<const DoubleValue*>(other))
         return new DoubleValue(this->value / *((double*)other->get_value()));
+    else if (dynamic_cast<const IntValue*>(other))
+        return new DoubleValue(this->value / *((int*)other->get_value()));
     return new ErrorValue("'/' is not defined between the two types");
 }
 // Comparison

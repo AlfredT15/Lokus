@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <vector>
-#include <map>
 #include "visitor.hpp"
 #include "value.hpp"
 #include "context.hpp"
@@ -24,7 +23,7 @@ typedef std::vector<NStatement*> StatementList;
 typedef std::vector<NExpression*> ExpressionList;
 typedef std::vector<NVariableDeclaration*> VariableList;
 typedef std::map<std::string, OperationType> TypeMap;
-typedef std::map<std::string, DataType> DMap;
+
 
 
 class Node {
@@ -59,20 +58,11 @@ public:
 };
 
 class NIdentifier : public NExpression {
-private:
-	DMap dTypeMap = {
-	{"int", DataType::INT_DTYPE},
-	{"float", DataType::FLOAT_DTYPE},
-	{"string", DataType::STRING_DTYPE},
-	{"char", DataType::CHAR_DTYPE},
-	{"bool", DataType::BOOL_DTYPE},
-	{"void", DataType::VOID_DTYPE},
-	};
 public:
 	IdentifierValue* value;
-	NIdentifier(const std::string &value) : value(new IdentifierValue(value, DataType::TNI)) { }
-	NIdentifier(const std::string &value, const std::string &type) 
-			: value(new IdentifierValue(value, dTypeMap[type])) { }
+	NIdentifier(const std::string &value) : value(new IdentifierValue(value)) { }
+	NIdentifier(const std::string &type, const std::string &value) 
+			: value(new IdentifierValue(type, value)) { }
 
     void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
