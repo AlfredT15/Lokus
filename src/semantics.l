@@ -55,7 +55,7 @@ linefeed        \n
 
 
 
-{linefeed}                                      {line_num++; return END_LINE;}
+{linefeed}                                      {line_num++;}
 {whitespace}                                    ;
 .                                               {InvalidToken();}
 

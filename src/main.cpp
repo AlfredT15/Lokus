@@ -9,6 +9,27 @@ extern int yyparse();
 extern FILE *yyin;
 extern NBlock* programBlock;
 
+void print_output(const ListValue* output)
+{
+    for (const Value* val : output->value)
+    {
+        if (dynamic_cast<const ErrorValue*>(val))
+        {
+            printf("%s\n", (*((std::string*)val->get_value())).c_str());
+            return;
+        }
+        else if (dynamic_cast<const IntValue*>(val))
+            printf("%d\n", *((int*)val->get_value()));
+        else if (dynamic_cast<const DoubleValue*>(val))
+            printf("%f\n", *((double*)val->get_value()));
+        else if (dynamic_cast<const BoolValue*>(val))
+            printf("%d\n", *((int*)val->get_value()));
+        else if (dynamic_cast<const ListValue*>(val))
+        {
+            print_output(dynamic_cast<const ListValue*>(val));
+        }
+    }
+}
 
 int main(int argc, char **argv)
 {
@@ -32,19 +53,6 @@ int main(int argc, char **argv)
         return 0;
     }
 	const ListValue* output = dynamic_cast<const ListValue*>(out);	
-    for (const Value* val : output->value)
-    {
-        if (dynamic_cast<const ErrorValue*>(val))
-        {
-            printf("%s\n", (*((std::string*)val->get_value())).c_str());
-            return 0;
-        }
-        else if (dynamic_cast<const IntValue*>(val))
-            printf("%d\n", *((int*)val->get_value()));
-        else if (dynamic_cast<const DoubleValue*>(val))
-            printf("%f\n", *((double*)val->get_value()));
-        else if (dynamic_cast<const BoolValue*>(val))
-            printf("%d\n", *((int*)val->get_value()));
-    }
+    print_output(output);
 	return 0;
 }

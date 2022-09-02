@@ -1,4 +1,4 @@
-bison -d -o src/syntax.cpp src/syntax.y
+bison -d -o src/syntax.cpp src/syntax.y --debug
 # clang++ -c -o syntax.o syntax.cpp
 flex -o src/semantics.cpp src/semantics.l
 # clang++ -c -o semantics.o semantics.cpp
