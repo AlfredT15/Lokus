@@ -62,6 +62,16 @@ void NIfStatement::Accept(const VisitorVoid *visitor) const
     visitor->VisitNIfStatement(this);
 };
 
+void NForStatement::Accept(const VisitorVoid *visitor) const
+{
+    visitor->VisitNForStatement(this);
+};
+
+void NWhileStatement::Accept(const VisitorVoid *visitor) const
+{
+    visitor->VisitNWhileStatement(this);
+};
+
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // VisitorType Methods
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -122,4 +132,14 @@ const Value* NFunctionDeclaration::Accept(const VisitorType *visitor, Context *c
 const Value* NIfStatement::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNIfStatement(this, context);
+};
+
+const Value* NForStatement::Accept(const VisitorType *visitor, Context *context) const
+{
+    return visitor->VisitNForStatement(this, context);
+};
+
+const Value* NWhileStatement::Accept(const VisitorType *visitor, Context *context) const
+{
+    return visitor->VisitNWhileStatement(this, context);
 };

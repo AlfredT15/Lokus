@@ -85,6 +85,18 @@ void PrintVisitor::VisitNIfStatement(const NIfStatement *element) const
     element->block.Accept(this);
     element->next_if->Accept(this);
 }
+void PrintVisitor::VisitNForStatement(const NForStatement *element) const
+{
+    element->counter->Accept(this);
+    element->condition->Accept(this);
+    element->change->Accept(this);
+    element->block.Accept(this);
+}
+void PrintVisitor::VisitNWhileStatement(const NWhileStatement *element) const
+{
+    element->condition->Accept(this);
+    element->block.Accept(this);
+}
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // InterpretVisitor
@@ -279,7 +291,6 @@ const Value* InterpretVisitor::VisitNFunctionDeclaration(const NFunctionDeclarat
 
     return func_val;
 }
-
 const Value* InterpretVisitor::VisitNIfStatement(const NIfStatement *element, Context* context) const
 {
     if (!element->condition_expr)
@@ -296,5 +307,44 @@ const Value* InterpretVisitor::VisitNIfStatement(const NIfStatement *element, Co
     }
     if (element->next_if)
         return element->next_if->Accept(this, context);
+    return new VoidValue();
+}
+const Value* InterpretVisitor::VisitNForStatement(const NForStatement *element, Context* context) const
+{
+    const IdentifierValue* counter = dynamic_cast<const IdentifierValue*>(element->counter->Accept(this, context));
+    if (!counter)
+        return new ErrorValue("The first argument of a for loop must be an assignment or declaration");
+    const BoolValue* condition = dynamic_cast<const BoolValue*>(element->condition->Accept(this, context));
+    if (!condition)
+        return new ErrorValue("The second argument of a for loop must return a bool");
+
+    ValueVec result;
+    while(true)
+    {
+        if (!condition->value)
+        {
+            break;
+        }
+        result.push_back(element->block.Accept(this, context));
+        element->change->Accept(this,context);
+        condition = dynamic_cast<const BoolValue*>(element->condition->Accept(this, context));
+    }
+    return new ListValue(result);
+}
+const Value* InterpretVisitor::VisitNWhileStatement(const NWhileStatement *element, Context* context) const
+{
+    const BoolValue* condition = dynamic_cast<const BoolValue*>(element->condition->Accept(this, context));
+    if (!condition)
+        return new ErrorValue("The argument for a while loop must return a bool");
+    
+    while(true)
+    {
+        if (!condition->value)
+        {
+            break;
+        }
+        element->block.Accept(this, context);
+        condition = dynamic_cast<const BoolValue*>(element->condition->Accept(this, context));
+    }
     return new VoidValue();
 }

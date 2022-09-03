@@ -39,6 +39,7 @@
 %token <token>  LPAREN RPAREN LBRACE RBRACE COMMA DOT
 %token <token>  RETURN EXTERN
 %token <token> 	IF ELIF ELSE
+%token <token> 	FOR WHILE 
 // %token          END_LINE
 
 /* Define the type of node our nonterminal symbols represent.
@@ -52,7 +53,7 @@
 %type <varvec> func_decl_args
 %type <exprvec> call_args
 %type <block> program stmts block
-%type <stmt> stmt var_decl func_decl extern_decl if_stmt
+%type <stmt> stmt var_decl func_decl extern_decl if_stmt for_stmt while_stmt
 
 /* Operator precedence for mathematical operators */
 %precedence EQ_OP 
@@ -76,7 +77,7 @@ stmts : stmt { $$ = new NBlock(); $$->statements.push_back($<stmt>1); }
 // stmts : END_LINE stmt
 // 	  ;
 
-stmt : var_decl | func_decl | extern_decl | if_stmt
+stmt : var_decl | func_decl | extern_decl | if_stmt | for_stmt | while_stmt
 	 | expr { $$ = new NExpressionStatement(*$1); }
 	 | RETURN expr { $$ = new NReturnStatement($2); }
      ;
@@ -91,6 +92,13 @@ if_stmt : IF expr block { $$ = new NIfStatement($2, *$3); }
 		| ELIF expr block if_stmt { $$ = new NIfStatement($2, *$3, $4); }
 		| ELSE block  { $$ = new NIfStatement(*$2); }
 		;
+
+for_stmt : FOR LPAREN expr COMMA expr COMMA expr RPAREN block { $$ = new NForStatement($3, $5, $7, *$9); }
+		 | FOR LPAREN var_decl COMMA expr COMMA expr RPAREN block { $$ = new NForStatement($3, $5, $7, *$9); }
+		 ;
+
+while_stmt : WHILE expr block { $$ = new NWhileStatement($2, *$3); }
+		   ;
 
 var_decl : data_type_and_ident { $$ = new NVariableDeclaration(*$1); }
 		 | data_type_and_ident EQ expr { $$ = new NVariableDeclaration(*$1, $3); }

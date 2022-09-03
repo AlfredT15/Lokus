@@ -73,7 +73,9 @@ extern int yydebug;
     EXTERN = 279,
     IF = 280,
     ELIF = 281,
-    ELSE = 282
+    ELSE = 282,
+    FOR = 283,
+    WHILE = 284
   };
 #endif
 
@@ -95,7 +97,7 @@ union YYSTYPE
 	std::string *string;
 	int token;
 
-#line 99 "src/syntax.hpp"
+#line 101 "src/syntax.hpp"
 
 };
 typedef union YYSTYPE YYSTYPE;

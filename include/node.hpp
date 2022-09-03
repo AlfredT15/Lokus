@@ -205,4 +205,32 @@ public:
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
+
+class NForStatement : public NStatement{
+public:
+	Node *counter;
+	NExpression *condition;
+	NExpression *change;
+	NBlock& block;
+
+	NForStatement(Node *counter, NExpression *condition, NExpression *change, NBlock& block)
+				: counter(counter), condition(condition), change(change), block(block) { }
+
+	void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
+
+class NWhileStatement : public NStatement{
+public:
+	NExpression *condition;
+	NBlock& block;
+
+	NWhileStatement(NExpression *condition, NBlock& block)
+				: condition(condition), block(block) { }
+
+	void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
 #endif

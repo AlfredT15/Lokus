@@ -27,6 +27,8 @@ linefeed        \n
 "if"                                            return TOKEN(IF);
 "else"                                          return TOKEN(ELSE);
 "elif"                                          return TOKEN(ELIF);
+"for"                                           return TOKEN(FOR);
+"while"                                         return TOKEN(WHILE);
 [a-zA-Z_][a-zA-Z0-9_]*                          SAVE_TOKEN; return IDENTIFIER;
 [0-9]+\.[0-9]* 			                        SAVE_TOKEN; return FLOAT_VALUE;
 [0-9]+					                        SAVE_TOKEN; return INTEGER_VALUE;
