@@ -57,6 +57,11 @@ void NFunctionDeclaration::Accept(const VisitorVoid *visitor) const
     visitor->VisitNFunctionDeclaration(this);
 };
 
+void NIfStatement::Accept(const VisitorVoid *visitor) const
+{
+    visitor->VisitNIfStatement(this);
+};
+
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // VisitorType Methods
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -112,4 +117,9 @@ const Value* NExternDeclaration::Accept(const VisitorType *visitor, Context *con
 const Value* NFunctionDeclaration::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNFunctionDeclaration(this, context);
+};
+
+const Value* NIfStatement::Accept(const VisitorType *visitor, Context *context) const
+{
+    return visitor->VisitNIfStatement(this, context);
 };

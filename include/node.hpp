@@ -146,8 +146,8 @@ public:
 
 class NReturnStatement : public NStatement {
 public:
-	NExpression& expression;
-	NReturnStatement(NExpression& expression) : 
+	NExpression *expression;
+	NReturnStatement(NExpression *expression) : 
 		expression(expression) { }
 
     void Accept(const VisitorVoid *visitor) const override;
@@ -187,6 +187,21 @@ public:
 		id(id), arguments(arguments), block(block) { }
 
     void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
+class NIfStatement : public NStatement {
+public:
+	NExpression *condition_expr;
+	NBlock& block;
+	NStatement* next_if; 
+	NIfStatement(NExpression *condition_expr, NBlock& block)
+			: condition_expr(condition_expr), block(block), next_if(nullptr) { }
+	NIfStatement(NExpression *condition_expr, NBlock& block, NStatement* next_if)
+			: condition_expr(condition_expr), block(block), next_if(next_if) { }
+	NIfStatement(NBlock& block) : condition_expr(nullptr), block(block), next_if(nullptr) { }
+
+	void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 

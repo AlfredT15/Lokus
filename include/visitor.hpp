@@ -19,6 +19,7 @@ class NReturnStatement;
 class NVariableDeclaration;
 class NExternDeclaration;
 class NFunctionDeclaration;
+class NIfStatement;
 
 class Value;
 class Context;
@@ -46,6 +47,7 @@ class VisitorType : public Visitor
         virtual const Value* VisitNVariableDeclaration(const NVariableDeclaration *element, Context* context) const = 0;
         virtual const Value* VisitNExternDeclaration(const NExternDeclaration *element, Context* context) const = 0;
         virtual const Value* VisitNFunctionDeclaration(const NFunctionDeclaration *element, Context* context) const = 0;
+        virtual const Value* VisitNIfStatement(const NIfStatement *element, Context* context) const = 0;
 };
 
 class VisitorVoid : public Visitor
@@ -65,6 +67,7 @@ class VisitorVoid : public Visitor
         virtual void VisitNVariableDeclaration(const NVariableDeclaration *element) const = 0;
         virtual void VisitNExternDeclaration(const NExternDeclaration *element) const = 0;
         virtual void VisitNFunctionDeclaration(const NFunctionDeclaration *element) const = 0;
+        virtual void VisitNIfStatement(const NIfStatement *element) const = 0;
 };
 
 class PrintVisitor: public VisitorVoid
@@ -83,6 +86,7 @@ class PrintVisitor: public VisitorVoid
         void VisitNVariableDeclaration(const NVariableDeclaration *element) const override;
         void VisitNExternDeclaration(const NExternDeclaration *element) const override;
         void VisitNFunctionDeclaration(const NFunctionDeclaration *element) const override;
+        void VisitNIfStatement(const NIfStatement *element) const override;
 };
 
 class InterpretVisitor: public VisitorType
@@ -101,6 +105,7 @@ class InterpretVisitor: public VisitorType
         const Value* VisitNVariableDeclaration(const NVariableDeclaration *element, Context* context) const override;
         const Value* VisitNExternDeclaration(const NExternDeclaration *element, Context* context) const override;
         const Value* VisitNFunctionDeclaration(const NFunctionDeclaration *element, Context* context) const override;
+        const Value* VisitNIfStatement(const NIfStatement *element, Context* context) const override;
 };
 
 

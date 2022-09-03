@@ -70,7 +70,10 @@ extern int yydebug;
     COMMA = 276,
     DOT = 277,
     RETURN = 278,
-    EXTERN = 279
+    EXTERN = 279,
+    IF = 280,
+    ELIF = 281,
+    ELSE = 282
   };
 #endif
 
@@ -92,7 +95,7 @@ union YYSTYPE
 	std::string *string;
 	int token;
 
-#line 96 "src/syntax.hpp"
+#line 99 "src/syntax.hpp"
 
 };
 typedef union YYSTYPE YYSTYPE;

@@ -55,7 +55,7 @@ void PrintVisitor::VisitNExpressionStatement(const NExpressionStatement *element
 }
 void PrintVisitor::VisitNReturnStatement(const NReturnStatement *element) const
 {
-    element->expression.Accept(this);
+    element->expression->Accept(this);
 }
 void PrintVisitor::VisitNVariableDeclaration(const NVariableDeclaration *element) const
 {
@@ -78,6 +78,12 @@ void PrintVisitor::VisitNFunctionDeclaration(const NFunctionDeclaration *element
         dec->Accept(this);
     }
     element->block.Accept(this);
+}
+void PrintVisitor::VisitNIfStatement(const NIfStatement *element) const
+{
+    element->condition_expr->Accept(this);
+    element->block.Accept(this);
+    element->next_if->Accept(this);
 }
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -216,7 +222,7 @@ const Value* InterpretVisitor::VisitNExpressionStatement(const NExpressionStatem
 }
 const Value* InterpretVisitor::VisitNReturnStatement(const NReturnStatement *element, Context* context) const
 {
-    const Value* value = element->expression.Accept(this, context);
+    const Value* value = element->expression->Accept(this, context);
     const IdentifierValue* id = dynamic_cast<const IdentifierValue*>(value);
 
     if (id)
@@ -272,5 +278,23 @@ const Value* InterpretVisitor::VisitNFunctionDeclaration(const NFunctionDeclarat
     context->set_value(id, func_val);
 
     return func_val;
-    // return new ErrorValue("NOT IMPLEMENTED");
+}
+
+const Value* InterpretVisitor::VisitNIfStatement(const NIfStatement *element, Context* context) const
+{
+    if (!element->condition_expr)
+        return element->block.Accept(this, context);
+    const Value* condition_val = element->condition_expr->Accept(this, context);
+    if (condition_val->get_isError())
+        return condition_val;
+    const BoolValue* condition = dynamic_cast<const BoolValue*>(condition_val);
+    if (!condition)
+        return new ErrorValue("The condition in the if statement must evaulate to a bool");
+    if (condition->value)
+    {
+        return element->block.Accept(this, context);
+    }
+    if (element->next_if)
+        return element->next_if->Accept(this, context);
+    return new VoidValue();
 }

@@ -76,6 +76,44 @@ public:
     const DataType& get_type() const override;
 };
 
+
+class VoidValue : public Value
+{
+    public:
+        // Data
+        const bool isError = false;
+        const DataType type = DataType::VOID_DTYPE;
+        // Arithmetic
+        const Value* added_to(const Value* other) const override
+            {return new ErrorValue("Addition operator not implemented for a void return");};
+        const Value* subbed_by(const Value* other) const override
+            {return new ErrorValue("Subtraction operator not implemented for a void return");};
+        const Value* multiplied_by(const Value* other) const override
+            {return new ErrorValue("Multiplication operator not implemented for a void return");};
+        const Value* divided_by(const Value* other) const override
+            {return new ErrorValue("Division operator not implemented for a void return");};
+        // Comparison
+        const Value* equal_to(const Value* other) const override
+            {return new ErrorValue("Equality operator not implemented for a void return");};
+        const Value* not_equal_to(const Value* other) const override
+            {return new ErrorValue("Not Equal operator not implemented for a void return");};
+        const Value* less_than(const Value* other) const override
+            {return new ErrorValue("Less than operator not implemented for a void return");};
+        const Value* greater_than(const Value* other) const override
+            {return new ErrorValue("Greater than operator not implemented for a void return");};
+        const Value* less_than_or_equal_to(const Value* other) const override
+            {return new ErrorValue("Less than or equal to operator not implemented for a void return");};
+        const Value* greater_than_or_equal_to(const Value* other) const override
+            {return new ErrorValue("Greater than or equal to operator not implemented for a void return");};
+        // Internal
+        const void* get_value() const override
+            {return nullptr;};
+        const bool get_isError() const override
+            {return this->isError;};
+        const DataType& get_type() const override
+            {return this->type;};
+};
+
 class NumericValue : public Value
 {};
 
@@ -404,5 +442,7 @@ class ReturnValue : public Value
         const DataType& get_type() const override
             {return this->type;};
 };
+
+
 
 #endif

@@ -1,0 +1,20 @@
+
+int one = 1
+int two = 2
+
+if one == two
+{
+    one + 0
+}
+elif (one+2)==two
+{
+    one + two
+}
+elif (one-2)==two
+{
+    one - two
+}
+else
+{
+    two + 0
+}
