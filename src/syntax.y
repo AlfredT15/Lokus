@@ -32,7 +32,7 @@
    match our tokens.l lex file. We also define the node type
    they represent.
  */
-%token <string> CHARACTER_VALUE STRING_VALUE INTEGER_VALUE FLOAT_VALUE BOOL_VALUE
+%token <string> CHARACTER_VALUE STRING_VALUE INTEGER_VALUE FLOAT_VALUE TRUE_VALUE FALSE_VALUE
 %token <string> IDENTIFIER DATA_TYPE
 %token <string> EQ_OP COMP_OP ADD SUB MUL DIV
 %token <token>  EQ
@@ -49,7 +49,7 @@
  */
 %type <ident> ident data_type_and_ident
 %type <op> op
-%type <expr> numeric expr 
+%type <expr> numeric boolean expr 
 %type <varvec> func_decl_args
 %type <exprvec> call_args
 %type <block> program stmts block
@@ -71,11 +71,8 @@ program : stmts { programBlock = $1; }
 		
 stmts : stmt { $$ = new NBlock(); $$->statements.push_back($<stmt>1); }
 	  | stmts stmt { $1->statements.push_back($<stmt>2); }
-	//   | stmts END_LINE
 	  ;
 
-// stmts : END_LINE stmt
-// 	  ;
 
 stmt : var_decl | func_decl | extern_decl | if_stmt | for_stmt | while_stmt
 	 | expr { $$ = new NExpressionStatement(*$1); }
@@ -126,11 +123,16 @@ ident : IDENTIFIER { $$ = new NIdentifier(*$1); delete $1; }
 numeric : INTEGER_VALUE { $$ = new NInteger(atol($1->c_str())); delete $1; }
 		| FLOAT_VALUE { $$ = new NDouble(atof($1->c_str())); delete $1; }
 		;
+
+boolean : TRUE_VALUE { $$ = new NBool($1->c_str()); delete $1; }
+		| FALSE_VALUE { $$ = new NBool($1->c_str()); delete $1; }
+		;
 	
 expr : ident EQ expr { $$ = new NAssignment(*$<ident>1, *$3); }
 	 | ident LPAREN call_args RPAREN { $$ = new NMethodCall(*$1, *$3); delete $3; }
 	 | ident { $<ident>$ = $1; }
 	 | numeric
+	 | boolean
 	 | expr op expr { $$ = new NBinaryOperator(*$1, *$2, *$3); }
 	 | LPAREN expr RPAREN { $$ = $2; }
 	 ;

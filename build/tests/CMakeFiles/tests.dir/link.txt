@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -rdynamic CMakeFiles/tests.dir/for_test.cpp.o CMakeFiles/tests.dir/bin_op_test.cpp.o CMakeFiles/tests.dir/value_test.cpp.o CMakeFiles/tests.dir/node_test.cpp.o -o tests  ../lib/libgtest_main.a ../lib/libgmock.a ../src/libLokusLib.a ../lib/libgtest.a 

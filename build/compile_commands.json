@@ -1,0 +1,77 @@
+[
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/clang++  -I/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include -I/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/src/gmock-all.cc"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/clang++  -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/src/gmock_main.cc"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/clang++  -I/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/include -I/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest-all.cc"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/clang++  -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/tests",
+  "command": "/usr/bin/clang++  -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock -g -o CMakeFiles/tests.dir/for_test.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/tests/for_test.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/tests/for_test.cpp"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/tests",
+  "command": "/usr/bin/clang++  -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock -g -o CMakeFiles/tests.dir/bin_op_test.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/tests/bin_op_test.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/tests/bin_op_test.cpp"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/tests",
+  "command": "/usr/bin/clang++  -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock -g -o CMakeFiles/tests.dir/value_test.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/tests/value_test.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/tests/value_test.cpp"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/tests",
+  "command": "/usr/bin/clang++  -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include -isystem /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock -g -o CMakeFiles/tests.dir/node_test.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/tests/node_test.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/tests/node_test.cpp"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/src",
+  "command": "/usr/bin/clang++   -g -o CMakeFiles/LokusLib.dir/context.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/context.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/src/context.cpp"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/src",
+  "command": "/usr/bin/clang++   -g -o CMakeFiles/LokusLib.dir/node.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/node.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/src/node.cpp"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/src",
+  "command": "/usr/bin/clang++   -g -o CMakeFiles/LokusLib.dir/semantics.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/semantics.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/src/semantics.cpp"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/src",
+  "command": "/usr/bin/clang++   -g -o CMakeFiles/LokusLib.dir/syntax.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/src",
+  "command": "/usr/bin/clang++   -g -o CMakeFiles/LokusLib.dir/value.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/value.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/src/value.cpp"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/src",
+  "command": "/usr/bin/clang++   -g -o CMakeFiles/LokusLib.dir/visitor.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/visitor.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/src/visitor.cpp"
+},
+{
+  "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/src",
+  "command": "/usr/bin/clang++  -I/home/alfred/Code/Language/new_langauge/Lokus/src/../include -g -o CMakeFiles/Lokus.dir/main.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/main.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/src/main.cpp"
+}
+]

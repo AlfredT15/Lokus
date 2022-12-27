@@ -29,9 +29,13 @@ linefeed        \n
 "elif"                                          return TOKEN(ELIF);
 "for"                                           return TOKEN(FOR);
 "while"                                         return TOKEN(WHILE);
-[a-zA-Z_][a-zA-Z0-9_]*                          SAVE_TOKEN; return IDENTIFIER;
 [0-9]+\.[0-9]* 			                        SAVE_TOKEN; return FLOAT_VALUE;
 [0-9]+					                        SAVE_TOKEN; return INTEGER_VALUE;
+
+"true"				                            SAVE_TOKEN; return TRUE_VALUE;
+"false"					                        SAVE_TOKEN; return FALSE_VALUE;
+
+[a-zA-Z_][a-zA-Z0-9_]*                          SAVE_TOKEN; return IDENTIFIER;
 
 "="                                             return TOKEN(EQ);		
 

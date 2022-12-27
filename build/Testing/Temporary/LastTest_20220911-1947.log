@@ -1,0 +1,30 @@
+Start testing: Sep 11 16:14 EDT
+----------------------------------------------------------
+1/1 Testing: for_test.BasicAssertions
+1/1 Test: for_test.BasicAssertions
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/for_test" "--gtest_filter=for_test.BasicAssertions" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"for_test.BasicAssertions" start time: Sep 11 16:14 EDT
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = for_test.BasicAssertions
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from for_test
+[ RUN      ] for_test.BasicAssertions
+[       OK ] for_test.BasicAssertions (0 ms)
+[----------] 1 test from for_test (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"for_test.BasicAssertions" end time: Sep 11 16:14 EDT
+"for_test.BasicAssertions" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 11 16:14 EDT

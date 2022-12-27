@@ -8,6 +8,7 @@
 // node.hpp
 class NInteger;
 class NDouble;
+class NBool;
 class NIdentifier;
 class NOperator;
 class NMethodCall;
@@ -38,6 +39,7 @@ class VisitorType : public Visitor
         virtual ~VisitorType() {}
         virtual const Value* VisitNInteger(const NInteger *element, Context* context) const = 0;
         virtual const Value* VisitNDouble(const NDouble *element, Context* context) const = 0;
+        virtual const Value* VisitNBool(const NBool *element, Context* context) const = 0;
         virtual const Value* VisitNIdentifier(const NIdentifier *element, Context* context) const = 0;
         virtual const Value* VisitNOperator(const NOperator *element, Context* context) const = 0;
         virtual const Value* VisitNMethodCall(const NMethodCall *element, Context* context) const = 0;
@@ -60,6 +62,7 @@ class VisitorVoid : public Visitor
         virtual ~VisitorVoid() {}
         virtual void VisitNInteger(const NInteger *element) const = 0;
         virtual void VisitNDouble(const NDouble *element) const = 0;
+        virtual void VisitNBool(const NBool *element) const = 0;
         virtual void VisitNIdentifier(const NIdentifier *element) const = 0;
         virtual void VisitNOperator(const NOperator *element) const = 0;
         virtual void VisitNMethodCall(const NMethodCall *element) const = 0;
@@ -81,6 +84,7 @@ class PrintVisitor: public VisitorVoid
     public:
         void VisitNInteger(const NInteger *element) const override;
         void VisitNDouble(const NDouble *element) const override;
+        void VisitNBool(const NBool *element) const override;
         void VisitNIdentifier(const NIdentifier *element) const override;
         void VisitNOperator(const NOperator *element) const override;
         void VisitNMethodCall(const NMethodCall *element) const override;
@@ -102,6 +106,7 @@ class InterpretVisitor: public VisitorType
     public:
         const Value* VisitNInteger(const NInteger *element, Context* context) const override;
         const Value* VisitNDouble(const NDouble *element, Context* context) const override;
+        const Value* VisitNBool(const NBool *element, Context* context) const override;
         const Value* VisitNIdentifier(const NIdentifier *element, Context* context) const override;
         const Value* VisitNOperator(const NOperator *element, Context* context) const override;
         const Value* VisitNMethodCall(const NMethodCall *element, Context* context) const override;

@@ -1,0 +1,2 @@
+/usr/bin/llvm-ar qc libLokusLib.a CMakeFiles/LokusLib.dir/context.cpp.o CMakeFiles/LokusLib.dir/node.cpp.o CMakeFiles/LokusLib.dir/semantics.cpp.o CMakeFiles/LokusLib.dir/syntax.cpp.o CMakeFiles/LokusLib.dir/value.cpp.o CMakeFiles/LokusLib.dir/visitor.cpp.o
+/usr/bin/llvm-ranlib libLokusLib.a

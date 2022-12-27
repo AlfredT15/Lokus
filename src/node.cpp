@@ -12,6 +12,10 @@ void NDouble::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNDouble(this);
 };
+void NBool::Accept(const VisitorVoid *visitor) const
+{
+    visitor->VisitNBool(this);
+};
 void NIdentifier::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNIdentifier(this);
@@ -56,17 +60,14 @@ void NFunctionDeclaration::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNFunctionDeclaration(this);
 };
-
 void NIfStatement::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNIfStatement(this);
 };
-
 void NForStatement::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNForStatement(this);
 };
-
 void NWhileStatement::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNWhileStatement(this);
@@ -75,14 +76,17 @@ void NWhileStatement::Accept(const VisitorVoid *visitor) const
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // VisitorType Methods
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
-const 
-Value* NInteger::Accept(const VisitorType *visitor, Context *context) const
+const Value* NInteger::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNInteger(this, context);
 };
 const Value* NDouble::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNDouble(this, context);
+};
+const Value* NBool::Accept(const VisitorType *visitor, Context *context) const
+{
+    return visitor->VisitNBool(this, context);
 };
 const Value* NIdentifier::Accept(const VisitorType *visitor, Context *context) const
 {
@@ -128,17 +132,14 @@ const Value* NFunctionDeclaration::Accept(const VisitorType *visitor, Context *c
 {
     return visitor->VisitNFunctionDeclaration(this, context);
 };
-
 const Value* NIfStatement::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNIfStatement(this, context);
 };
-
 const Value* NForStatement::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNForStatement(this, context);
 };
-
 const Value* NWhileStatement::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNWhileStatement(this, context);

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-clang++"
+	BuildStamp="20220911-1947-Experimental"
+	Name="olympus-mons"
+	Generator="ctest-3.22.1"
+	CompilerName="/usr/bin/clang++"
+	CompilerVersion="14.0.0"
+	OSName="Linux"
+	Hostname="olympus-mons"
+	OSRelease="5.15.0-47-generic"
+	OSVersion="#51-Ubuntu SMP Thu Aug 11 07:51:15 UTC 2022"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="23"
+	ModelID="1"
+	ProcessorCacheSize="512"
+	NumberOfLogicalCPU="24"
+	NumberOfPhysicalCPU="12"
+	TotalVirtualMemory="2047"
+	TotalPhysicalMemory="31954"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2193.58"
+	>
+	<Testing>
+		<StartDateTime>Sep 11 16:14 EDT</StartDateTime>
+		<StartTestTime>1662927283</StartTestTime>
+		<TestList>
+			<Test>./tests/for_test.BasicAssertions</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>for_test.BasicAssertions</Name>
+			<Path>./tests</Path>
+			<FullName>./tests/for_test.BasicAssertions</FullName>
+			<FullCommandLine>/home/alfred/Code/Language/new_langauge/Lokus/build/tests/for_test "--gtest_filter=for_test.BasicAssertions" "--gtest_also_run_disabled_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.00275027</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/alfred/Code/Language/new_langauge/Lokus/build/tests/for_test "--gtest_filter=for_test.BasicAssertions" "--gtest_also_run_disabled_tests"</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyNkLtuwzAMRXd9Bcd4sNWuBTKkD2RokBZOOxmGoVi0K1QmAz2a368faZAUaBpOvOCR7iXzSGSohU4ZmiXQOO5AfnCHUtnGoZYPrFGuFLVRtSgJ95XthYq9WPFn9HIbjdWy0rjzsmVuLQb0IfWuPpFylENXDU5ZXYs1B7yD5YjAWz+BxtiADubQsKsGNrtX3tQL79EFw+RFMT9WCfkh+i2E8fUQ/dD7aAJmokiPVcLS8lbZaY70ZRxTh9SzGNK4+wWf/vmTRhSQv69hrPJCxomAl+cLFMxuoPPJ/6YTCIGDsom4bqOAyqWa93R+r7/uBE5Rdu7T7/C62GyeHodNJzYT3zAYtUc=</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Sep 11 16:14 EDT</EndDateTime>
+		<EndTestTime>1662927283</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

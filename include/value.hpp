@@ -76,7 +76,6 @@ public:
     const DataType& get_type() const override;
 };
 
-
 class VoidValue : public Value
 {
     public:
@@ -264,6 +263,8 @@ public:
                     : value(value), type(dTypeMap[type]) { }
     IdentifierValue(const std::string &value) : value(value), type(DataType::TNI) {}
 
+    // ~IdentifierValue() {}
+
     // Arithmetic
     const Value* added_to(const Value* other) const override
         {return new ErrorValue("Addition operator not implemented for Identifiers");};
@@ -360,7 +361,6 @@ public:
     const DataType& get_type() const override;
 };
 
-
 class FunctionValue : public Value
 {
     public:
@@ -403,7 +403,6 @@ class FunctionValue : public Value
             {return this->type;};
 };
 
-
 class ReturnValue : public Value
 {
     public:
@@ -442,7 +441,5 @@ class ReturnValue : public Value
         const DataType& get_type() const override
             {return this->type;};
 };
-
-
 
 #endif

@@ -1,0 +1,5 @@
+if(EXISTS "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/for_test[1]_tests.cmake")
+  include("/home/alfred/Code/Language/new_langauge/Lokus/build/tests/for_test[1]_tests.cmake")
+else()
+  add_test(for_test_NOT_BUILT for_test_NOT_BUILT)
+endif()

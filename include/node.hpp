@@ -57,6 +57,32 @@ public:
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
+class NBool : public NExpression {
+public:
+	BoolValue* value;
+	NBool(const std::string &value) {
+		if (value == "true")
+		{
+			this->value = new BoolValue(true);
+		}
+		else if (value == "false")
+		{
+			this->value = new BoolValue(false);
+		}		
+	 }
+
+    void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
+class NString : public NExpression {
+public:
+	StringValue* value;
+	NString(const std::string &value) : value(new StringValue(value)) { }
+
+    void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
 class NIdentifier : public NExpression {
 public:
 	IdentifierValue* value;
@@ -205,7 +231,6 @@ public:
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
-
 class NForStatement : public NStatement{
 public:
 	Node *counter;
@@ -219,7 +244,6 @@ public:
 	void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
-
 
 class NWhileStatement : public NStatement{
 public:
