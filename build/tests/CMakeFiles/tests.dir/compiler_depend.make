@@ -980,11 +980,51 @@ tests/CMakeFiles/tests.dir/node_test.cpp.o: ../tests/node_test.cpp \
   _deps/googletest-src/googletest/include/gtest/gtest-typed-test.h \
   _deps/googletest-src/googletest/include/gtest/gtest_pred_impl.h \
   _deps/googletest-src/googletest/include/gtest/gtest_prod.h \
+  _deps/googletest-src/googlemock/include/gmock/gmock.h \
+  _deps/googletest-src/googlemock/include/gmock/gmock-actions.h \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/bits/stl_algo.h \
+  /usr/include/c++/11/bits/algorithmfwd.h \
+  /usr/include/c++/11/bits/stl_heap.h \
+  /usr/include/c++/11/bits/uniform_int_dist.h \
+  _deps/googletest-src/googlemock/include/gmock/internal/gmock-internal-utils.h \
+  _deps/googletest-src/googlemock/include/gmock/internal/gmock-port.h \
+  _deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-port.h \
+  _deps/googletest-src/googlemock/include/gmock/internal/gmock-pp.h \
+  _deps/googletest-src/googlemock/include/gmock/gmock-cardinalities.h \
+  /usr/lib/llvm-14/lib/clang/14.0.0/include/limits.h \
+  /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+  _deps/googletest-src/googlemock/include/gmock/gmock-function-mocker.h \
+  _deps/googletest-src/googlemock/include/gmock/gmock-spec-builders.h \
+  _deps/googletest-src/googlemock/include/gmock/gmock-matchers.h \
+  /usr/include/c++/11/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  _deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-matchers.h \
+  _deps/googletest-src/googlemock/include/gmock/gmock-more-actions.h \
+  _deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-generated-actions.h \
+  _deps/googletest-src/googlemock/include/gmock/gmock-more-matchers.h \
+  _deps/googletest-src/googlemock/include/gmock/gmock-nice-strict.h \
   ../include/value.hpp \
   ../include/context.hpp \
   ../include/enum.hpp \
   ../include/node.hpp \
-  ../include/visitor.hpp
+  ../include/visitor.hpp \
+  ../tests/matchers.h
 
 tests/CMakeFiles/tests.dir/value_test.cpp.o: ../tests/value_test.cpp \
   _deps/googletest-src/googletest/include/gtest/gtest.h \
@@ -1354,8 +1394,13 @@ tests/CMakeFiles/tests.dir/value_test.cpp.o: ../tests/value_test.cpp \
   ../include/context.hpp \
   ../include/enum.hpp \
   ../include/node.hpp \
-  ../include/visitor.hpp
+  ../include/visitor.hpp \
+  ../tests/matchers.h
 
+
+/usr/include/c++/11/math.h:
+
+../tests/value_test.cpp:
 
 _deps/googletest-src/googlemock/include/gmock/gmock-more-matchers.h:
 
@@ -1364,6 +1409,14 @@ _deps/googletest-src/googlemock/include/gmock/gmock-nice-strict.h:
 _deps/googletest-src/googlemock/include/gmock/gmock-more-actions.h:
 
 _deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-matchers.h:
+
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
 _deps/googletest-src/googlemock/include/gmock/gmock-matchers.h:
 
@@ -1390,18 +1443,6 @@ _deps/googletest-src/googlemock/include/gmock/gmock-function-mocker.h:
 /usr/include/c++/11/bits/algorithmfwd.h:
 
 /usr/include/c++/11/algorithm:
-
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
-
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/include/c++/11/math.h:
-
-../tests/value_test.cpp:
 
 ../tests/node_test.cpp:
 
@@ -1466,6 +1507,8 @@ _deps/googletest-src/googletest/include/gtest/internal/gtest-filepath.h:
 /usr/include/x86_64-linux-gnu/bits/sigaction.h:
 
 /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h:
+
+../tests/matchers.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
 

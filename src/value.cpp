@@ -334,29 +334,7 @@ const DataType& OperatorValue::get_type() const
 const Value* ListValue::added_to(const Value* other) const
 {
     ValueVec output;
-    if (dynamic_cast<const IntValue*>(other))
-    {
-        for (int i = 0; i < this->value.size(); i++)
-        {
-            const Value* temp = this->value[i]->added_to(other);
-            if (temp->get_isError())
-                return temp;
-            output.push_back(temp);
-        }
-        return new ListValue(output);
-    }
-    else if (dynamic_cast<const DoubleValue*>(other))
-    {
-        for (int i = 0; i < this->value.size(); i++)
-        {
-            const Value* temp = this->value[i]->added_to(other);
-            if (temp->get_isError())
-                return temp;
-            output.push_back(temp);
-        }
-        return new ListValue(output);
-    }
-    else if (dynamic_cast<const StringValue*>(other))
+    if (other->get_type() == DataType::INT_DTYPE || other->get_type() == DataType::FLOAT_DTYPE || other->get_type() == DataType::STRING_DTYPE)
     {
         for (int i = 0; i < this->value.size(); i++)
         {
@@ -375,7 +353,7 @@ const Value* ListValue::added_to(const Value* other) const
         }
         for (int i = 0; i < this->value.size(); i++)
         {
-            const Value* temp = this->value[i]->subbed_by((*((ValueVec*)other->get_value()))[i]);
+            const Value* temp = this->value[i]->added_to((*((ValueVec*)other->get_value()))[i]);
             if (temp->get_isError())
                 return temp;
             output.push_back(temp);
@@ -387,18 +365,7 @@ const Value* ListValue::added_to(const Value* other) const
 const Value* ListValue::subbed_by(const Value* other) const
 {
     ValueVec output;
-    if (dynamic_cast<const IntValue*>(other))
-    {
-        for (int i = 0; i < this->value.size(); i++)
-        {
-            const Value* temp = this->value[i]->subbed_by(other);
-            if (temp->get_isError())
-                return temp;
-            output.push_back(temp);
-        }
-        return new ListValue(output);
-    }
-    else if (dynamic_cast<const DoubleValue*>(other))
+    if (other->get_type() == DataType::INT_DTYPE || other->get_type() == DataType::FLOAT_DTYPE)
     {
         for (int i = 0; i < this->value.size(); i++)
         {
@@ -413,7 +380,7 @@ const Value* ListValue::subbed_by(const Value* other) const
     {
         if (this->value.size() != (*((ValueVec*)other->get_value())).size())
         {
-            return new ErrorValue("Dimension of lists must match for addition");
+            return new ErrorValue("Dimension of lists must match for subtraction");
         }
         for (int i = 0; i < this->value.size(); i++)
         {
@@ -424,34 +391,12 @@ const Value* ListValue::subbed_by(const Value* other) const
         }
         return new ListValue(output);
     }
-    return new ErrorValue("'+' is not defined between the two types");
+    return new ErrorValue("'-' is not defined between the two types");
 }
 const Value* ListValue::multiplied_by(const Value* other) const
 {
     ValueVec output;
-    if (dynamic_cast<const IntValue*>(other))
-    {
-        for (int i = 0; i < this->value.size(); i++)
-        {
-            const Value* temp = this->value[i]->multiplied_by(other);
-            if (temp->get_isError())
-                return temp;
-            output.push_back(temp);
-        }
-        return new ListValue(output);
-    }
-    else if (dynamic_cast<const DoubleValue*>(other))
-    {
-        for (int i = 0; i < this->value.size(); i++)
-        {
-            const Value* temp = this->value[i]->multiplied_by(other);
-            if (temp->get_isError())
-                return temp;
-            output.push_back(temp);
-        }
-        return new ListValue(output);
-    }
-    else if (dynamic_cast<const StringValue*>(other))
+    if (other->get_type() == DataType::INT_DTYPE || other->get_type() == DataType::FLOAT_DTYPE)
     {
         for (int i = 0; i < this->value.size(); i++)
         {
@@ -466,7 +411,7 @@ const Value* ListValue::multiplied_by(const Value* other) const
     {
         if (this->value.size() != (*((ValueVec*)other->get_value())).size())
         {
-            return new ErrorValue("Dimension of lists must match for addition");
+            return new ErrorValue("Dimension of lists must match for multiplication");
         }
         for (int i = 0; i < this->value.size(); i++)
         {
@@ -477,23 +422,12 @@ const Value* ListValue::multiplied_by(const Value* other) const
         }
         return new ListValue(output);
     }
-    return new ErrorValue("'+' is not defined between the two types");
+    return new ErrorValue("'*' is not defined between the two types");
 }
 const Value* ListValue::divided_by(const Value* other) const
 {
    ValueVec output;
-    if (dynamic_cast<const IntValue*>(other))
-    {
-        for (int i = 0; i < this->value.size(); i++)
-        {
-            const Value* temp = this->value[i]->divided_by(other);
-            if (temp->get_isError())
-                return temp;
-            output.push_back(temp);
-        }
-        return new ListValue(output);
-    }
-    else if (dynamic_cast<const DoubleValue*>(other))
+    if (other->get_type() == DataType::INT_DTYPE || other->get_type() == DataType::FLOAT_DTYPE)
     {
         for (int i = 0; i < this->value.size(); i++)
         {
@@ -508,7 +442,7 @@ const Value* ListValue::divided_by(const Value* other) const
     {
         if (this->value.size() != (*((ValueVec*)other->get_value())).size())
         {
-            return new ErrorValue("Dimension of lists must match for addition");
+            return new ErrorValue("Dimension of lists must match for division");
         }
         for (int i = 0; i < this->value.size(); i++)
         {
@@ -519,7 +453,7 @@ const Value* ListValue::divided_by(const Value* other) const
         }
         return new ListValue(output);
     }
-    return new ErrorValue("'+' is not defined between the two types");
+    return new ErrorValue("'/' is not defined between the two types");
 }
 // Comparison
 const Value* ListValue::equal_to(const Value* other) const

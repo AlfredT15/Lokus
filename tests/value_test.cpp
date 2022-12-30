@@ -8,6 +8,7 @@
 #include "../include/value.hpp"
 #include "../include/enum.hpp"
 #include "../include/node.hpp"
+#include "matchers.h"
 
 using ::testing::ElementsAre;
 using ::testing::Pointee;
@@ -142,6 +143,28 @@ TEST(value_construction, bool_type_check)
 };
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+// StringValue Tests
+// <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+TEST(value_construction, string_check)
+{
+    StringValue* str_val = new StringValue("test");
+    ASSERT_THAT((std::string*)str_val->get_value(), Pointee(Eq("test")));
+};
+
+TEST(value_construction, string_isError_check)
+{
+    StringValue* str_val = new StringValue("test");
+    ASSERT_THAT(str_val->get_isError(), IsFalse());
+};
+
+TEST(value_construction, string_type_check)
+{
+    StringValue* str_val = new StringValue("test");
+    ASSERT_THAT(str_val->get_type(), Eq(DataType::STRING_DTYPE));
+};
+
+// <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // IdentifierValue Tests
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 
@@ -189,22 +212,6 @@ TEST(value_construction, operator_type_check)
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // ListValue Tests
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
-
-MATCHER_P(IntValueVecMatcher, container, "")
-{
-    if (arg->size() != container.size())
-    {
-        return false;
-    }
-    for (int i = 0; i < arg->size(); i++)
-    {
-        if (*((int*)(arg)->at(i)->get_value()) != *((int*)container[i]->get_value()))
-        {
-            return false;
-        }
-    }
-    return true;
-};
 
 TEST(value_construction, list_check)
 {

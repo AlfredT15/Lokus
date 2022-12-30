@@ -252,6 +252,7 @@ private:
 	{"char", DataType::CHAR_DTYPE},
 	{"bool", DataType::BOOL_DTYPE},
 	{"void", DataType::VOID_DTYPE},
+    {"list", DataType::LIST_DTYPE}
 	};
 public:
     // Data

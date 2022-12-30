@@ -18,6 +18,10 @@ void PrintVisitor::VisitNBool(const NBool *element) const
 {
     printf("bool: %d \n", element->value->value);
 }
+void PrintVisitor::VisitNString(const NString *element) const
+{
+    printf("string: %s \n", element->value->value.c_str());
+}
 void PrintVisitor::VisitNIdentifier(const NIdentifier *element) const
 {
     printf("identifier: %s \n", element->value->value.c_str());
@@ -119,6 +123,11 @@ const Value* InterpretVisitor::VisitNDouble(const NDouble *element, Context* con
 const Value* InterpretVisitor::VisitNBool(const NBool *element, Context* context) const
 {
     // Returns an BoolValue object
+    return element->value;
+}
+const Value* InterpretVisitor::VisitNString(const NString *element, Context* context) const
+{
+    // Returns an StringValue object
     return element->value;
 }
 const Value* InterpretVisitor::VisitNIdentifier(const NIdentifier *element, Context* context) const
