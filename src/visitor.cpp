@@ -193,7 +193,7 @@ const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *eleme
     {
         lhs_val = context->find_value(lhs_id->value);
         if (lhs_val->get_isError())
-            return rhs_val;
+            return lhs_val;
     }
     if (rhs_id)
     {
