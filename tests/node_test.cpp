@@ -22,11 +22,9 @@ TEST(basic_node, int_accept)
 {
     const InterpretVisitor *visitor = new InterpretVisitor();
     Context* context = new Context();
-    IntValue* int_val = new IntValue(1);
-    NInteger* int_node = new NInteger(1);
+    NInteger* node = new NInteger(1);
 
-    ASSERT_EQ(*((int*)int_node->Accept(visitor, context)->get_value()), *((int*)int_val->get_value()));
-    // ASSERT_THAT((int*)int_node->Accept(visitor, context)->get_value(), Pointee(Eq(*((int*)int_val->get_value()))));
+    ASSERT_THAT((int*)node->Accept(visitor, context)->get_value(), Pointee(Eq(1)));
 }
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -37,10 +35,35 @@ TEST(basic_node, double_accept)
 {
     const InterpretVisitor *visitor = new InterpretVisitor();
     Context* context = new Context();
-    DoubleValue* double_val = new DoubleValue(1);
-    NDouble* double_node = new NDouble(1);
+    NDouble* node = new NDouble(1);
 
-    ASSERT_EQ(*((double*)double_node->Accept(visitor, context)->get_value()), *((double*)double_val->get_value()));
+    ASSERT_THAT((double*)node->Accept(visitor, context)->get_value(), Pointee(Eq(1)));
+}
+
+// <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+// NBool Tests
+// <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+TEST(basic_node, bool_accept)
+{
+    const InterpretVisitor *visitor = new InterpretVisitor();
+    Context* context = new Context();
+    NBool* node = new NBool("true");
+
+    ASSERT_THAT((bool*)node->Accept(visitor, context)->get_value(), Pointee(Eq(true)));
+}
+
+// <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+// NString Tests
+// <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+TEST(basic_node, string_accept)
+{
+    const InterpretVisitor *visitor = new InterpretVisitor();
+    Context* context = new Context();
+    NString* node = new NString("test");
+
+    ASSERT_THAT((std::string*)node->Accept(visitor, context)->get_value(), Pointee(Eq("test")));
 }
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -51,20 +74,19 @@ TEST(basic_node, identifier_accept_val)
 {
     const InterpretVisitor *visitor = new InterpretVisitor();
     Context* context = new Context();
-    IdentifierValue* identifier_val = new IdentifierValue("char", "test");
-    NIdentifier* identifier_node = new NIdentifier("char", "test");
+    NIdentifier* node = new NIdentifier("char", "test");
 
-    ASSERT_EQ(*((std::string*)identifier_node->Accept(visitor, context)->get_value()), *((std::string*)identifier_val->get_value()));
+    ASSERT_THAT((std::string*)node->Accept(visitor, context)->get_value(), Pointee(Eq("test")));
+
 }
 
 TEST(basic_node, identifier_accept_type)
 {
     const InterpretVisitor *visitor = new InterpretVisitor();
     Context* context = new Context();
-    IdentifierValue* identifier_val = new IdentifierValue("char", "test");
-    NIdentifier* identifier_node = new NIdentifier("char", "test");
+    NIdentifier* node = new NIdentifier("char", "test");
 
-    ASSERT_EQ(identifier_node->Accept(visitor, context)->get_type(), identifier_val->get_type());
+    ASSERT_THAT(node->Accept(visitor, context)->get_type(), Eq(DataType::CHAR_DTYPE));
 }
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -75,10 +97,9 @@ TEST(basic_node, operator_accept)
 {
     const InterpretVisitor *visitor = new InterpretVisitor();
     Context* context = new Context();
-    OperatorValue* operator_val = new OperatorValue(OperationType::ADD_TYPE);
-    NOperator* operator_node = new NOperator("+");
+    NOperator* node = new NOperator("+");
 
-    ASSERT_EQ(*((OperationType*)operator_node->Accept(visitor, context)->get_value()), *((OperationType*)operator_val->get_value()));
+    ASSERT_THAT((OperationType*)node->Accept(visitor, context)->get_value(), Pointee(Eq(OperationType::ADD_TYPE)));
 }
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -87,12 +108,53 @@ TEST(basic_node, operator_accept)
 
 TEST(basic_node, method_accept)
 {
-    // const InterpretVisitor *visitor = new InterpretVisitor();
-    // Context* context = new Context();
-    // OperatorValue* operator_val = new OperatorValue(OperationType::ADD_TYPE);
-    // NOperator* operator_node = new NOperator("+");
+    const InterpretVisitor *visitor = new InterpretVisitor();
+    ValueVec arg_values;
+    IdentifierValue* arg1 = new IdentifierValue("int", "test1");
+    IdentifierValue* arg2 = new IdentifierValue("bool", "test2");
+    IdentifierValue* arg3 = new IdentifierValue("float", "test3");
+    arg_values.push_back(arg1);
+    arg_values.push_back(arg2);
+    arg_values.push_back(arg3);
 
-    // ASSERT_EQ(*((OperationType*)operator_node->Accept(visitor, context)->get_value()), *((OperationType*)operator_val->get_value()));
+    Context* master_context = new Context();
+    Context* function_context = new Context();
+    NBlock* body = new NBlock();
+
+    NExpression* lhs = new NInteger(1);
+    NOperator* op = new NOperator("+");
+    NExpression* rhs = new NInteger(2);
+    NExpression* binOp = new NBinaryOperator(*lhs, *op, *rhs);
+    
+    NIdentifier* var = new NIdentifier("int", "result");
+    NExpression* assign = new NAssignment(*var, *binOp);
+
+    NExpression* iden = new NIdentifier("int","test1");
+    NExpression* returnBinOp = new NBinaryOperator(*var, *op, *iden);
+    NStatement* returnState = new NReturnStatement(returnBinOp);
+
+    NStatement* expState = new NExpressionStatement(*assign);
+
+    body->statements.push_back(expState);
+    body->statements.push_back(returnState);
+    FunctionValue* function_val = new FunctionValue(&arg_values, function_context, *body, DataType::INT_DTYPE);
+
+    IdentifierValue* func_iden = new IdentifierValue("func_def");
+    master_context->set_value(func_iden, function_val);
+    master_context->set_value(arg1, new IntValue(1));
+    master_context->set_value(arg2, new BoolValue(true));
+    master_context->set_value(arg3, new DoubleValue(1.5));
+
+    ExpressionList args;
+    args.push_back(new NIdentifier("int","test1"));
+    args.push_back(new NIdentifier("bool","test2"));
+    args.push_back(new NIdentifier("float","test3"));
+
+    NIdentifier iden_node = NIdentifier("func_def");
+
+    NMethodCall* node = new NMethodCall(iden_node, args);
+
+    ASSERT_THAT((int*)node->Accept(visitor, master_context)->get_value(), Pointee(Eq(4)));
 }
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -526,6 +588,7 @@ TEST(bin_op_node, double_greater_than_or_equal_to_int_equal)
 
     ASSERT_EQ(bin_op_node->Accept(visitor, context)->get_type(), DataType::ERROR_DTYPE);
 }
+
 
 TEST(bin_op_node, double_greater_than_or_equal_to_int_greater)
 {
@@ -962,3 +1025,71 @@ TEST(bin_op_node, list_plus_string)
 
     ASSERT_THAT((ValueVec*)bin_op_node->Accept(visitor, context)->get_value(), StringValueVecMatcher(ValueVec{new StringValue("zap-inator"), new StringValue("bop-inator"), new StringValue("thwak-inator")}));
 }
+
+// <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+// NAssignment Tests
+// <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+TEST(basic_node, assignment_accept)
+{
+    const InterpretVisitor *visitor = new InterpretVisitor();
+    Context* context = new Context();
+    NIdentifier lhs = NIdentifier("test");
+    NExpression* rhs = new NInteger(1);
+    NAssignment* assign = new NAssignment(lhs, *rhs);
+
+    const IdentifierValue* result = dynamic_cast<const IdentifierValue*>(assign->Accept(visitor, context));
+
+    ASSERT_THAT((int*)((IntValue*)context->find_value(result->value))->get_value(), Pointee(Eq(1)));
+}
+
+// <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+// NBlock Tests
+// <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+TEST(basic_node, block_accept)
+{
+    const InterpretVisitor *visitor = new InterpretVisitor();
+    Context* context = new Context();
+    NBlock* body = new NBlock();
+
+    NExpression* lhs = new NInteger(1);
+    NOperator* op = new NOperator("+");
+    NExpression* rhs = new NInteger(2);
+    NExpression* binOp = new NBinaryOperator(*lhs, *op, *rhs);
+    
+    NIdentifier* var = new NIdentifier("int", "result");
+    NExpression* assign = new NAssignment(*var, *binOp);
+
+    NOperator* op2 = new NOperator("*");
+    NExpression* binOp2 = new NBinaryOperator(*var, *op2, *rhs);
+    NIdentifier* var2 = new NIdentifier("int", "result2");
+    NExpression* assign2 = new NAssignment(*var2, *binOp2);
+
+    NStatement* expState = new NExpressionStatement(*assign);
+    NStatement* expState2 = new NExpressionStatement(*assign2);
+
+    body->statements.push_back(expState);
+    body->statements.push_back(expState2);
+
+    ASSERT_THAT((ValueVec*)body->Accept(visitor, context)->get_value(), StringValueVecMatcher(ValueVec{new IdentifierValue("int","result"), new IdentifierValue("int","result2")}));
+}
+
+TEST(basic_node, block_with_return_accept)
+{
+    const InterpretVisitor *visitor = new InterpretVisitor();
+    Context* context = new Context();
+    NBlock* body = new NBlock();
+
+    NExpression* lhs = new NInteger(1);
+    NOperator* op = new NOperator("+");
+    NExpression* rhs = new NInteger(2);
+    NExpression* binOp = new NBinaryOperator(*lhs, *op, *rhs);
+
+    NStatement* returnState = new NReturnStatement(binOp);
+
+    body->statements.push_back(returnState);
+
+    ASSERT_THAT((int*)body->Accept(visitor, context)->get_value(), Pointee(Eq(3)));
+}
+

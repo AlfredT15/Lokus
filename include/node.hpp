@@ -83,6 +83,7 @@ public:
     void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
+
 class NIdentifier : public NExpression {
 public:
 	IdentifierValue* value;

@@ -157,7 +157,18 @@ const Value* InterpretVisitor::VisitNMethodCall(const NMethodCall *element, Cont
     ValueVec arg_vals;
     for (NExpression* expr : element->arguments)
     {
-        arg_vals.push_back(expr->Accept(this, context));
+        const IdentifierValue* arg_id = dynamic_cast<const IdentifierValue*>(expr->Accept(this, context));
+        if (arg_id)
+        {
+            const Value* val = context->find_value(arg_id->value);
+            if (val->get_isError())
+                return val;
+            arg_vals.push_back(val);
+        }
+        else
+        {
+            arg_vals.push_back(expr->Accept(this, context));
+        }
     }
 
     // Checks the number of argument values provided compared to the amount expected
@@ -203,14 +214,22 @@ const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *eleme
         lhs_val = context->find_value(lhs_id->value);
         if (lhs_val->get_isError())
             return lhs_val;
+        // lhs_id = dynamic_cast<const IdentifierValue*>(lhs_val);
     }
     if (rhs_id)
     {
         rhs_val = context->find_value(rhs_id->value);
         if (rhs_val->get_isError())
             return rhs_val;
+        // rhs_id = dynamic_cast<const IdentifierValue*>(rhs_val);
     }
 
+    DataType test = lhs_val->get_type();
+    DataType test2 = rhs_val->get_type();
+    const IdentifierValue* test_lhs = dynamic_cast<const IdentifierValue*>(lhs_val);
+    const IdentifierValue* test_rhs = dynamic_cast<const IdentifierValue*>(rhs_val);
+    const IntValue* test_lhs2 = dynamic_cast<const IntValue*>(lhs_val);
+    const IntValue* test_rhs2 = dynamic_cast<const IntValue*>(rhs_val);
     // Perform the associated operation
     switch (op_val->value)
     {
@@ -260,7 +279,7 @@ const Value* InterpretVisitor::VisitNAssignment(const NAssignment *element, Cont
     if (!variable_set)
         return new ErrorValue(lhs_id->value + " does not exist in this scope");
     
-    // return the variable assigned?
+    // return the variable assigned
     return lhs_id;
 }
 const Value* InterpretVisitor::VisitNBlock(const NBlock *element, Context* context) const
