@@ -241,10 +241,14 @@ TEST(value_construction, list_type_check)
 
 TEST(value_construction, function_construction)
 {
+    const InterpretVisitor *visitor = new InterpretVisitor();
     ValueVec arg_values;
-    arg_values.push_back(new IdentifierValue("int", "test1"));
-    arg_values.push_back(new IdentifierValue("bool", "test2"));
-    arg_values.push_back(new IdentifierValue("float", "test3"));
+    IdentifierValue* arg1 = new IdentifierValue("int", "test1");
+    IdentifierValue* arg2 = new IdentifierValue("bool", "test2");
+    IdentifierValue* arg3 = new IdentifierValue("float", "test3");
+    arg_values.push_back(arg1);
+    arg_values.push_back(arg2);
+    arg_values.push_back(arg3);
 
     Context* context = new Context();
     NBlock* body = new NBlock();
@@ -265,8 +269,15 @@ TEST(value_construction, function_construction)
 
     body->statements.push_back(expState);
     body->statements.push_back(returnState);
-    FunctionValue* function_val = new FunctionValue(&arg_values, context, *body, DataType::INT_DTYPE);
-    ASSERT_THAT(function_val, Not(IsNull()));
+
+    context->set_value(arg1, new IntValue(1));
+    context->set_value(arg2, new BoolValue(true));
+    context->set_value(arg3, new DoubleValue(1.5));
+
+    Context* func_context = new Context(context);
+
+    FunctionValue* function_val = new FunctionValue(&arg_values, func_context, *body, DataType::INT_DTYPE);
+    ASSERT_THAT((int*)((IntValue*)function_val->block.Accept(visitor, function_val->function_context))->get_value(), Pointee(Eq(4)));
 };
 
 TEST(value_construction, function_isError_check)

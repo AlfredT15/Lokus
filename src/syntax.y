@@ -120,6 +120,7 @@ data_type_and_ident : DATA_TYPE IDENTIFIER { $$ = new NIdentifier(*$1, *$2); del
 ident : IDENTIFIER { $$ = new NIdentifier(*$1); delete $1; }
 	  ;
 
+// numeric and boolean should be removed later
 numeric : INTEGER_VALUE { $$ = new NInteger(atol($1->c_str())); delete $1; }
 		| FLOAT_VALUE { $$ = new NDouble(atof($1->c_str())); delete $1; }
 		;

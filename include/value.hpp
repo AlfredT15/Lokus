@@ -124,6 +124,7 @@ public:
     const bool isError = false;
     const DataType type = DataType::INT_DTYPE;
 
+    IntValue() {}
     IntValue(const int &value) : value(value) { }
 
     // Arithmetic
@@ -152,6 +153,7 @@ public:
     const bool isError = false;
     const DataType type = DataType::FLOAT_DTYPE;
 
+    DoubleValue() {}
     DoubleValue(const double &value) : value(value) { }
 
     // Arithmetic
@@ -180,6 +182,7 @@ public:
     const bool isError = false;
     const DataType type = DataType::BOOL_DTYPE;
 
+    BoolValue() {}
     BoolValue(const bool &value) : value(value) { }
 
     // Arithmetic
@@ -216,6 +219,7 @@ public:
     const bool isError = false;
     const DataType type = DataType::STRING_DTYPE;
 
+    StringValue() {}
     StringValue(const std::string &value) : value(value) { }
 
     // Arithmetic
@@ -339,6 +343,7 @@ public:
     const bool isError = false;
     const DataType type = DataType::LIST_DTYPE;
 
+    ListValue() {}
     ListValue(ValueVec &value) : value(value) { }
     // Arithmetic
     const Value* added_to(const Value* other) const override;

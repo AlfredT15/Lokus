@@ -324,6 +324,29 @@ const Value* InterpretVisitor::VisitNVariableDeclaration(const NVariableDeclarat
 
     // Declare a Value
     const Value* val;
+    switch (id->get_type())
+    {
+    case DataType::INT_DTYPE:
+        val = new IntValue();
+        break;
+    case DataType::FLOAT_DTYPE:
+        val = new DoubleValue();
+        break;
+    case DataType::STRING_DTYPE:
+        val = new StringValue();
+        break;
+    case DataType::BOOL_DTYPE:
+        val = new BoolValue();
+        break;
+    case DataType::LIST_DTYPE:
+        val = new ListValue();
+        break;
+    default:
+        val = new VoidValue();
+        break;
+    }
+    
+    
 
     // If the declaration included a value to be assigned to the identifier
     if (element->assignmentExpr)
