@@ -9,29 +9,46 @@ extern int yyparse();
 extern FILE *yyin;
 extern NBlock* programBlock;
 
-void print_output(const ListValue* output, Context* master_context)
+void print_output(const Value* val)
+{
+    if (dynamic_cast<const ErrorValue*>(val))
+    {
+        printf("%s\n", (*((std::string*)val->get_value())).c_str());
+        return;
+    }
+    else if (dynamic_cast<const StringValue*>(val))
+        printf("%s\n", ((std::string*)val->get_value())->c_str());
+    else if (dynamic_cast<const IntValue*>(val))
+        printf("%d\n", *((int*)val->get_value()));
+    else if (dynamic_cast<const DoubleValue*>(val))
+        printf("%f\n", *((double*)val->get_value()));
+    else if (dynamic_cast<const BoolValue*>(val))
+        printf("%d\n", *((int*)val->get_value()));
+    else if (dynamic_cast<const ListValue*>(val))
+    {
+        const ListValue* val2 = dynamic_cast<const ListValue*>(val);
+        for (const Value* element_val : val2->value)
+        {
+            print_output(element_val);
+        }
+    }
+}
+
+void print_output_list(const ListValue* output)
 {
     for (const Value* val : output->value)
     {
-        if (dynamic_cast<const PrintValue*>(val))
+        if (dynamic_cast<const ErrorValue*>(val))
         {
-            const Value* valToPrint = (const Value*)val->get_value();
-            if (dynamic_cast<const ErrorValue*>(valToPrint))
-            {
-                printf("%s\n", (*((std::string*)valToPrint->get_value())).c_str());
-                return;
-            }
-            else if (dynamic_cast<const StringValue*>(valToPrint))
-                printf("%s\n", ((std::string*)valToPrint->get_value())->c_str());
-            else if (dynamic_cast<const IntValue*>(valToPrint))
-                printf("%d\n", *((int*)valToPrint->get_value()));
-            else if (dynamic_cast<const DoubleValue*>(valToPrint))
-                printf("%f\n", *((double*)valToPrint->get_value()));
-            else if (dynamic_cast<const BoolValue*>(valToPrint))
-                printf("%d\n", *((int*)valToPrint->get_value()));
+            printf("%s\n", (*((std::string*)val->get_value())).c_str());
+            return;
+        }
+        else if (dynamic_cast<const PrintValue*>(val))
+        {
+            print_output((const Value*)val->get_value());
         }
         else if (dynamic_cast<const ListValue*>(val))
-            print_output(dynamic_cast<const ListValue*>(val), master_context);
+            print_output_list(dynamic_cast<const ListValue*>(val));
     }
 }
 
@@ -57,6 +74,6 @@ int main(int argc, char **argv)
         return 0;
     }
 	const ListValue* output = dynamic_cast<const ListValue*>(out);	
-    print_output(output, master_context);
+    print_output_list(output);
 	return 0;
 }

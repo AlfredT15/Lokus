@@ -31,11 +31,14 @@ linefeed        \n
 "while"                                         return TOKEN(WHILE);
 "print"                                         return TOKEN(PRINTING);
 \"[^"]+\"                                       SAVE_TOKEN; return STRING_VALUE;
-[0-9]+\.[0-9]* 			                        SAVE_TOKEN; return FLOAT_VALUE;
 [0-9]+					                        SAVE_TOKEN; return INTEGER_VALUE;
+[0-9]+\.[0-9]* 			                        SAVE_TOKEN; return FLOAT_VALUE;
 
 "true"				                            SAVE_TOKEN; return TRUE_VALUE;
 "false"					                        SAVE_TOKEN; return FALSE_VALUE;
+
+"or"                                            SAVE_TOKEN; return OR;
+"and"                                           SAVE_TOKEN; return AND;
 
 [a-zA-Z_][a-zA-Z0-9_]*                          SAVE_TOKEN; return IDENTIFIER;
 
@@ -59,6 +62,8 @@ linefeed        \n
 ")"					          	                return TOKEN(RPAREN);
 "{"         						            return TOKEN(LBRACE);
 "}"					          	                return TOKEN(RBRACE);
+"["                                             return TOKEN(LBRACKET);
+"]"                                             return TOKEN(RBRACKET);
 
 "."         						            return TOKEN(DOT);
 ","				          		                return TOKEN(COMMA);

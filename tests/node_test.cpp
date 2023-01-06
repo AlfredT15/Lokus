@@ -1215,7 +1215,7 @@ TEST(basic_node, function_declaration_accept)
 
     const FunctionValue* func_val = dynamic_cast<const FunctionValue*>(node.Accept(visitor, context));
 
-    ASSERT_THAT((int*)((IntValue*)func_val->block.Accept(visitor, func_val->function_context))->get_value(), Pointee(Eq(4)));
+    ASSERT_THAT((int*)((IntValue*)func_val->block.Accept(visitor, context))->get_value(), Pointee(Eq(4)));
 
 }
 

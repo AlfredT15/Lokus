@@ -1,0 +1,23 @@
+
+bool test = true
+bool test2 = false
+int n = 1
+if test and test2
+{
+    print("and passed")
+}
+
+if test or test2
+{
+    print("or passed")
+}
+
+if n == 1
+{
+    print("n does equal 1")
+}
+
+if (n == 1) or (n == 2)
+{
+    print("second or passed")
+}

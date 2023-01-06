@@ -1,6 +1,9 @@
 #ifndef ENUM_H
 #define ENUM_H
 
+#include <iostream>
+#include <string>
+
 enum DataType
 {
 	INT_DTYPE,
@@ -26,7 +29,9 @@ enum OperationType
     LT_TYPE,
     GT_TYPE,
     LTE_TYPE,
-    GTE_TYPE
+    GTE_TYPE,
+    AND_TYPE,
+    OR_TYPE
 };
 
 #endif

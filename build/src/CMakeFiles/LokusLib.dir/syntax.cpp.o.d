@@ -1,5 +1,5 @@
 src/CMakeFiles/LokusLib.dir/syntax.cpp.o: \
-  /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.cpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp \
   /home/alfred/Code/Language/new_langauge/Lokus/include/node.hpp \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iostream \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -187,4 +187,4 @@ src/CMakeFiles/LokusLib.dir/syntax.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/erase_if.h \
   /home/alfred/Code/Language/new_langauge/Lokus/include/context.hpp \
   /home/alfred/Code/Language/new_langauge/Lokus/include/enum.hpp \
-  /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.hpp
+  /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.hpp

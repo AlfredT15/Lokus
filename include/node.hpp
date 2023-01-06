@@ -57,6 +57,12 @@ public:
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
+class NList : public NExpression {
+public:
+	ListValue* value;
+	NList(const )
+}
+
 class NBool : public NExpression {
 public:
 	BoolValue* value;
@@ -95,6 +101,7 @@ public:
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
+
 class NOperator : public NExpression {
 private:
 	TypeMap opType = {
@@ -107,7 +114,9 @@ private:
 	{">", OperationType::GT_TYPE},
 	{"<", OperationType::LT_TYPE},
 	{">=", OperationType::GTE_TYPE},
-	{"<=", OperationType::LTE_TYPE}
+	{"<=", OperationType::LTE_TYPE},
+	{"and", OperationType::AND_TYPE},
+	{"or", OperationType::OR_TYPE}
 	};
 public:
 	OperatorValue* value;

@@ -11,6 +11,8 @@ typedef std::map<const std::string, const Value*> SymbolTable;
 
 class Context
 {
+    private:
+        bool defined_in_parent(const std::string& name);
     public:
         Context* parent;
         SymbolTable sym_table;
@@ -19,6 +21,7 @@ class Context
 
         const Value* find_value(const std::string& name);
         bool set_value(const IdentifierValue* ident_val, const Value* val);
+        
 };
 
 #endif

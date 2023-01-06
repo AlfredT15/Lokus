@@ -26,6 +26,8 @@ public:
     virtual const Value* multiplied_by(const Value* other) const = 0;
     virtual const Value* divided_by(const Value* other) const = 0;
     //Comparison
+    virtual const Value* anded_by(const Value* other) const = 0;
+    virtual const Value* ored_by(const Value* other) const = 0;
     virtual const Value* equal_to(const Value* other) const = 0;
     virtual const Value* not_equal_to(const Value* other) const = 0;
     virtual const Value* less_than(const Value* other) const = 0;
@@ -58,6 +60,10 @@ public:
     const Value* divided_by(const Value* other) const override
         {return new ErrorValue("Division operator not implemented for errors");};
     // Comparison
+    const Value* anded_by(const Value* other) const override
+        {return new ErrorValue("and operator not implemented for errors");};
+    const Value* ored_by(const Value* other) const override
+        {return new ErrorValue("or operator not implemented for errors");};
     const Value* equal_to(const Value* other) const override
         {return new ErrorValue("Equality operator not implemented for errors");};
     const Value* not_equal_to(const Value* other) const override
@@ -92,6 +98,10 @@ class VoidValue : public Value
         const Value* divided_by(const Value* other) const override
             {return new ErrorValue("Division operator not implemented for a void return");};
         // Comparison
+        const Value* anded_by(const Value* other) const override
+            {return new ErrorValue("and operator not implemented for void return");};
+        const Value* ored_by(const Value* other) const override
+            {return new ErrorValue("or operator not implemented for void return");};
         const Value* equal_to(const Value* other) const override
             {return new ErrorValue("Equality operator not implemented for a void return");};
         const Value* not_equal_to(const Value* other) const override
@@ -133,6 +143,8 @@ public:
     const Value* multiplied_by(const Value* other) const override;
     const Value* divided_by(const Value* other) const override;
     // Comparison
+    const Value* anded_by(const Value* other) const override;
+    const Value* ored_by(const Value* other) const override;
     const Value* equal_to(const Value* other) const override;
     const Value* not_equal_to(const Value* other) const override;
     const Value* less_than(const Value* other) const override;
@@ -162,6 +174,8 @@ public:
     const Value* multiplied_by(const Value* other) const override;
     const Value* divided_by(const Value* other) const override;
     //Comparison
+    const Value* anded_by(const Value* other) const override;
+    const Value* ored_by(const Value* other) const override;
     const Value* equal_to(const Value* other) const override;
     const Value* not_equal_to(const Value* other) const override;
     const Value* less_than(const Value* other) const override;
@@ -195,6 +209,8 @@ public:
     const Value* divided_by(const Value* other) const override
         {return new ErrorValue("Division operator not implemented for bools");};
     //Comparison
+    const Value* anded_by(const Value* other) const override;
+    const Value* ored_by(const Value* other) const override;
     const Value* equal_to(const Value* other) const override;
     const Value* not_equal_to(const Value* other) const override;
     const Value* less_than(const Value* other) const override
@@ -236,6 +252,10 @@ public:
     const Value* divided_by(const Value* other) const override
         {return new ErrorValue("Division operator not implemented for strings");};
     //Comparison
+    const Value* anded_by(const Value* other) const override
+        {return new ErrorValue("and operator not implemented for strings");};
+    const Value* ored_by(const Value* other) const override
+        {return new ErrorValue("or operator not implemented for strings");};
     const Value* equal_to(const Value* other) const override;
     const Value* not_equal_to(const Value* other) const override;
     const Value* less_than(const Value* other) const override
@@ -286,6 +306,10 @@ public:
     const Value* divided_by(const Value* other) const override
         {return new ErrorValue("Division operator not implemented for Identifiers");};
     // Comparison
+    const Value* anded_by(const Value* other) const override
+        {return new ErrorValue("and operator not implemented for Identifiers");};
+    const Value* ored_by(const Value* other) const override
+        {return new ErrorValue("or operator not implemented for Identifiers");};
     const Value* equal_to(const Value* other) const override
         {return new ErrorValue("Equality operator not implemented for Identifiers");};
     const Value* not_equal_to(const Value* other) const override
@@ -323,6 +347,10 @@ public:
     const Value* divided_by(const Value* other) const override
         {return new ErrorValue("Division operator not implemented for Operators");};
     // Comparison
+    const Value* anded_by(const Value* other) const override
+        {return new ErrorValue("and operator not implemented for Operators");};
+    const Value* ored_by(const Value* other) const override
+        {return new ErrorValue("or operator not implemented for Operators");};
     const Value* equal_to(const Value* other) const override
         {return new ErrorValue("Equality operator not implemented for Operators");};
     const Value* not_equal_to(const Value* other) const override
@@ -357,6 +385,10 @@ public:
     const Value* multiplied_by(const Value* other) const override;
     const Value* divided_by(const Value* other) const override;
     //Comparison
+    const Value* anded_by(const Value* other) const override
+        {return new ErrorValue("and operator not implemented for Lists");};
+    const Value* ored_by(const Value* other) const override
+        {return new ErrorValue("or operator not implemented for Lists");};
     const Value* equal_to(const Value* other) const override;
     const Value* not_equal_to(const Value* other) const override;
     const Value* less_than(const Value* other) const override
@@ -394,6 +426,10 @@ class FunctionValue : public Value
         const Value* divided_by(const Value* other) const override
             {return new ErrorValue("Division operator not implemented for functions");};
         // Comparison
+        const Value* anded_by(const Value* other) const override
+            {return new ErrorValue("and operator not implemented for functions");};
+        const Value* ored_by(const Value* other) const override
+            {return new ErrorValue("or operator not implemented for functions");};
         const Value* equal_to(const Value* other) const override
             {return new ErrorValue("Equality operator not implemented for functions");};
         const Value* not_equal_to(const Value* other) const override
@@ -433,6 +469,10 @@ class ReturnValue : public Value
         const Value* divided_by(const Value* other) const override
             {return new ErrorValue("Division operator not implemented for a return value");};
         // Comparison
+        const Value* anded_by(const Value* other) const override
+            {return new ErrorValue("and operator not implemented for return value");};
+        const Value* ored_by(const Value* other) const override
+            {return new ErrorValue("or operator not implemented for return value");};
         const Value* equal_to(const Value* other) const override
             {return new ErrorValue("Equality operator not implemented for a return value");};
         const Value* not_equal_to(const Value* other) const override
@@ -472,6 +512,10 @@ class PrintValue : public Value
         const Value* divided_by(const Value* other) const override
             {return new ErrorValue("Division operator not implemented for a print value");};
         // Comparison
+        const Value* anded_by(const Value* other) const override
+            {return new ErrorValue("and operator not implemented for print value");};
+        const Value* ored_by(const Value* other) const override
+            {return new ErrorValue("or operator not implemented for print value");};
         const Value* equal_to(const Value* other) const override
             {return new ErrorValue("Equality operator not implemented for a print value");};
         const Value* not_equal_to(const Value* other) const override

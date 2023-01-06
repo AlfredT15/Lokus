@@ -35,9 +35,9 @@
  */
 %token <string> CHARACTER_VALUE STRING_VALUE INTEGER_VALUE FLOAT_VALUE TRUE_VALUE FALSE_VALUE
 %token <string> IDENTIFIER DATA_TYPE
-%token <string> EQ_OP COMP_OP ADD SUB MUL DIV
+%token <string> EQ_OP COMP_OP ADD SUB MUL DIV AND OR
 %token <token>  EQ
-%token <token>  LPAREN RPAREN LBRACE RBRACE COMMA DOT
+%token <token>  LPAREN RPAREN LBRACE RBRACE LBRACKET RBRACKET COMMA DOT
 %token <token>  PRINTING RETURN EXTERN
 %token <token> 	IF ELIF ELSE
 %token <token> 	FOR WHILE 
@@ -50,15 +50,17 @@
  */
 %type <ident> ident data_type_and_ident
 %type <op> op
-%type <expr> numeric boolean expr 
+%type <expr> numeric boolean expr list
 %type <varvec> func_decl_args
 %type <exprvec> call_args
 %type <block> program stmts block
-%type <stmt> stmt var_decl func_decl extern_decl if_stmt for_stmt while_stmt
+%type <stmt> stmt var_decl func_decl extern_decl if_stmt elif_stmt for_stmt while_stmt
 
 /* Operator precedence for mathematical operators */
 %precedence EQ_OP 
 %precedence COMP_OP
+%precedence OR
+%precedence AND
 %left ADD SUB
 %left MUL DIV
 
@@ -89,11 +91,12 @@ block : LBRACE stmts RBRACE { $$ = $2; }
 	  ;
 
 if_stmt : IF expr block { $$ = new NIfStatement($2, *$3); }
-		| IF expr block if_stmt { $$ = new NIfStatement($2, *$3, $4); }
-		| ELIF expr block { $$ = new NIfStatement($2, *$3); }
-		| ELIF expr block if_stmt { $$ = new NIfStatement($2, *$3, $4); }
-		| ELSE block  { $$ = new NIfStatement(*$2); }
-		;
+		| IF expr block elif_stmt { $$ = new NIfStatement($2, *$3, $4); }
+
+elif_stmt : ELIF expr block { $$ = new NIfStatement($2, *$3); }
+		  | ELIF expr block elif_stmt { $$ = new NIfStatement($2, *$3, $4); }
+		  | ELSE block  { $$ = new NIfStatement(*$2); }
+		  ;
 
 for_stmt : FOR LPAREN expr COMMA expr COMMA expr RPAREN block { $$ = new NForStatement($3, $5, $7, *$9); }
 		 | FOR LPAREN var_decl COMMA expr COMMA expr RPAREN block { $$ = new NForStatement($3, $5, $7, *$9); }
@@ -128,11 +131,15 @@ ident : IDENTIFIER { $$ = new NIdentifier(*$1); delete $1; }
 // numeric and boolean should be removed later
 numeric : INTEGER_VALUE { $$ = new NInteger(atol($1->c_str())); delete $1; }
 		| FLOAT_VALUE { $$ = new NDouble(atof($1->c_str())); delete $1; }
+		| SUB INTEGER_VALUE { $$ = new NInteger(-atol($2->c_str())); delete $1; }
+		| SUB FLOAT_VALUE { $$ = new NDouble(-atof($2->c_str())); delete $1; }
 		;
 
 boolean : TRUE_VALUE { $$ = new NBool($1->c_str()); delete $1; }
 		| FALSE_VALUE { $$ = new NBool($1->c_str()); delete $1; }
 		;
+
+list	: RBRACKET expr LBRACKET { $$ = }
 	
 expr : ident EQ expr { $$ = new NAssignment(*$<ident>1, *$3); }
 	 | ident LPAREN call_args RPAREN { $$ = new NMethodCall(*$1, *$3); delete $3; }
@@ -150,6 +157,8 @@ op : MUL	{ $$ = new NOperator(*$1); delete $1; }
    | SUB	{ $$ = new NOperator(*$1); delete $1; }
    | COMP_OP{ $$ = new NOperator(*$1); delete $1; }
    | EQ_OP	{ $$ = new NOperator(*$1); delete $1; }
+   | AND	{ $$ = new NOperator(*$1); delete $1; }
+   | OR		{ $$ = new NOperator(*$1); delete $1; }
 
 	
 call_args : /*blank*/  { $$ = new ExpressionList(); }

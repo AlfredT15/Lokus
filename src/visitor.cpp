@@ -163,7 +163,9 @@ const Value* InterpretVisitor::VisitNMethodCall(const NMethodCall *element, Cont
     ValueVec arg_vals;
     for (NExpression* expr : element->arguments)
     {
-        const IdentifierValue* arg_id = dynamic_cast<const IdentifierValue*>(expr->Accept(this, context));
+        const Value* arg = expr->Accept(this, context);
+        int test = *((int*)arg->get_value());
+        const IdentifierValue* arg_id = dynamic_cast<const IdentifierValue*>(arg);
         if (arg_id)
         {
             const Value* val = context->find_value(arg_id->value);
@@ -173,7 +175,7 @@ const Value* InterpretVisitor::VisitNMethodCall(const NMethodCall *element, Cont
         }
         else
         {
-            arg_vals.push_back(expr->Accept(this, context));
+            arg_vals.push_back(arg);
         }
     }
 
@@ -191,19 +193,24 @@ const Value* InterpretVisitor::VisitNMethodCall(const NMethodCall *element, Cont
             return new ErrorValue("Parameter number " + std::to_string(i+1) + " expects a different type");
     }
 
+    // Create a new context for every unique method call
+    Context* new_context = new Context(func_val->function_context);
     // Assigns the arguments passed through to the method to the context within the method and to the associated identifiers
     for (int i = 0; i < func_val->arg_values->size(); i++)
     {
         const IdentifierValue* id2 = dynamic_cast<const IdentifierValue*>(func_val->arg_values->at(i));
         if (!id2)
             return new ErrorValue("Something is wrong");
-        bool var_set = func_val->function_context->set_value(id2, arg_vals.at(i));
+        bool var_set = new_context->set_value(id2, arg_vals.at(i));
         if (!var_set)
             return new ErrorValue("Expected a different type in arguments passed");
     }
 
     // Now evaluate the function with the context appropriately preset
-    return func_val->block.Accept(this, func_val->function_context);
+    const Value* result = func_val->block.Accept(this, new_context);
+    if (result->get_type() == func_val->get_type())
+        return result;
+    return new ErrorValue("Returns a " + std::to_string(result->get_type()) + " expects a " + std::to_string(func_val->get_type()));
 }
 const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *element, Context* context) const
 {
@@ -247,6 +254,10 @@ const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *eleme
         return lhs_val->multiplied_by(rhs_val);
     case OperationType::DIV_TYPE:
         return lhs_val->divided_by(rhs_val);
+    case OperationType::AND_TYPE:
+        return lhs_val->anded_by(rhs_val);
+    case OperationType::OR_TYPE:
+        return lhs_val->ored_by(rhs_val);
     case OperationType::EE_TYPE:
         return lhs_val->equal_to(rhs_val);
     case OperationType::NE_TYPE:
@@ -298,12 +309,16 @@ const Value* InterpretVisitor::VisitNBlock(const NBlock *element, Context* conte
     {
         // evaluate the statement
         const Value* val = stmnt->Accept(this, context);
+        if (val->get_isError())
+            return val;
         // If statement is to return then return the value
         const ReturnValue* ret = dynamic_cast<const ReturnValue*>(val);
         if (ret)
             return ret->value;
         value.push_back(val);
     }
+    if (value.size() == 1)
+        return value[0];
     return new ListValue(value);
 }
 const Value* InterpretVisitor::VisitNExpressionStatement(const NExpressionStatement *element, Context* context) const
@@ -396,13 +411,14 @@ const Value* InterpretVisitor::VisitNFunctionDeclaration(const NFunctionDeclarat
 
     // Create the expected parameters for the function
     ValueVec* arg_values = new ValueVec;
+    Context temp = Context();
     for (NVariableDeclaration* dec : element->arguments)
     {
-        arg_values->push_back(dec->Accept(this, context));
+        arg_values->push_back(dec->Accept(this, &temp));
     }
-
     // Create a new context for the function
     Context* new_context = new Context(context);
+
     const FunctionValue* func_val = new FunctionValue(arg_values, new_context, element->block, id->type);
 
     // Assign the function value to the identifier in the current context
