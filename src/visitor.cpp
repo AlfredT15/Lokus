@@ -106,6 +106,12 @@ void PrintVisitor::VisitNWhileStatement(const NWhileStatement *element) const
     element->block.Accept(this);
 }
 
+void PrintVisitor::VisitNPrintStatement(const NPrintStatement *element) const
+{
+    printf("Printing: ");
+    element->expr->Accept(this);
+}
+
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // InterpretVisitor
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -486,4 +492,16 @@ const Value* InterpretVisitor::VisitNWhileStatement(const NWhileStatement *eleme
         condition = dynamic_cast<const BoolValue*>(element->condition->Accept(this, context));
     }
     return new ListValue(result);
+}
+const Value* InterpretVisitor::VisitNPrintStatement(const NPrintStatement* element, Context* context) const
+{
+    const Value* element_val = (const Value*) element->expr->Accept(this,context);
+    const IdentifierValue* element_id = dynamic_cast<const IdentifierValue*>(element_val);
+    if (element_id)
+    {
+        element_val = context->find_value(element_id->value);
+        if (element_val->get_isError())
+                return element_val;
+    }
+    return new PrintValue(element_val);
 }

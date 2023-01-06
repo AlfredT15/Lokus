@@ -1,11 +1,12 @@
 %{
-  #include "../include/node.hpp"
+  #include "/home/alfred/Code/Language/new_langauge/Lokus/include/node.hpp"
   #include <cstdio>
   #include <cstdlib>
   #include <vector>
 	NBlock *programBlock; /* the top level root node of our final AST */
 
 	#define YYERROR_VERBOSE 1
+	#define YYDEBUG 1
 	extern int yylex();
 	extern int line_num;
 
@@ -37,7 +38,7 @@
 %token <string> EQ_OP COMP_OP ADD SUB MUL DIV
 %token <token>  EQ
 %token <token>  LPAREN RPAREN LBRACE RBRACE COMMA DOT
-%token <token>  RETURN EXTERN
+%token <token>  PRINTING RETURN EXTERN
 %token <token> 	IF ELIF ELSE
 %token <token> 	FOR WHILE 
 // %token          END_LINE
@@ -74,10 +75,14 @@ stmts : stmt { $$ = new NBlock(); $$->statements.push_back($<stmt>1); }
 	  ;
 
 
-stmt : var_decl | func_decl | extern_decl | if_stmt | for_stmt | while_stmt
+stmt : var_decl | func_decl | extern_decl | if_stmt | for_stmt | while_stmt 
 	 | expr { $$ = new NExpressionStatement(*$1); }
 	 | RETURN expr { $$ = new NReturnStatement($2); }
+	 | PRINTING LPAREN expr RPAREN { $$ = new NPrintStatement($3); }
      ;
+
+// print_stmt : PRINT LPAREN expr RPAREN { $$ = new NPrintStatement($3); }
+// 		   ;
 
 block : LBRACE stmts RBRACE { $$ = $2; }
 	  | LBRACE RBRACE { $$ = new NBlock(); }
@@ -134,6 +139,7 @@ expr : ident EQ expr { $$ = new NAssignment(*$<ident>1, *$3); }
 	 | ident { $<ident>$ = $1; }
 	 | numeric
 	 | boolean
+	 | STRING_VALUE { $$ = new NString($1->c_str()); delete $1;}
 	 | expr op expr { $$ = new NBinaryOperator(*$1, *$2, *$3); }
 	 | LPAREN expr RPAREN { $$ = $2; }
 	 ;

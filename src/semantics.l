@@ -1,5 +1,5 @@
 %{
-    #include "../include/node.hpp"
+    #include "/home/alfred/Code/Language/new_langauge/Lokus/include/node.hpp"
     #include "syntax.hpp"
     void InvalidToken();
     int line_num = 1;
@@ -29,6 +29,8 @@ linefeed        \n
 "elif"                                          return TOKEN(ELIF);
 "for"                                           return TOKEN(FOR);
 "while"                                         return TOKEN(WHILE);
+"print"                                         return TOKEN(PRINTING);
+\"[^"]+\"                                       SAVE_TOKEN; return STRING_VALUE;
 [0-9]+\.[0-9]* 			                        SAVE_TOKEN; return FLOAT_VALUE;
 [0-9]+					                        SAVE_TOKEN; return INTEGER_VALUE;
 
@@ -60,8 +62,6 @@ linefeed        \n
 
 "."         						            return TOKEN(DOT);
 ","				          		                return TOKEN(COMMA);
-
-
 
 
 {linefeed}                                      {line_num++;}

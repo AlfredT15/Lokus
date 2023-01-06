@@ -374,7 +374,7 @@ src/CMakeFiles/LokusLib.dir/node.cpp.o
  /home/alfred/Code/Language/new_langauge/Lokus/include/enum.hpp
 
 src/CMakeFiles/LokusLib.dir/semantics.cpp.o
- /home/alfred/Code/Language/new_langauge/Lokus/src/semantics.cpp
+ /home/alfred/Code/Language/new_langauge/Lokus/build/src/semantics.cpp
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/features.h
@@ -577,7 +577,7 @@ src/CMakeFiles/LokusLib.dir/semantics.cpp.o
  /usr/include/c++/11/bits/erase_if.h
  /home/alfred/Code/Language/new_langauge/Lokus/include/context.hpp
  /home/alfred/Code/Language/new_langauge/Lokus/include/enum.hpp
- /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.hpp
+ /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.hpp
  /usr/include/unistd.h
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h
  /usr/include/x86_64-linux-gnu/bits/environments.h
@@ -588,7 +588,7 @@ src/CMakeFiles/LokusLib.dir/semantics.cpp.o
  /usr/include/linux/close_range.h
 
 src/CMakeFiles/LokusLib.dir/syntax.cpp.o
- /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp
+ /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.cpp
  /home/alfred/Code/Language/new_langauge/Lokus/include/node.hpp
  /usr/include/c++/11/iostream
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h
@@ -788,7 +788,7 @@ src/CMakeFiles/LokusLib.dir/syntax.cpp.o
  /usr/include/c++/11/bits/erase_if.h
  /home/alfred/Code/Language/new_langauge/Lokus/include/context.hpp
  /home/alfred/Code/Language/new_langauge/Lokus/include/enum.hpp
- /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.hpp
+ /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.hpp
 
 src/CMakeFiles/LokusLib.dir/value.cpp.o
  /home/alfred/Code/Language/new_langauge/Lokus/src/value.cpp

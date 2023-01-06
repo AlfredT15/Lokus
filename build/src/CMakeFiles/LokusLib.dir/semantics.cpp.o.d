@@ -1,5 +1,5 @@
 src/CMakeFiles/LokusLib.dir/semantics.cpp.o: \
-  /home/alfred/Code/Language/new_langauge/Lokus/src/semantics.cpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/src/semantics.cpp \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h /usr/include/features-time64.h \
@@ -64,7 +64,7 @@ src/CMakeFiles/LokusLib.dir/semantics.cpp.o: \
   /usr/include/alloca.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_abs.h \
-  /home/alfred/Code/Language/new_langauge/Lokus/src/../include/node.hpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/include/node.hpp \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iostream \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ostream \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ios \
@@ -175,8 +175,8 @@ src/CMakeFiles/LokusLib.dir/semantics.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_bvector.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/vector.tcc \
-  /home/alfred/Code/Language/new_langauge/Lokus/src/../include/visitor.hpp \
-  /home/alfred/Code/Language/new_langauge/Lokus/src/../include/value.hpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/include/visitor.hpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/include/value.hpp \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/map \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_tree.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/aligned_buffer.h \
@@ -189,9 +189,9 @@ src/CMakeFiles/LokusLib.dir/semantics.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_multimap.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/erase_if.h \
-  /home/alfred/Code/Language/new_langauge/Lokus/src/../include/context.hpp \
-  /home/alfred/Code/Language/new_langauge/Lokus/src/../include/enum.hpp \
-  /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.hpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/include/context.hpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/include/enum.hpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.hpp \
   /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \

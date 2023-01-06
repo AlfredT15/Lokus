@@ -76,6 +76,10 @@ void NWhileStatement::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNWhileStatement(this);
 };
+void NPrintStatement::Accept(const VisitorVoid *visitor) const
+{
+    visitor->VisitNPrintStatement(this);
+};
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // VisitorType Methods
@@ -151,4 +155,8 @@ const Value* NForStatement::Accept(const VisitorType *visitor, Context *context)
 const Value* NWhileStatement::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNWhileStatement(this, context);
+};
+const Value* NPrintStatement::Accept(const VisitorType *visitor, Context *context) const
+{
+    return visitor->VisitNPrintStatement(this, context);
 };

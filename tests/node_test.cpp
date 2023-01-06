@@ -1634,3 +1634,14 @@ TEST(basic_node, while_statement_accept_double_loop)
 
     ASSERT_THAT((int*)context->find_value("test1")->get_value(), Pointee(Eq(26)));
 }
+
+TEST(basic_node, print_statement)
+{
+    const InterpretVisitor *visitor = new InterpretVisitor();
+    Context* context = new Context();
+
+    NInteger int_node = NInteger(1);
+    NPrintStatement node = NPrintStatement(&int_node);
+
+    ASSERT_THAT((int*)((IntValue*)((PrintValue*)node.Accept(visitor, context))->get_value())->get_value(), Pointee(Eq(1)));
+}

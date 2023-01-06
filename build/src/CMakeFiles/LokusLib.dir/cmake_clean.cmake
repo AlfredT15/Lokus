@@ -13,6 +13,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/LokusLib.dir/visitor.cpp.o.d"
   "libLokusLib.a"
   "libLokusLib.pdb"
+  "semantics.cpp"
+  "syntax.cpp"
+  "syntax.hpp"
 )
 
 # Per-language clean rules from dependency scanning.

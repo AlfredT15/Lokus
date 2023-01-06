@@ -371,7 +371,7 @@ src/CMakeFiles/LokusLib.dir/node.cpp.o: ../src/node.cpp \
   ../include/context.hpp \
   ../include/enum.hpp
 
-src/CMakeFiles/LokusLib.dir/semantics.cpp.o: ../src/semantics.cpp \
+src/CMakeFiles/LokusLib.dir/semantics.cpp.o: src/semantics.cpp \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -574,7 +574,7 @@ src/CMakeFiles/LokusLib.dir/semantics.cpp.o: ../src/semantics.cpp \
   /usr/include/c++/11/bits/erase_if.h \
   ../include/context.hpp \
   ../include/enum.hpp \
-  ../src/syntax.hpp \
+  src/syntax.hpp \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
@@ -584,7 +584,7 @@ src/CMakeFiles/LokusLib.dir/semantics.cpp.o: ../src/semantics.cpp \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h
 
-src/CMakeFiles/LokusLib.dir/syntax.cpp.o: ../src/syntax.cpp \
+src/CMakeFiles/LokusLib.dir/syntax.cpp.o: src/syntax.cpp \
   ../include/node.hpp \
   /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -784,7 +784,7 @@ src/CMakeFiles/LokusLib.dir/syntax.cpp.o: ../src/syntax.cpp \
   /usr/include/c++/11/bits/erase_if.h \
   ../include/context.hpp \
   ../include/enum.hpp \
-  ../src/syntax.hpp
+  src/syntax.hpp
 
 src/CMakeFiles/LokusLib.dir/value.cpp.o: ../src/value.cpp \
   /usr/include/c++/11/vector \
@@ -1157,6 +1157,8 @@ src/CMakeFiles/LokusLib.dir/visitor.cpp.o: ../src/visitor.cpp \
   ../include/enum.hpp
 
 
+src/syntax.cpp:
+
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
@@ -1165,9 +1167,13 @@ src/CMakeFiles/LokusLib.dir/visitor.cpp.o: ../src/visitor.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
+src/syntax.hpp:
+
 /usr/include/c++/11/stdlib.h:
 
 /usr/include/string.h:
+
+src/semantics.cpp:
 
 /usr/include/c++/11/bits/istream.tcc:
 
@@ -1285,8 +1291,6 @@ src/CMakeFiles/LokusLib.dir/visitor.cpp.o: ../src/visitor.cpp \
 
 /usr/include/c++/11/initializer_list:
 
-../src/syntax.cpp:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
 /usr/include/endian.h:
@@ -1381,8 +1385,6 @@ src/CMakeFiles/LokusLib.dir/visitor.cpp.o: ../src/visitor.cpp \
 
 /usr/include/c++/11/bits/uses_allocator.h:
 
-../src/semantics.cpp:
-
 /usr/include/c++/11/bits/stl_multimap.h:
 
 /usr/include/features.h:
@@ -1448,8 +1450,6 @@ src/CMakeFiles/LokusLib.dir/visitor.cpp.o: ../src/visitor.cpp \
 /usr/include/c++/11/bits/concept_check.h:
 
 /usr/include/stdint.h:
-
-../src/syntax.hpp:
 
 /usr/include/asm-generic/errno-base.h:
 

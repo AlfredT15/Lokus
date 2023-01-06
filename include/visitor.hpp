@@ -24,6 +24,7 @@ class NFunctionDeclaration;
 class NIfStatement;
 class NForStatement;
 class NWhileStatement;
+class NPrintStatement;
 
 class Value;
 class Context;
@@ -56,6 +57,7 @@ class VisitorType : public Visitor
         virtual const Value* VisitNIfStatement(const NIfStatement *element, Context* context) const = 0;
         virtual const Value* VisitNForStatement(const NForStatement *element, Context* context) const = 0;
         virtual const Value* VisitNWhileStatement(const NWhileStatement *element, Context* context) const = 0;
+        virtual const Value* VisitNPrintStatement(const NPrintStatement *element, Context* context) const = 0;
 };
 
 class VisitorVoid : public Visitor
@@ -80,6 +82,7 @@ class VisitorVoid : public Visitor
         virtual void VisitNIfStatement(const NIfStatement *element) const = 0;
         virtual void VisitNForStatement(const NForStatement *element) const = 0;
         virtual void VisitNWhileStatement(const NWhileStatement *element) const = 0;
+        virtual void VisitNPrintStatement(const NPrintStatement *element) const = 0;
 };
 
 class PrintVisitor: public VisitorVoid
@@ -103,6 +106,7 @@ class PrintVisitor: public VisitorVoid
         void VisitNIfStatement(const NIfStatement *element) const override;
         void VisitNForStatement(const NForStatement *element) const override;
         void VisitNWhileStatement(const NWhileStatement *element) const override;
+        void VisitNPrintStatement(const NPrintStatement *element) const override;
 };
 
 class InterpretVisitor: public VisitorType
@@ -126,6 +130,7 @@ class InterpretVisitor: public VisitorType
         const Value* VisitNIfStatement(const NIfStatement *element, Context* context) const override;
         const Value* VisitNForStatement(const NForStatement *element, Context* context) const override;
         const Value* VisitNWhileStatement(const NWhileStatement *element, Context* context) const override;
+        const Value* VisitNPrintStatement(const NPrintStatement *element, Context* context) const override;
 };
 
 

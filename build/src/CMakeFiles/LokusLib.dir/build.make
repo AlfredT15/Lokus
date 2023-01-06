@@ -69,10 +69,21 @@ include src/CMakeFiles/LokusLib.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/LokusLib.dir/flags.make
 
+src/syntax.cpp: ../src/syntax.y
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[BISON][MyParser] Building parser with bison 3.8.2"
+	cd /home/alfred/Code/Language/new_langauge/Lokus/src && /usr/bin/bison -d -o /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.cpp syntax.y
+
+src/syntax.hpp: src/syntax.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate src/syntax.hpp
+
+src/semantics.cpp: ../src/semantics.l
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "[FLEX][MyScanner] Building scanner with flex 2.6.4"
+	cd /home/alfred/Code/Language/new_langauge/Lokus/src && /usr/bin/flex -o/home/alfred/Code/Language/new_langauge/Lokus/build/src/semantics.cpp semantics.l
+
 src/CMakeFiles/LokusLib.dir/context.cpp.o: src/CMakeFiles/LokusLib.dir/flags.make
 src/CMakeFiles/LokusLib.dir/context.cpp.o: ../src/context.cpp
 src/CMakeFiles/LokusLib.dir/context.cpp.o: src/CMakeFiles/LokusLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/LokusLib.dir/context.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/LokusLib.dir/context.cpp.o"
 	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/LokusLib.dir/context.cpp.o -MF CMakeFiles/LokusLib.dir/context.cpp.o.d -o CMakeFiles/LokusLib.dir/context.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/context.cpp
 
 src/CMakeFiles/LokusLib.dir/context.cpp.i: cmake_force
@@ -86,7 +97,7 @@ src/CMakeFiles/LokusLib.dir/context.cpp.s: cmake_force
 src/CMakeFiles/LokusLib.dir/node.cpp.o: src/CMakeFiles/LokusLib.dir/flags.make
 src/CMakeFiles/LokusLib.dir/node.cpp.o: ../src/node.cpp
 src/CMakeFiles/LokusLib.dir/node.cpp.o: src/CMakeFiles/LokusLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/LokusLib.dir/node.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/LokusLib.dir/node.cpp.o"
 	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/LokusLib.dir/node.cpp.o -MF CMakeFiles/LokusLib.dir/node.cpp.o.d -o CMakeFiles/LokusLib.dir/node.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/node.cpp
 
 src/CMakeFiles/LokusLib.dir/node.cpp.i: cmake_force
@@ -98,37 +109,38 @@ src/CMakeFiles/LokusLib.dir/node.cpp.s: cmake_force
 	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alfred/Code/Language/new_langauge/Lokus/src/node.cpp -o CMakeFiles/LokusLib.dir/node.cpp.s
 
 src/CMakeFiles/LokusLib.dir/semantics.cpp.o: src/CMakeFiles/LokusLib.dir/flags.make
-src/CMakeFiles/LokusLib.dir/semantics.cpp.o: ../src/semantics.cpp
+src/CMakeFiles/LokusLib.dir/semantics.cpp.o: src/semantics.cpp
+src/CMakeFiles/LokusLib.dir/semantics.cpp.o: src/syntax.hpp
 src/CMakeFiles/LokusLib.dir/semantics.cpp.o: src/CMakeFiles/LokusLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/LokusLib.dir/semantics.cpp.o"
-	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/LokusLib.dir/semantics.cpp.o -MF CMakeFiles/LokusLib.dir/semantics.cpp.o.d -o CMakeFiles/LokusLib.dir/semantics.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/semantics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/LokusLib.dir/semantics.cpp.o"
+	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/LokusLib.dir/semantics.cpp.o -MF CMakeFiles/LokusLib.dir/semantics.cpp.o.d -o CMakeFiles/LokusLib.dir/semantics.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/build/src/semantics.cpp
 
 src/CMakeFiles/LokusLib.dir/semantics.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LokusLib.dir/semantics.cpp.i"
-	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alfred/Code/Language/new_langauge/Lokus/src/semantics.cpp > CMakeFiles/LokusLib.dir/semantics.cpp.i
+	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alfred/Code/Language/new_langauge/Lokus/build/src/semantics.cpp > CMakeFiles/LokusLib.dir/semantics.cpp.i
 
 src/CMakeFiles/LokusLib.dir/semantics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LokusLib.dir/semantics.cpp.s"
-	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alfred/Code/Language/new_langauge/Lokus/src/semantics.cpp -o CMakeFiles/LokusLib.dir/semantics.cpp.s
+	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alfred/Code/Language/new_langauge/Lokus/build/src/semantics.cpp -o CMakeFiles/LokusLib.dir/semantics.cpp.s
 
 src/CMakeFiles/LokusLib.dir/syntax.cpp.o: src/CMakeFiles/LokusLib.dir/flags.make
-src/CMakeFiles/LokusLib.dir/syntax.cpp.o: ../src/syntax.cpp
+src/CMakeFiles/LokusLib.dir/syntax.cpp.o: src/syntax.cpp
 src/CMakeFiles/LokusLib.dir/syntax.cpp.o: src/CMakeFiles/LokusLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/LokusLib.dir/syntax.cpp.o"
-	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/LokusLib.dir/syntax.cpp.o -MF CMakeFiles/LokusLib.dir/syntax.cpp.o.d -o CMakeFiles/LokusLib.dir/syntax.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/LokusLib.dir/syntax.cpp.o"
+	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/LokusLib.dir/syntax.cpp.o -MF CMakeFiles/LokusLib.dir/syntax.cpp.o.d -o CMakeFiles/LokusLib.dir/syntax.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.cpp
 
 src/CMakeFiles/LokusLib.dir/syntax.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LokusLib.dir/syntax.cpp.i"
-	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp > CMakeFiles/LokusLib.dir/syntax.cpp.i
+	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.cpp > CMakeFiles/LokusLib.dir/syntax.cpp.i
 
 src/CMakeFiles/LokusLib.dir/syntax.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LokusLib.dir/syntax.cpp.s"
-	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp -o CMakeFiles/LokusLib.dir/syntax.cpp.s
+	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.cpp -o CMakeFiles/LokusLib.dir/syntax.cpp.s
 
 src/CMakeFiles/LokusLib.dir/value.cpp.o: src/CMakeFiles/LokusLib.dir/flags.make
 src/CMakeFiles/LokusLib.dir/value.cpp.o: ../src/value.cpp
 src/CMakeFiles/LokusLib.dir/value.cpp.o: src/CMakeFiles/LokusLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/LokusLib.dir/value.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/LokusLib.dir/value.cpp.o"
 	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/LokusLib.dir/value.cpp.o -MF CMakeFiles/LokusLib.dir/value.cpp.o.d -o CMakeFiles/LokusLib.dir/value.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/value.cpp
 
 src/CMakeFiles/LokusLib.dir/value.cpp.i: cmake_force
@@ -142,7 +154,7 @@ src/CMakeFiles/LokusLib.dir/value.cpp.s: cmake_force
 src/CMakeFiles/LokusLib.dir/visitor.cpp.o: src/CMakeFiles/LokusLib.dir/flags.make
 src/CMakeFiles/LokusLib.dir/visitor.cpp.o: ../src/visitor.cpp
 src/CMakeFiles/LokusLib.dir/visitor.cpp.o: src/CMakeFiles/LokusLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/LokusLib.dir/visitor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/LokusLib.dir/visitor.cpp.o"
 	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/LokusLib.dir/visitor.cpp.o -MF CMakeFiles/LokusLib.dir/visitor.cpp.o.d -o CMakeFiles/LokusLib.dir/visitor.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/visitor.cpp
 
 src/CMakeFiles/LokusLib.dir/visitor.cpp.i: cmake_force
@@ -173,7 +185,7 @@ src/libLokusLib.a: src/CMakeFiles/LokusLib.dir/value.cpp.o
 src/libLokusLib.a: src/CMakeFiles/LokusLib.dir/visitor.cpp.o
 src/libLokusLib.a: src/CMakeFiles/LokusLib.dir/build.make
 src/libLokusLib.a: src/CMakeFiles/LokusLib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libLokusLib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libLokusLib.a"
 	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && $(CMAKE_COMMAND) -P CMakeFiles/LokusLib.dir/cmake_clean_target.cmake
 	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LokusLib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -185,7 +197,9 @@ src/CMakeFiles/LokusLib.dir/clean:
 	cd /home/alfred/Code/Language/new_langauge/Lokus/build/src && $(CMAKE_COMMAND) -P CMakeFiles/LokusLib.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/LokusLib.dir/clean
 
-src/CMakeFiles/LokusLib.dir/depend:
+src/CMakeFiles/LokusLib.dir/depend: src/semantics.cpp
+src/CMakeFiles/LokusLib.dir/depend: src/syntax.cpp
+src/CMakeFiles/LokusLib.dir/depend: src/syntax.hpp
 	cd /home/alfred/Code/Language/new_langauge/Lokus/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alfred/Code/Language/new_langauge/Lokus /home/alfred/Code/Language/new_langauge/Lokus/src /home/alfred/Code/Language/new_langauge/Lokus/build /home/alfred/Code/Language/new_langauge/Lokus/build/src /home/alfred/Code/Language/new_langauge/Lokus/build/src/CMakeFiles/LokusLib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/LokusLib.dir/depend
 

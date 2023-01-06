@@ -42,7 +42,7 @@ class NStatement : public Node {
 class NInteger : public NExpression {
 public:
 	IntValue* value;
-	NInteger(const int &value) : value(new IntValue(value)) {}
+	NInteger(const int &value) : value(new IntValue(value)) { }
 
     void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
@@ -255,6 +255,15 @@ public:
 
 	NWhileStatement(NExpression *condition, NBlock& block)
 				: condition(condition), block(block) { }
+
+	void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
+class NPrintStatement : public NStatement{
+public:
+	NExpression* expr;
+	NPrintStatement(NExpression* expr) : expr(expr) { }
 
 	void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
