@@ -58,29 +58,31 @@ extern int yydebug;
     STRING_VALUE = 259,            /* STRING_VALUE  */
     INTEGER_VALUE = 260,           /* INTEGER_VALUE  */
     FLOAT_VALUE = 261,             /* FLOAT_VALUE  */
-    BOOL_VALUE = 262,              /* BOOL_VALUE  */
-    IDENTIFIER = 263,              /* IDENTIFIER  */
-    DATA_TYPE = 264,               /* DATA_TYPE  */
-    EQ_OP = 265,                   /* EQ_OP  */
-    COMP_OP = 266,                 /* COMP_OP  */
-    ADD = 267,                     /* ADD  */
-    SUB = 268,                     /* SUB  */
-    MUL = 269,                     /* MUL  */
-    DIV = 270,                     /* DIV  */
-    EQ = 271,                      /* EQ  */
-    LPAREN = 272,                  /* LPAREN  */
-    RPAREN = 273,                  /* RPAREN  */
-    LBRACE = 274,                  /* LBRACE  */
-    RBRACE = 275,                  /* RBRACE  */
-    COMMA = 276,                   /* COMMA  */
-    DOT = 277,                     /* DOT  */
-    RETURN = 278,                  /* RETURN  */
-    EXTERN = 279,                  /* EXTERN  */
-    IF = 280,                      /* IF  */
-    ELIF = 281,                    /* ELIF  */
-    ELSE = 282,                    /* ELSE  */
-    FOR = 283,                     /* FOR  */
-    WHILE = 284                    /* WHILE  */
+    TRUE_VALUE = 262,              /* TRUE_VALUE  */
+    FALSE_VALUE = 263,             /* FALSE_VALUE  */
+    IDENTIFIER = 264,              /* IDENTIFIER  */
+    DATA_TYPE = 265,               /* DATA_TYPE  */
+    EQ_OP = 266,                   /* EQ_OP  */
+    COMP_OP = 267,                 /* COMP_OP  */
+    ADD = 268,                     /* ADD  */
+    SUB = 269,                     /* SUB  */
+    MUL = 270,                     /* MUL  */
+    DIV = 271,                     /* DIV  */
+    EQ = 272,                      /* EQ  */
+    LPAREN = 273,                  /* LPAREN  */
+    RPAREN = 274,                  /* RPAREN  */
+    LBRACE = 275,                  /* LBRACE  */
+    RBRACE = 276,                  /* RBRACE  */
+    COMMA = 277,                   /* COMMA  */
+    DOT = 278,                     /* DOT  */
+    RETURN = 279,                  /* RETURN  */
+    EXTERN = 280,                  /* EXTERN  */
+    IF = 281,                      /* IF  */
+    ELIF = 282,                    /* ELIF  */
+    ELSE = 283,                    /* ELSE  */
+    FOR = 284,                     /* FOR  */
+    WHILE = 285,                   /* WHILE  */
+    PRINT = 286                    /* PRINT  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -89,7 +91,7 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 17 "src/syntax.y"
+#line 18 "src/syntax.y"
 
 	Node *node;
 	NBlock *block;
@@ -103,7 +105,7 @@ union YYSTYPE
 	std::string *string;
 	int token;
 
-#line 107 "src/syntax.hpp"
+#line 109 "src/syntax.hpp"
 
 };
 typedef union YYSTYPE YYSTYPE;

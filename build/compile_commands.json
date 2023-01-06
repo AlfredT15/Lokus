@@ -51,13 +51,13 @@
 },
 {
   "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/src",
-  "command": "/usr/bin/clang++   -g -o CMakeFiles/LokusLib.dir/semantics.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/semantics.cpp",
-  "file": "/home/alfred/Code/Language/new_langauge/Lokus/src/semantics.cpp"
+  "command": "/usr/bin/clang++   -g -o CMakeFiles/LokusLib.dir/semantics.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/build/src/semantics.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/build/src/semantics.cpp"
 },
 {
   "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/src",
-  "command": "/usr/bin/clang++   -g -o CMakeFiles/LokusLib.dir/syntax.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp",
-  "file": "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+  "command": "/usr/bin/clang++   -g -o CMakeFiles/LokusLib.dir/syntax.cpp.o -c /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.cpp",
+  "file": "/home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.cpp"
 },
 {
   "directory": "/home/alfred/Code/Language/new_langauge/Lokus/build/src",

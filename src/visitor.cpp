@@ -18,6 +18,10 @@ void PrintVisitor::VisitNBool(const NBool *element) const
 {
     printf("bool: %d \n", element->value->value);
 }
+void PrintVisitor::VisitNString(const NString *element) const
+{
+    printf("string: %s \n", element->value->value.c_str());
+}
 void PrintVisitor::VisitNIdentifier(const NIdentifier *element) const
 {
     printf("identifier: %s \n", element->value->value.c_str());
@@ -102,6 +106,12 @@ void PrintVisitor::VisitNWhileStatement(const NWhileStatement *element) const
     element->block.Accept(this);
 }
 
+void PrintVisitor::VisitNPrintStatement(const NPrintStatement *element) const
+{
+    printf("Printing: ");
+    element->expr->Accept(this);
+}
+
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // InterpretVisitor
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -119,6 +129,11 @@ const Value* InterpretVisitor::VisitNDouble(const NDouble *element, Context* con
 const Value* InterpretVisitor::VisitNBool(const NBool *element, Context* context) const
 {
     // Returns an BoolValue object
+    return element->value;
+}
+const Value* InterpretVisitor::VisitNString(const NString *element, Context* context) const
+{
+    // Returns an StringValue object
     return element->value;
 }
 const Value* InterpretVisitor::VisitNIdentifier(const NIdentifier *element, Context* context) const
@@ -148,7 +163,18 @@ const Value* InterpretVisitor::VisitNMethodCall(const NMethodCall *element, Cont
     ValueVec arg_vals;
     for (NExpression* expr : element->arguments)
     {
-        arg_vals.push_back(expr->Accept(this, context));
+        const IdentifierValue* arg_id = dynamic_cast<const IdentifierValue*>(expr->Accept(this, context));
+        if (arg_id)
+        {
+            const Value* val = context->find_value(arg_id->value);
+            if (val->get_isError())
+                return val;
+            arg_vals.push_back(val);
+        }
+        else
+        {
+            arg_vals.push_back(expr->Accept(this, context));
+        }
     }
 
     // Checks the number of argument values provided compared to the amount expected
@@ -193,15 +219,23 @@ const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *eleme
     {
         lhs_val = context->find_value(lhs_id->value);
         if (lhs_val->get_isError())
-            return rhs_val;
+            return lhs_val;
+        // lhs_id = dynamic_cast<const IdentifierValue*>(lhs_val);
     }
     if (rhs_id)
     {
         rhs_val = context->find_value(rhs_id->value);
         if (rhs_val->get_isError())
             return rhs_val;
+        // rhs_id = dynamic_cast<const IdentifierValue*>(rhs_val);
     }
 
+    DataType test = lhs_val->get_type();
+    DataType test2 = rhs_val->get_type();
+    const IdentifierValue* test_lhs = dynamic_cast<const IdentifierValue*>(lhs_val);
+    const IdentifierValue* test_rhs = dynamic_cast<const IdentifierValue*>(rhs_val);
+    const IntValue* test_lhs2 = dynamic_cast<const IntValue*>(lhs_val);
+    const IntValue* test_rhs2 = dynamic_cast<const IntValue*>(rhs_val);
     // Perform the associated operation
     switch (op_val->value)
     {
@@ -251,7 +285,7 @@ const Value* InterpretVisitor::VisitNAssignment(const NAssignment *element, Cont
     if (!variable_set)
         return new ErrorValue(lhs_id->value + " does not exist in this scope");
     
-    // return the variable assigned?
+    // return the variable assigned
     return lhs_id;
 }
 const Value* InterpretVisitor::VisitNBlock(const NBlock *element, Context* context) const
@@ -296,6 +330,29 @@ const Value* InterpretVisitor::VisitNVariableDeclaration(const NVariableDeclarat
 
     // Declare a Value
     const Value* val;
+    switch (id->get_type())
+    {
+    case DataType::INT_DTYPE:
+        val = new IntValue();
+        break;
+    case DataType::FLOAT_DTYPE:
+        val = new DoubleValue();
+        break;
+    case DataType::STRING_DTYPE:
+        val = new StringValue();
+        break;
+    case DataType::BOOL_DTYPE:
+        val = new BoolValue();
+        break;
+    case DataType::LIST_DTYPE:
+        val = new ListValue();
+        break;
+    default:
+        val = new VoidValue();
+        break;
+    }
+    
+    
 
     // If the declaration included a value to be assigned to the identifier
     if (element->assignmentExpr)
@@ -435,4 +492,16 @@ const Value* InterpretVisitor::VisitNWhileStatement(const NWhileStatement *eleme
         condition = dynamic_cast<const BoolValue*>(element->condition->Accept(this, context));
     }
     return new ListValue(result);
+}
+const Value* InterpretVisitor::VisitNPrintStatement(const NPrintStatement* element, Context* context) const
+{
+    const Value* element_val = (const Value*) element->expr->Accept(this,context);
+    const IdentifierValue* element_id = dynamic_cast<const IdentifierValue*>(element_val);
+    if (element_id)
+    {
+        element_val = context->find_value(element_id->value);
+        if (element_val->get_isError())
+                return element_val;
+    }
+    return new PrintValue(element_val);
 }

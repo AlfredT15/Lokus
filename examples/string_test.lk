@@ -1,0 +1,4 @@
+
+string temp = "Hello "
+string temp2 = "World"
+print(temp + temp2)

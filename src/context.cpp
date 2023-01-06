@@ -14,7 +14,13 @@ const Value* Context::find_value(const std::string& name)
 
 bool Context::set_value(const IdentifierValue* ident_val, const Value* val)
 {
-    if (this->sym_table.find(ident_val->value) == this->sym_table.end())
+    if (this->parent)
+    {
+        bool result = this->parent->set_value(ident_val, val);
+        if (result)
+            return result;
+    }
+    else if (this->sym_table.find(ident_val->value) == this->sym_table.end())
     {
         this->sym_table[ident_val->value] = val;
         return true;

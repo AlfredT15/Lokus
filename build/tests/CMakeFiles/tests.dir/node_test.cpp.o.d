@@ -304,8 +304,46 @@ tests/CMakeFiles/tests.dir/node_test.cpp.o: \
   /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/include/gtest/gtest-typed-test.h \
   /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/include/gtest/gtest_pred_impl.h \
   /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/include/gtest/gtest_prod.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/gmock.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/gmock-actions.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/algorithm \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algo.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/algorithmfwd.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_heap.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/uniform_int_dist.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/internal/gmock-internal-utils.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/internal/gmock-port.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-port.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/internal/gmock-pp.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/gmock-cardinalities.h \
+  /usr/lib/llvm-14/lib/clang/14.0.0/include/limits.h \
+  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/gmock-function-mocker.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/gmock-spec-builders.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/gmock-matchers.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cmath \
+  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-matchers.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/gmock-more-actions.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-generated-actions.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/gmock-more-matchers.h \
+  /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/gmock-nice-strict.h \
   /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/value.hpp \
   /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/context.hpp \
   /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/enum.hpp \
   /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/node.hpp \
-  /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/visitor.hpp
+  /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/visitor.hpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/tests/matchers.h

@@ -42,7 +42,7 @@ class NStatement : public Node {
 class NInteger : public NExpression {
 public:
 	IntValue* value;
-	NInteger(const int &value) : value(new IntValue(value)) {}
+	NInteger(const int &value) : value(new IntValue(value)) { }
 
     void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
@@ -83,6 +83,7 @@ public:
     void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
+
 class NIdentifier : public NExpression {
 public:
 	IdentifierValue* value;
@@ -233,13 +234,15 @@ public:
 
 class NForStatement : public NStatement{
 public:
-	Node *counter;
+	NStatement *counter;
 	NExpression *condition;
 	NExpression *change;
 	NBlock& block;
 
-	NForStatement(Node *counter, NExpression *condition, NExpression *change, NBlock& block)
+	NForStatement(NStatement *counter, NExpression *condition, NExpression *change, NBlock& block)
 				: counter(counter), condition(condition), change(change), block(block) { }
+	NForStatement(NExpression *counter, NExpression *condition, NExpression *change, NBlock& block)
+				: counter(new NExpressionStatement(*counter)), condition(condition), change(change), block(block) { }
 
 	void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
@@ -252,6 +255,15 @@ public:
 
 	NWhileStatement(NExpression *condition, NBlock& block)
 				: condition(condition), block(block) { }
+
+	void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
+class NPrintStatement : public NStatement{
+public:
+	NExpression* expr;
+	NPrintStatement(NExpression* expr) : expr(expr) { }
 
 	void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;

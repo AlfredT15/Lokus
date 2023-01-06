@@ -9,6 +9,7 @@
 class NInteger;
 class NDouble;
 class NBool;
+class NString;
 class NIdentifier;
 class NOperator;
 class NMethodCall;
@@ -23,6 +24,7 @@ class NFunctionDeclaration;
 class NIfStatement;
 class NForStatement;
 class NWhileStatement;
+class NPrintStatement;
 
 class Value;
 class Context;
@@ -40,6 +42,7 @@ class VisitorType : public Visitor
         virtual const Value* VisitNInteger(const NInteger *element, Context* context) const = 0;
         virtual const Value* VisitNDouble(const NDouble *element, Context* context) const = 0;
         virtual const Value* VisitNBool(const NBool *element, Context* context) const = 0;
+        virtual const Value* VisitNString(const NString *element, Context* context) const = 0;
         virtual const Value* VisitNIdentifier(const NIdentifier *element, Context* context) const = 0;
         virtual const Value* VisitNOperator(const NOperator *element, Context* context) const = 0;
         virtual const Value* VisitNMethodCall(const NMethodCall *element, Context* context) const = 0;
@@ -54,6 +57,7 @@ class VisitorType : public Visitor
         virtual const Value* VisitNIfStatement(const NIfStatement *element, Context* context) const = 0;
         virtual const Value* VisitNForStatement(const NForStatement *element, Context* context) const = 0;
         virtual const Value* VisitNWhileStatement(const NWhileStatement *element, Context* context) const = 0;
+        virtual const Value* VisitNPrintStatement(const NPrintStatement *element, Context* context) const = 0;
 };
 
 class VisitorVoid : public Visitor
@@ -63,6 +67,7 @@ class VisitorVoid : public Visitor
         virtual void VisitNInteger(const NInteger *element) const = 0;
         virtual void VisitNDouble(const NDouble *element) const = 0;
         virtual void VisitNBool(const NBool *element) const = 0;
+        virtual void VisitNString(const NString *element) const = 0;
         virtual void VisitNIdentifier(const NIdentifier *element) const = 0;
         virtual void VisitNOperator(const NOperator *element) const = 0;
         virtual void VisitNMethodCall(const NMethodCall *element) const = 0;
@@ -77,6 +82,7 @@ class VisitorVoid : public Visitor
         virtual void VisitNIfStatement(const NIfStatement *element) const = 0;
         virtual void VisitNForStatement(const NForStatement *element) const = 0;
         virtual void VisitNWhileStatement(const NWhileStatement *element) const = 0;
+        virtual void VisitNPrintStatement(const NPrintStatement *element) const = 0;
 };
 
 class PrintVisitor: public VisitorVoid
@@ -85,6 +91,7 @@ class PrintVisitor: public VisitorVoid
         void VisitNInteger(const NInteger *element) const override;
         void VisitNDouble(const NDouble *element) const override;
         void VisitNBool(const NBool *element) const override;
+        void VisitNString(const NString *element) const override;
         void VisitNIdentifier(const NIdentifier *element) const override;
         void VisitNOperator(const NOperator *element) const override;
         void VisitNMethodCall(const NMethodCall *element) const override;
@@ -99,6 +106,7 @@ class PrintVisitor: public VisitorVoid
         void VisitNIfStatement(const NIfStatement *element) const override;
         void VisitNForStatement(const NForStatement *element) const override;
         void VisitNWhileStatement(const NWhileStatement *element) const override;
+        void VisitNPrintStatement(const NPrintStatement *element) const override;
 };
 
 class InterpretVisitor: public VisitorType
@@ -107,6 +115,7 @@ class InterpretVisitor: public VisitorType
         const Value* VisitNInteger(const NInteger *element, Context* context) const override;
         const Value* VisitNDouble(const NDouble *element, Context* context) const override;
         const Value* VisitNBool(const NBool *element, Context* context) const override;
+        const Value* VisitNString(const NString *element, Context* context) const override;
         const Value* VisitNIdentifier(const NIdentifier *element, Context* context) const override;
         const Value* VisitNOperator(const NOperator *element, Context* context) const override;
         const Value* VisitNMethodCall(const NMethodCall *element, Context* context) const override;
@@ -121,6 +130,7 @@ class InterpretVisitor: public VisitorType
         const Value* VisitNIfStatement(const NIfStatement *element, Context* context) const override;
         const Value* VisitNForStatement(const NForStatement *element, Context* context) const override;
         const Value* VisitNWhileStatement(const NWhileStatement *element, Context* context) const override;
+        const Value* VisitNPrintStatement(const NPrintStatement *element, Context* context) const override;
 };
 
 

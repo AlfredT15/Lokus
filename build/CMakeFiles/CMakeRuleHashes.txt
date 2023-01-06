@@ -27,3 +27,5 @@ c080cec385d3d84b91d587fb063a3505 CMakeFiles/NightlyConfigure
 ae645f9ea1c6cfb4c48c900034703f04 CMakeFiles/NightlySubmit
 a16b6a5d6448ba6b260f1fccb766fe89 CMakeFiles/NightlyTest
 e0cf68f053de66ab17b47998a581d9c0 CMakeFiles/NightlyUpdate
+a89f5a157ede6ae95abd300097da7769 src/semantics.cpp
+61b722631f5879e6663017784b4ec190 src/syntax.cpp

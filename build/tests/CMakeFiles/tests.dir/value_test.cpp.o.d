@@ -344,4 +344,7 @@ tests/CMakeFiles/tests.dir/value_test.cpp.o: \
   /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googlemock/include/gmock/gmock-nice-strict.h \
   /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/value.hpp \
   /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/context.hpp \
-  /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/enum.hpp
+  /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/enum.hpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/node.hpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/tests/../include/visitor.hpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/tests/matchers.h

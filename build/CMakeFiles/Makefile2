@@ -926,7 +926,7 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=10,11 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=12,13 "Built target gmock"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -953,7 +953,7 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletes
 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=12,13 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=14,15 "Built target gmock_main"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -979,7 +979,7 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=14,15 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=16,17 "Built target gtest"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1005,7 +1005,7 @@ _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=16,17 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=18,19 "Built target gtest_main"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1034,12 +1034,12 @@ tests/CMakeFiles/tests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gte
 tests/CMakeFiles/tests.dir/all: src/CMakeFiles/LokusLib.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=18,19,20,21,22 "Built target tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=20,21,22,23,24 "Built target tests"
 .PHONY : tests/CMakeFiles/tests.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles 0
 .PHONY : tests/CMakeFiles/tests.dir/rule
@@ -1060,12 +1060,12 @@ tests/CMakeFiles/tests.dir/clean:
 src/CMakeFiles/LokusLib.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/LokusLib.dir/build.make src/CMakeFiles/LokusLib.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/LokusLib.dir/build.make src/CMakeFiles/LokusLib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=3,4,5,6,7,8,9 "Built target LokusLib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11 "Built target LokusLib"
 .PHONY : src/CMakeFiles/LokusLib.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/LokusLib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/LokusLib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/LokusLib.dir/rule
@@ -1091,7 +1091,7 @@ src/CMakeFiles/Lokus.dir/all: src/CMakeFiles/LokusLib.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/Lokus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/Lokus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alfred/Code/Language/new_langauge/Lokus/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/Lokus.dir/rule

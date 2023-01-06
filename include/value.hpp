@@ -124,6 +124,7 @@ public:
     const bool isError = false;
     const DataType type = DataType::INT_DTYPE;
 
+    IntValue() {}
     IntValue(const int &value) : value(value) { }
 
     // Arithmetic
@@ -152,6 +153,7 @@ public:
     const bool isError = false;
     const DataType type = DataType::FLOAT_DTYPE;
 
+    DoubleValue() {}
     DoubleValue(const double &value) : value(value) { }
 
     // Arithmetic
@@ -180,6 +182,7 @@ public:
     const bool isError = false;
     const DataType type = DataType::BOOL_DTYPE;
 
+    BoolValue() {}
     BoolValue(const bool &value) : value(value) { }
 
     // Arithmetic
@@ -216,7 +219,14 @@ public:
     const bool isError = false;
     const DataType type = DataType::STRING_DTYPE;
 
-    StringValue(const std::string &value) : value(value) { }
+    StringValue() {}
+    StringValue(const std::string &value) 
+    { 
+        if (value[0] == '"' && value[value.size()-1] == '"')
+            this->value = value.substr(1,value.size()-2);
+        else
+            this->value = value;
+    }
 
     // Arithmetic
     const Value* added_to(const Value* other) const override;
@@ -252,6 +262,7 @@ private:
 	{"char", DataType::CHAR_DTYPE},
 	{"bool", DataType::BOOL_DTYPE},
 	{"void", DataType::VOID_DTYPE},
+    {"list", DataType::LIST_DTYPE}
 	};
 public:
     // Data
@@ -338,6 +349,7 @@ public:
     const bool isError = false;
     const DataType type = DataType::LIST_DTYPE;
 
+    ListValue() {}
     ListValue(ValueVec &value) : value(value) { }
     // Arithmetic
     const Value* added_to(const Value* other) const override;
@@ -433,6 +445,45 @@ class ReturnValue : public Value
             {return new ErrorValue("Less than or equal to operator not implemented for a return value");};
         const Value* greater_than_or_equal_to(const Value* other) const override
             {return new ErrorValue("Greater than or equal to operator not implemented for a return value");};
+        // Internal
+        const void* get_value() const override
+            {return this->value;};
+        const bool get_isError() const override
+            {return this->isError;};
+        const DataType& get_type() const override
+            {return this->type;};
+};
+
+class PrintValue : public Value
+{
+    public:
+        const bool isError = false;
+        const Value* value;
+        const DataType type;
+        PrintValue(const Value* value): value(value), type(value->get_type()) {}
+
+         // Arithmetic
+        const Value* added_to(const Value* other) const override
+            {return new ErrorValue("Addition operator not implemented for a print value");};
+        const Value* subbed_by(const Value* other) const override
+            {return new ErrorValue("Subtraction operator not implemented for a print value");};
+        const Value* multiplied_by(const Value* other) const override
+            {return new ErrorValue("Multiplication operator not implemented for a print value");};
+        const Value* divided_by(const Value* other) const override
+            {return new ErrorValue("Division operator not implemented for a print value");};
+        // Comparison
+        const Value* equal_to(const Value* other) const override
+            {return new ErrorValue("Equality operator not implemented for a print value");};
+        const Value* not_equal_to(const Value* other) const override
+            {return new ErrorValue("Not Equal operator not implemented for a print value");};
+        const Value* less_than(const Value* other) const override
+            {return new ErrorValue("Less than operator not implemented for a print value");};
+        const Value* greater_than(const Value* other) const override
+            {return new ErrorValue("Greater than operator not implemented for a print value");};
+        const Value* less_than_or_equal_to(const Value* other) const override
+            {return new ErrorValue("Less than or equal to operator not implemented for a print value");};
+        const Value* greater_than_or_equal_to(const Value* other) const override
+            {return new ErrorValue("Greater than or equal to operator not implemented for a print value");};
         // Internal
         const void* get_value() const override
             {return this->value;};

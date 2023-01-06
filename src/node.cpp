@@ -16,6 +16,10 @@ void NBool::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNBool(this);
 };
+void NString::Accept(const VisitorVoid *visitor) const
+{
+    visitor->VisitNString(this);
+};
 void NIdentifier::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNIdentifier(this);
@@ -72,6 +76,10 @@ void NWhileStatement::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNWhileStatement(this);
 };
+void NPrintStatement::Accept(const VisitorVoid *visitor) const
+{
+    visitor->VisitNPrintStatement(this);
+};
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // VisitorType Methods
@@ -87,6 +95,10 @@ const Value* NDouble::Accept(const VisitorType *visitor, Context *context) const
 const Value* NBool::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNBool(this, context);
+};
+const Value* NString::Accept(const VisitorType *visitor, Context *context) const
+{
+    return visitor->VisitNString(this, context);
 };
 const Value* NIdentifier::Accept(const VisitorType *visitor, Context *context) const
 {
@@ -143,4 +155,8 @@ const Value* NForStatement::Accept(const VisitorType *visitor, Context *context)
 const Value* NWhileStatement::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNWhileStatement(this, context);
+};
+const Value* NPrintStatement::Accept(const VisitorType *visitor, Context *context) const
+{
+    return visitor->VisitNPrintStatement(this, context);
 };
