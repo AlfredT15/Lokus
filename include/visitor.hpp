@@ -8,6 +8,7 @@
 // node.hpp
 class NInteger;
 class NDouble;
+class NList;
 class NBool;
 class NString;
 class NIdentifier;
@@ -15,7 +16,9 @@ class NOperator;
 class NMethodCall;
 class NBinaryOperator;
 class NAssignment;
+class NListAssignment;
 class NBlock;
+class NListAccess;
 class NExpressionStatement;
 class NReturnStatement;
 class NVariableDeclaration;
@@ -25,6 +28,7 @@ class NIfStatement;
 class NForStatement;
 class NWhileStatement;
 class NPrintStatement;
+class NLength;
 
 class Value;
 class Context;
@@ -41,6 +45,7 @@ class VisitorType : public Visitor
         virtual ~VisitorType() {}
         virtual const Value* VisitNInteger(const NInteger *element, Context* context) const = 0;
         virtual const Value* VisitNDouble(const NDouble *element, Context* context) const = 0;
+        virtual const Value* VisitNList(const NList *element, Context* context) const = 0;
         virtual const Value* VisitNBool(const NBool *element, Context* context) const = 0;
         virtual const Value* VisitNString(const NString *element, Context* context) const = 0;
         virtual const Value* VisitNIdentifier(const NIdentifier *element, Context* context) const = 0;
@@ -48,7 +53,9 @@ class VisitorType : public Visitor
         virtual const Value* VisitNMethodCall(const NMethodCall *element, Context* context) const = 0;
         virtual const Value* VisitNBinaryOperator(const NBinaryOperator *element, Context* context) const = 0;
         virtual const Value* VisitNAssignment(const NAssignment *element, Context* context) const = 0;
+        virtual const Value* VisitNListAssignment(const NListAssignment *element, Context* context) const = 0;
         virtual const Value* VisitNBlock(const NBlock *element, Context* context) const = 0;
+        virtual const Value* VisitNListAccess(const NListAccess *element, Context* context) const = 0;
         virtual const Value* VisitNExpressionStatement(const NExpressionStatement *element, Context* context) const = 0;
         virtual const Value* VisitNReturnStatement(const NReturnStatement *element, Context* context) const = 0;
         virtual const Value* VisitNVariableDeclaration(const NVariableDeclaration *element, Context* context) const = 0;
@@ -58,6 +65,7 @@ class VisitorType : public Visitor
         virtual const Value* VisitNForStatement(const NForStatement *element, Context* context) const = 0;
         virtual const Value* VisitNWhileStatement(const NWhileStatement *element, Context* context) const = 0;
         virtual const Value* VisitNPrintStatement(const NPrintStatement *element, Context* context) const = 0;
+        virtual const Value* VisitNLength(const NLength *element, Context* context) const = 0;
 };
 
 class VisitorVoid : public Visitor
@@ -66,6 +74,7 @@ class VisitorVoid : public Visitor
         virtual ~VisitorVoid() {}
         virtual void VisitNInteger(const NInteger *element) const = 0;
         virtual void VisitNDouble(const NDouble *element) const = 0;
+        virtual void VisitNList(const NList *element) const = 0;
         virtual void VisitNBool(const NBool *element) const = 0;
         virtual void VisitNString(const NString *element) const = 0;
         virtual void VisitNIdentifier(const NIdentifier *element) const = 0;
@@ -73,7 +82,9 @@ class VisitorVoid : public Visitor
         virtual void VisitNMethodCall(const NMethodCall *element) const = 0;
         virtual void VisitNBinaryOperator(const NBinaryOperator *element) const = 0;
         virtual void VisitNAssignment(const NAssignment *element) const = 0;
+        virtual void VisitNListAssignment(const NListAssignment *element) const = 0;
         virtual void VisitNBlock(const NBlock *element) const = 0;
+        virtual void VisitNListAccess(const NListAccess *element) const = 0;
         virtual void VisitNExpressionStatement(const NExpressionStatement *element) const = 0;
         virtual void VisitNReturnStatement(const NReturnStatement *element) const = 0;
         virtual void VisitNVariableDeclaration(const NVariableDeclaration *element) const = 0;
@@ -83,6 +94,7 @@ class VisitorVoid : public Visitor
         virtual void VisitNForStatement(const NForStatement *element) const = 0;
         virtual void VisitNWhileStatement(const NWhileStatement *element) const = 0;
         virtual void VisitNPrintStatement(const NPrintStatement *element) const = 0;
+        virtual void VisitNLength(const NLength *element) const = 0;
 };
 
 class PrintVisitor: public VisitorVoid
@@ -90,6 +102,7 @@ class PrintVisitor: public VisitorVoid
     public:
         void VisitNInteger(const NInteger *element) const override;
         void VisitNDouble(const NDouble *element) const override;
+        void VisitNList(const NList *element) const override;
         void VisitNBool(const NBool *element) const override;
         void VisitNString(const NString *element) const override;
         void VisitNIdentifier(const NIdentifier *element) const override;
@@ -97,7 +110,9 @@ class PrintVisitor: public VisitorVoid
         void VisitNMethodCall(const NMethodCall *element) const override;
         void VisitNBinaryOperator(const NBinaryOperator *element) const override;
         void VisitNAssignment(const NAssignment *element) const override;
+        void VisitNListAssignment(const NListAssignment *element) const override;
         void VisitNBlock(const NBlock *element) const override;
+        void VisitNListAccess(const NListAccess *element) const override;
         void VisitNExpressionStatement(const NExpressionStatement *element) const override;
         void VisitNReturnStatement(const NReturnStatement *element) const override;
         void VisitNVariableDeclaration(const NVariableDeclaration *element) const override;
@@ -107,13 +122,17 @@ class PrintVisitor: public VisitorVoid
         void VisitNForStatement(const NForStatement *element) const override;
         void VisitNWhileStatement(const NWhileStatement *element) const override;
         void VisitNPrintStatement(const NPrintStatement *element) const override;
+        void VisitNLength(const NLength *element) const override;
 };
 
 class InterpretVisitor: public VisitorType
 {
+    private:
+        ValueVec setValueVec(ValueVec val, ValueVec idx_list, int idx, const Value* rhs) const;
     public:
         const Value* VisitNInteger(const NInteger *element, Context* context) const override;
         const Value* VisitNDouble(const NDouble *element, Context* context) const override;
+        const Value* VisitNList(const NList *element, Context* context) const override;
         const Value* VisitNBool(const NBool *element, Context* context) const override;
         const Value* VisitNString(const NString *element, Context* context) const override;
         const Value* VisitNIdentifier(const NIdentifier *element, Context* context) const override;
@@ -121,7 +140,9 @@ class InterpretVisitor: public VisitorType
         const Value* VisitNMethodCall(const NMethodCall *element, Context* context) const override;
         const Value* VisitNBinaryOperator(const NBinaryOperator *element, Context* context) const override;
         const Value* VisitNAssignment(const NAssignment *element, Context* context) const override;
+        const Value* VisitNListAssignment(const NListAssignment *element, Context* context) const override;
         const Value* VisitNBlock(const NBlock *element, Context* context) const override;
+        const Value* VisitNListAccess(const NListAccess *element, Context* context) const override;
         const Value* VisitNExpressionStatement(const NExpressionStatement *element, Context* context) const override;
         const Value* VisitNReturnStatement(const NReturnStatement *element, Context* context) const override;
         const Value* VisitNVariableDeclaration(const NVariableDeclaration *element, Context* context) const override;
@@ -131,6 +152,7 @@ class InterpretVisitor: public VisitorType
         const Value* VisitNForStatement(const NForStatement *element, Context* context) const override;
         const Value* VisitNWhileStatement(const NWhileStatement *element, Context* context) const override;
         const Value* VisitNPrintStatement(const NPrintStatement *element, Context* context) const override;
+        const Value* VisitNLength(const NLength *element, Context* context) const override;
 };
 
 

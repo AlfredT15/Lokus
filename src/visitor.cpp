@@ -14,6 +14,33 @@ void PrintVisitor::VisitNDouble(const NDouble *element) const
 {
     printf("float: %f \n", element->value->value);
 }
+void PrintVisitor::VisitNList(const NList *element) const
+{
+    // for (const Value* val : element->value->value)
+    // {
+    //     const ListValue* Lval = dynamic_cast<const ListValue*>(val);
+    //     if (Lval)
+    //         this->VisitNList(new NList((ValueVec&)Lval->value));
+    //     const DoubleValue* Dval = dynamic_cast<const DoubleValue*>(val);
+    //     if (Dval)
+    //         printf("float: %f \n", Dval->value);
+    //     const IntValue* Ival = dynamic_cast<const IntValue*>(val);
+    //     if (Ival)
+    //         printf("int: %d \n", Ival->value);
+    //     const BoolValue* Bval = dynamic_cast<const BoolValue*>(val);
+    //     if (Bval)
+    //         printf("bool: %d \n", Bval->value);
+    //     const StringValue* Sval = dynamic_cast<const StringValue*>(val);
+    //     if (Sval)
+    //         printf("string: %s \n", Sval->value.c_str());
+    //     const IdentifierValue* IdVal = dynamic_cast<const IdentifierValue*>(val);
+    //     if (IdVal)
+    //         printf("identifier: %s \n", IdVal->value.c_str());
+    //     const OperatorValue* Oval = dynamic_cast<const OperatorValue*>(val);
+    //     if (Oval)
+    //         printf("operation: %d \n", Oval->value);
+    // }
+}
 void PrintVisitor::VisitNBool(const NBool *element) const
 {
     printf("bool: %d \n", element->value->value);
@@ -50,12 +77,20 @@ void PrintVisitor::VisitNAssignment(const NAssignment *element) const
     printf(" = ");
     element->rhs.Accept(this); 
 }
+void PrintVisitor::VisitNListAssignment(const NListAssignment *element) const
+{
+
+}
 void PrintVisitor::VisitNBlock(const NBlock *element) const
 {
     for (NStatement* stmnt : element->statements)
     {
         stmnt->Accept(this);
     }
+}
+void PrintVisitor::VisitNListAccess(const NListAccess *element) const
+{
+
 }
 void PrintVisitor::VisitNExpressionStatement(const NExpressionStatement *element) const
 {
@@ -105,11 +140,14 @@ void PrintVisitor::VisitNWhileStatement(const NWhileStatement *element) const
     element->condition->Accept(this);
     element->block.Accept(this);
 }
-
 void PrintVisitor::VisitNPrintStatement(const NPrintStatement *element) const
 {
     printf("Printing: ");
     element->expr->Accept(this);
+}
+void PrintVisitor::VisitNLength(const NLength *element) const
+{
+
 }
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -125,6 +163,29 @@ const Value* InterpretVisitor::VisitNDouble(const NDouble *element, Context* con
 {
     // Returns an DoubleValue object
     return element->value;
+}
+const Value* InterpretVisitor::VisitNList(const NList *element, Context* context) const
+{
+    ValueVec arg_vals;
+    // Returns an ListValue object
+    for (NExpression* expr : element->value)
+    {
+        const Value* arg = expr->Accept(this, context);
+        const IdentifierValue* arg_id = dynamic_cast<const IdentifierValue*>(arg);
+        if (arg_id)
+        {
+            const Value* val = context->find_value(arg_id->value);
+            if (val->get_isError())
+                return val;
+            arg_vals.push_back(val);
+        }
+        else
+        {
+            arg_vals.push_back(arg);
+        }
+    }
+
+    return new ListValue(arg_vals);
 }
 const Value* InterpretVisitor::VisitNBool(const NBool *element, Context* context) const
 {
@@ -164,7 +225,6 @@ const Value* InterpretVisitor::VisitNMethodCall(const NMethodCall *element, Cont
     for (NExpression* expr : element->arguments)
     {
         const Value* arg = expr->Accept(this, context);
-        int test = *((int*)arg->get_value());
         const IdentifierValue* arg_id = dynamic_cast<const IdentifierValue*>(arg);
         if (arg_id)
         {
@@ -254,6 +314,8 @@ const Value* InterpretVisitor::VisitNBinaryOperator(const NBinaryOperator *eleme
         return lhs_val->multiplied_by(rhs_val);
     case OperationType::DIV_TYPE:
         return lhs_val->divided_by(rhs_val);
+    case OperationType::MOD_TYPE:
+        return lhs_val->modded_by(rhs_val);
     case OperationType::AND_TYPE:
         return lhs_val->anded_by(rhs_val);
     case OperationType::OR_TYPE:
@@ -299,6 +361,74 @@ const Value* InterpretVisitor::VisitNAssignment(const NAssignment *element, Cont
     // return the variable assigned
     return lhs_id;
 }
+ValueVec InterpretVisitor::setValueVec(ValueVec val, ValueVec idx_list, int idx, const Value* rhs) const
+{
+    const IntValue* int_val = dynamic_cast<const IntValue*>(idx_list[idx]);
+    int idx_val = *(int*)int_val->get_value();
+    if (idx_val >= val.size())
+        return ValueVec{new ErrorValue("Index out of bounds")};
+    const ListValue* return_list = dynamic_cast<const ListValue*>(val[idx_val]);
+    if (return_list)
+    {
+        ValueVec temp = this->setValueVec(return_list->value, idx_list, idx+1, rhs);
+        val[idx_val] = new ListValue(temp);
+    }
+    else
+    {
+        val[idx_val] = rhs;
+    }
+    
+    return val;
+}
+const Value* InterpretVisitor::VisitNListAssignment(const NListAssignment *element, Context* context) const
+{
+    // Get the identifier for the left hand side
+    const IdentifierValue* lhs_id = dynamic_cast<const IdentifierValue*>(element->lhs.Accept(this, context));
+    const Value* lhs_val;
+    if (lhs_id)
+    {
+        lhs_val = context->find_value(lhs_id->value);
+        if (lhs_val->get_isError())
+            return lhs_val;
+    }
+
+    // Get the value for the right hand side and check errors
+    const Value* rhs_val = element->rhs.Accept(this, context);
+    if (rhs_val->get_isError())
+        return rhs_val;
+
+    // Check to see if the rhs is an identifier and get it's value
+    const IdentifierValue* rhs_id = dynamic_cast<const IdentifierValue*>(rhs_val);
+    if (rhs_id)
+    {
+        rhs_val = context->find_value(rhs_id->value);
+        if (rhs_val->get_isError())
+            return rhs_val;
+    }
+
+    
+
+    ValueVec idx_list;
+    for (NInteger* val : element->index)
+    {
+        const IntValue* idx = dynamic_cast<const IntValue*>(val->Accept(this, context));
+        if (!idx)
+            return idx;
+        idx_list.push_back(idx);
+    }
+    
+    const ListValue* list_val = dynamic_cast<const ListValue*>(lhs_val);
+    if (!list_val)
+        return new ErrorValue("Tried to access " + lhs_id->value + " as a list when it is not");
+    
+    ValueVec return_val = list_val->value;
+
+    ValueVec temp = this->setValueVec(list_val->value, idx_list, 0, rhs_val);
+    context->set_value(lhs_id, new ListValue(temp));
+    
+    // return the variable assigned
+    return lhs_id;
+}
 const Value* InterpretVisitor::VisitNBlock(const NBlock *element, Context* context) const
 {
     ValueVec value;
@@ -320,6 +450,47 @@ const Value* InterpretVisitor::VisitNBlock(const NBlock *element, Context* conte
     if (value.size() == 1)
         return value[0];
     return new ListValue(value);
+}
+const Value* InterpretVisitor::VisitNListAccess(const NListAccess *element, Context* context) const
+{
+    ValueVec idx_list;
+    for (NInteger* val : element->index)
+    {
+        const IntValue* idx = dynamic_cast<const IntValue*>(val->Accept(this, context));
+        if (!idx)
+            return idx;
+        idx_list.push_back(idx);
+    }
+    const IdentifierValue* id = dynamic_cast<const IdentifierValue*>(element->id.Accept(this, context));
+    const Value* val = context->find_value(id->value);
+    if (val->get_isError())
+        return val;
+    const ListValue* list_val = dynamic_cast<const ListValue*>(val);
+    if (!list_val)
+        return new ErrorValue("Tried to access " + id->value + " as a list when it is not");
+    
+    const Value* return_val;
+    for (int i = 0; i < idx_list.size(); i++)
+    {
+        const IntValue* int_val = dynamic_cast<const IntValue*>(idx_list[i]);
+        int idx_val = *(int*)int_val->get_value();
+        if (idx_val >= list_val->value.size())
+            return new ErrorValue("Index out of bounds");
+        return_val = list_val->value[idx_val];
+        const ListValue* return_list = dynamic_cast<const ListValue*>(return_val);
+        if (return_list)
+        {
+            list_val = return_list;
+        }
+        else if (i != idx_list.size() - 1)
+        {
+            return new ErrorValue(id->value + " is a " + std::to_string(i+1) + 
+                                    " dimensional array and you tried to access it like a " + 
+                                    std::to_string(idx_list.size()) +  " dimensional array");
+        }
+    }
+
+    return return_val;
 }
 const Value* InterpretVisitor::VisitNExpressionStatement(const NExpressionStatement *element, Context* context) const
 {
@@ -520,4 +691,22 @@ const Value* InterpretVisitor::VisitNPrintStatement(const NPrintStatement* eleme
                 return element_val;
     }
     return new PrintValue(element_val);
+}
+const Value* InterpretVisitor::VisitNLength(const NLength* element, Context* context) const
+{
+    const Value* element_val = (const Value*) element->expr->Accept(this,context);
+    const IdentifierValue* element_id = dynamic_cast<const IdentifierValue*>(element_val);
+    if (element_id)
+    {
+        element_val = context->find_value(element_id->value);
+        if (element_val->get_isError())
+                return element_val;
+    }
+    const StringValue* str_val = dynamic_cast<const StringValue*>(element_val);
+    if (str_val)
+        return new IntValue(str_val->value.size());
+    const ListValue* list_val = dynamic_cast<const ListValue*>(element_val);
+    if (list_val)
+        return new IntValue(list_val->value.size());
+    return new ErrorValue("Cannot get length of expression");
 }

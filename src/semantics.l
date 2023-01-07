@@ -20,6 +20,7 @@ linefeed        \n
 "char"      |
 "bool"      |
 "string"    |
+"list"      |
 "float"                                         SAVE_TOKEN; return DATA_TYPE;
 
 "extern"                                        return TOKEN(EXTERN);
@@ -29,7 +30,8 @@ linefeed        \n
 "elif"                                          return TOKEN(ELIF);
 "for"                                           return TOKEN(FOR);
 "while"                                         return TOKEN(WHILE);
-"print"                                         return TOKEN(PRINTING);
+"print"                                         return TOKEN(PRINT);
+"len"                                           return TOKEN(LEN);
 \"[^"]+\"                                       SAVE_TOKEN; return STRING_VALUE;
 [0-9]+					                        SAVE_TOKEN; return INTEGER_VALUE;
 [0-9]+\.[0-9]* 			                        SAVE_TOKEN; return FLOAT_VALUE;
@@ -57,6 +59,7 @@ linefeed        \n
 
 "*"		         				                SAVE_TOKEN; return MUL;
 "/"				          		                SAVE_TOKEN; return DIV;
+"%"                                             SAVE_TOKEN; return MOD;
 
 "("	          					                return TOKEN(LPAREN);
 ")"					          	                return TOKEN(RPAREN);

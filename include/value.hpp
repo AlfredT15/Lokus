@@ -25,6 +25,7 @@ public:
     virtual const Value* subbed_by(const Value* other) const = 0;
     virtual const Value* multiplied_by(const Value* other) const = 0;
     virtual const Value* divided_by(const Value* other) const = 0;
+    virtual const Value* modded_by(const Value* other) const = 0;
     //Comparison
     virtual const Value* anded_by(const Value* other) const = 0;
     virtual const Value* ored_by(const Value* other) const = 0;
@@ -59,6 +60,8 @@ public:
         {return new ErrorValue("Multiplication operator not implemented for errors");};
     const Value* divided_by(const Value* other) const override
         {return new ErrorValue("Division operator not implemented for errors");};
+    const Value* modded_by(const Value* other) const override
+        {return new ErrorValue("Modulus operator not implemented for errors");};
     // Comparison
     const Value* anded_by(const Value* other) const override
         {return new ErrorValue("and operator not implemented for errors");};
@@ -97,6 +100,8 @@ class VoidValue : public Value
             {return new ErrorValue("Multiplication operator not implemented for a void return");};
         const Value* divided_by(const Value* other) const override
             {return new ErrorValue("Division operator not implemented for a void return");};
+        const Value* modded_by(const Value* other) const override
+            {return new ErrorValue("Modulus operator not implemented for a void return");};
         // Comparison
         const Value* anded_by(const Value* other) const override
             {return new ErrorValue("and operator not implemented for void return");};
@@ -142,6 +147,7 @@ public:
     const Value* subbed_by(const Value* other) const override;
     const Value* multiplied_by(const Value* other) const override;
     const Value* divided_by(const Value* other) const override;
+    const Value* modded_by(const Value* other) const override;
     // Comparison
     const Value* anded_by(const Value* other) const override;
     const Value* ored_by(const Value* other) const override;
@@ -173,6 +179,8 @@ public:
     const Value* subbed_by(const Value* other) const override;
     const Value* multiplied_by(const Value* other) const override;
     const Value* divided_by(const Value* other) const override;
+    const Value* modded_by(const Value* other) const override
+            {return new ErrorValue("Modulus operator not implemented for floats");};
     //Comparison
     const Value* anded_by(const Value* other) const override;
     const Value* ored_by(const Value* other) const override;
@@ -208,6 +216,8 @@ public:
         {return new ErrorValue("Multiplication operator not implemented for bools");};
     const Value* divided_by(const Value* other) const override
         {return new ErrorValue("Division operator not implemented for bools");};
+    const Value* modded_by(const Value* other) const override
+            {return new ErrorValue("Modulus operator not implemented for bools");};
     //Comparison
     const Value* anded_by(const Value* other) const override;
     const Value* ored_by(const Value* other) const override;
@@ -251,6 +261,8 @@ public:
     const Value* multiplied_by(const Value* other) const override;
     const Value* divided_by(const Value* other) const override
         {return new ErrorValue("Division operator not implemented for strings");};
+    const Value* modded_by(const Value* other) const override
+            {return new ErrorValue("Modulus operator not implemented for strings");};
     //Comparison
     const Value* anded_by(const Value* other) const override
         {return new ErrorValue("and operator not implemented for strings");};
@@ -305,6 +317,8 @@ public:
         {return new ErrorValue("Multiplication operator not implemented for Identifiers");};
     const Value* divided_by(const Value* other) const override
         {return new ErrorValue("Division operator not implemented for Identifiers");};
+    const Value* modded_by(const Value* other) const override
+            {return new ErrorValue("Modulus operator not implemented for Identifiers");};
     // Comparison
     const Value* anded_by(const Value* other) const override
         {return new ErrorValue("and operator not implemented for Identifiers");};
@@ -346,6 +360,8 @@ public:
         {return new ErrorValue("Multiplication operator not implemented for Operators");};
     const Value* divided_by(const Value* other) const override
         {return new ErrorValue("Division operator not implemented for Operators");};
+    const Value* modded_by(const Value* other) const override
+            {return new ErrorValue("Modulus operator not implemented for Operators");};
     // Comparison
     const Value* anded_by(const Value* other) const override
         {return new ErrorValue("and operator not implemented for Operators");};
@@ -384,6 +400,8 @@ public:
     const Value* subbed_by(const Value* other) const override;
     const Value* multiplied_by(const Value* other) const override;
     const Value* divided_by(const Value* other) const override;
+    const Value* modded_by(const Value* other) const override
+            {return new ErrorValue("Modulus operator not implemented for Lists");};
     //Comparison
     const Value* anded_by(const Value* other) const override
         {return new ErrorValue("and operator not implemented for Lists");};
@@ -425,6 +443,8 @@ class FunctionValue : public Value
             {return new ErrorValue("Multiplication operator not implemented for functions");};
         const Value* divided_by(const Value* other) const override
             {return new ErrorValue("Division operator not implemented for functions");};
+        const Value* modded_by(const Value* other) const override
+            {return new ErrorValue("Modulus operator not implemented for functions");};
         // Comparison
         const Value* anded_by(const Value* other) const override
             {return new ErrorValue("and operator not implemented for functions");};
@@ -468,6 +488,8 @@ class ReturnValue : public Value
             {return new ErrorValue("Multiplication operator not implemented for a return value");};
         const Value* divided_by(const Value* other) const override
             {return new ErrorValue("Division operator not implemented for a return value");};
+        const Value* modded_by(const Value* other) const override
+            {return new ErrorValue("Modulus operator not implemented for a return value");};
         // Comparison
         const Value* anded_by(const Value* other) const override
             {return new ErrorValue("and operator not implemented for return value");};
@@ -511,6 +533,8 @@ class PrintValue : public Value
             {return new ErrorValue("Multiplication operator not implemented for a print value");};
         const Value* divided_by(const Value* other) const override
             {return new ErrorValue("Division operator not implemented for a print value");};
+        const Value* modded_by(const Value* other) const override
+            {return new ErrorValue("Modulus operator not implemented for a print value");};
         // Comparison
         const Value* anded_by(const Value* other) const override
             {return new ErrorValue("and operator not implemented for print value");};

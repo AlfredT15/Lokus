@@ -21,10 +21,13 @@
 	NExpression *expr;
 	NStatement *stmt;
 	NIdentifier *ident;
+	NInteger *intgr;
+	NDouble *flt;
 	NOperator *op;
 	NVariableDeclaration *var_decl;
 	std::vector<NVariableDeclaration*> *varvec;
 	std::vector<NExpression*> *exprvec;
+	std::vector<NInteger*> *intvec;
 	std::string *string;
 	int token;
 }
@@ -35,10 +38,10 @@
  */
 %token <string> CHARACTER_VALUE STRING_VALUE INTEGER_VALUE FLOAT_VALUE TRUE_VALUE FALSE_VALUE
 %token <string> IDENTIFIER DATA_TYPE
-%token <string> EQ_OP COMP_OP ADD SUB MUL DIV AND OR
+%token <string> EQ_OP COMP_OP ADD SUB MUL DIV AND OR MOD
 %token <token>  EQ
 %token <token>  LPAREN RPAREN LBRACE RBRACE LBRACKET RBRACKET COMMA DOT
-%token <token>  PRINTING RETURN EXTERN
+%token <token>  PRINT RETURN EXTERN LEN
 %token <token> 	IF ELIF ELSE
 %token <token> 	FOR WHILE 
 // %token          END_LINE
@@ -50,9 +53,10 @@
  */
 %type <ident> ident data_type_and_ident
 %type <op> op
-%type <expr> numeric boolean expr list
+%type <expr> numeric boolean expr integer float_val
 %type <varvec> func_decl_args
-%type <exprvec> call_args
+%type <exprvec> call_args list
+%type <intvec> list_access
 %type <block> program stmts block
 %type <stmt> stmt var_decl func_decl extern_decl if_stmt elif_stmt for_stmt while_stmt
 
@@ -62,7 +66,7 @@
 %precedence OR
 %precedence AND
 %left ADD SUB
-%left MUL DIV
+%left MUL DIV MOD
 
 %start program
 
@@ -80,7 +84,7 @@ stmts : stmt { $$ = new NBlock(); $$->statements.push_back($<stmt>1); }
 stmt : var_decl | func_decl | extern_decl | if_stmt | for_stmt | while_stmt 
 	 | expr { $$ = new NExpressionStatement(*$1); }
 	 | RETURN expr { $$ = new NReturnStatement($2); }
-	 | PRINTING LPAREN expr RPAREN { $$ = new NPrintStatement($3); }
+	 | PRINT LPAREN expr RPAREN { $$ = new NPrintStatement($3); }
      ;
 
 // print_stmt : PRINT LPAREN expr RPAREN { $$ = new NPrintStatement($3); }
@@ -128,31 +132,49 @@ data_type_and_ident : DATA_TYPE IDENTIFIER { $$ = new NIdentifier(*$1, *$2); del
 ident : IDENTIFIER { $$ = new NIdentifier(*$1); delete $1; }
 	  ;
 
-// numeric and boolean should be removed later
-numeric : INTEGER_VALUE { $$ = new NInteger(atol($1->c_str())); delete $1; }
-		| FLOAT_VALUE { $$ = new NDouble(atof($1->c_str())); delete $1; }
-		| SUB INTEGER_VALUE { $$ = new NInteger(-atol($2->c_str())); delete $1; }
-		| SUB FLOAT_VALUE { $$ = new NDouble(-atof($2->c_str())); delete $1; }
+numeric : integer
+		| float_val
 		;
+
+integer : INTEGER_VALUE { $$ = new NInteger(atol($1->c_str())); delete $1; }
+		| SUB INTEGER_VALUE { $$ = new NInteger(-atol($2->c_str())); delete $1; }
+		;
+
+float_val : FLOAT_VALUE { $$ = new NDouble(atof($1->c_str())); delete $1; }
+		  | SUB FLOAT_VALUE { $$ = new NDouble(-atof($2->c_str())); delete $1; }
+		  ;
 
 boolean : TRUE_VALUE { $$ = new NBool($1->c_str()); delete $1; }
 		| FALSE_VALUE { $$ = new NBool($1->c_str()); delete $1; }
 		;
 
-list	: RBRACKET expr LBRACKET { $$ = }
+list : /*blank*/  { $$ = new ExpressionList(); }
+	 | expr { $$ = new ExpressionList(); $$->push_back($1); }
+	 | list COMMA expr  { $1->push_back($3); }
+	 ;
+
+list_access : /*blank*/  { $$ = new IntegerList(); }
+			| integer { $$ = new IntegerList(); $$->push_back($<intgr>1); }
+			| list COMMA integer  { $1->push_back($<intgr>3); }
+			;
 	
 expr : ident EQ expr { $$ = new NAssignment(*$<ident>1, *$3); }
 	 | ident LPAREN call_args RPAREN { $$ = new NMethodCall(*$1, *$3); delete $3; }
 	 | ident { $<ident>$ = $1; }
+	 | ident LBRACKET list_access RBRACKET { $$ = new NListAccess(*$<ident>1, *$3); delete $3; }
+	 | ident LBRACKET list_access RBRACKET EQ expr { $$ = new NListAssignment(*$<ident>1, *$3, *$6); delete $3; }
 	 | numeric
 	 | boolean
+	 | LBRACKET list RBRACKET { $$ = new NList(*$2); delete $2; }
 	 | STRING_VALUE { $$ = new NString($1->c_str()); delete $1;}
 	 | expr op expr { $$ = new NBinaryOperator(*$1, *$2, *$3); }
 	 | LPAREN expr RPAREN { $$ = $2; }
+	 | LEN LPAREN expr RPAREN { $$ = new NLength($3); }
 	 ;
 
 op : MUL	{ $$ = new NOperator(*$1); delete $1; }
    | DIV	{ $$ = new NOperator(*$1); delete $1; }
+   | MOD	{ $$ = new NOperator(*$1); delete $1; }
    | ADD	{ $$ = new NOperator(*$1); delete $1; }
    | SUB	{ $$ = new NOperator(*$1); delete $1; }
    | COMP_OP{ $$ = new NOperator(*$1); delete $1; }

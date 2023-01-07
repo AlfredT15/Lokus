@@ -70,21 +70,25 @@ extern int yydebug;
     DIV = 271,                     /* DIV  */
     AND = 272,                     /* AND  */
     OR = 273,                      /* OR  */
-    EQ = 274,                      /* EQ  */
-    LPAREN = 275,                  /* LPAREN  */
-    RPAREN = 276,                  /* RPAREN  */
-    LBRACE = 277,                  /* LBRACE  */
-    RBRACE = 278,                  /* RBRACE  */
-    COMMA = 279,                   /* COMMA  */
-    DOT = 280,                     /* DOT  */
-    PRINTING = 281,                /* PRINTING  */
-    RETURN = 282,                  /* RETURN  */
-    EXTERN = 283,                  /* EXTERN  */
-    IF = 284,                      /* IF  */
-    ELIF = 285,                    /* ELIF  */
-    ELSE = 286,                    /* ELSE  */
-    FOR = 287,                     /* FOR  */
-    WHILE = 288                    /* WHILE  */
+    MOD = 274,                     /* MOD  */
+    EQ = 275,                      /* EQ  */
+    LPAREN = 276,                  /* LPAREN  */
+    RPAREN = 277,                  /* RPAREN  */
+    LBRACE = 278,                  /* LBRACE  */
+    RBRACE = 279,                  /* RBRACE  */
+    LBRACKET = 280,                /* LBRACKET  */
+    RBRACKET = 281,                /* RBRACKET  */
+    COMMA = 282,                   /* COMMA  */
+    DOT = 283,                     /* DOT  */
+    PRINT = 284,                   /* PRINT  */
+    RETURN = 285,                  /* RETURN  */
+    EXTERN = 286,                  /* EXTERN  */
+    LEN = 287,                     /* LEN  */
+    IF = 288,                      /* IF  */
+    ELIF = 289,                    /* ELIF  */
+    ELSE = 290,                    /* ELSE  */
+    FOR = 291,                     /* FOR  */
+    WHILE = 292                    /* WHILE  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -100,14 +104,17 @@ union YYSTYPE
 	NExpression *expr;
 	NStatement *stmt;
 	NIdentifier *ident;
+	NInteger *intgr;
+	NDouble *flt;
 	NOperator *op;
 	NVariableDeclaration *var_decl;
 	std::vector<NVariableDeclaration*> *varvec;
 	std::vector<NExpression*> *exprvec;
+	std::vector<NInteger*> *intvec;
 	std::string *string;
 	int token;
 
-#line 111 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.hpp"
+#line 118 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.hpp"
 
 };
 typedef union YYSTYPE YYSTYPE;

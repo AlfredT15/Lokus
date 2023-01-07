@@ -14,6 +14,7 @@ class Value;
 class NStatement;
 class NExpression;
 class NVariableDeclaration;
+class NInteger;
 
 class IntValue;
 class DoubleValue;
@@ -21,6 +22,7 @@ class IdentifierValue;
 
 typedef std::vector<NStatement*> StatementList;
 typedef std::vector<NExpression*> ExpressionList;
+typedef std::vector<NInteger*> IntegerList;
 typedef std::vector<NVariableDeclaration*> VariableList;
 typedef std::map<std::string, OperationType> TypeMap;
 
@@ -59,9 +61,12 @@ public:
 
 class NList : public NExpression {
 public:
-	ListValue* value;
-	NList(const )
-}
+	ExpressionList value;
+	NList(ExpressionList& value) : value(value) {}
+
+	void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
 
 class NBool : public NExpression {
 public:
@@ -101,7 +106,6 @@ public:
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
-
 class NOperator : public NExpression {
 private:
 	TypeMap opType = {
@@ -109,6 +113,7 @@ private:
 	{"-", OperationType::SUB_TYPE},
 	{"*", OperationType::MUL_TYPE},
 	{"/", OperationType::DIV_TYPE},
+	{"%", OperationType::MOD_TYPE},
 	{"==", OperationType::EE_TYPE},
 	{"!=", OperationType::NE_TYPE},
 	{">", OperationType::GT_TYPE},
@@ -161,12 +166,43 @@ public:
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
+class NListAssignment : public NExpression {
+public:
+	NIdentifier& lhs;
+	IntegerList index;
+	NExpression& rhs;
+	NListAssignment(NIdentifier& lhs, IntegerList& index, NExpression& rhs) : 
+		lhs(lhs), index(index), rhs(rhs) { }
+
+    void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
 class NBlock : public NExpression {
 public:
 	StatementList statements;
 	NBlock() { }
 
     void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
+class NListAccess : public NExpression{
+public:
+	NIdentifier& id;
+	IntegerList index;
+	NListAccess(NIdentifier& id, IntegerList& index) : id(id), index(index) { }
+
+	void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
+class NLength : public NExpression{
+public:
+	NExpression* expr;
+	NLength(NExpression* expr) : expr(expr) { }
+
+	void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 

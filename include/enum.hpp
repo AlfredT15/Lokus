@@ -24,6 +24,7 @@ enum OperationType
     SUB_TYPE,
     MUL_TYPE,
     DIV_TYPE,
+    MOD_TYPE,
     EE_TYPE,
     NE_TYPE,
     LT_TYPE,

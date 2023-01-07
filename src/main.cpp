@@ -17,7 +17,7 @@ void print_output(const Value* val)
         return;
     }
     else if (dynamic_cast<const StringValue*>(val))
-        printf("%s\n", ((std::string*)val->get_value())->c_str());
+        printf("%s", ((std::string*)val->get_value())->c_str());
     else if (dynamic_cast<const IntValue*>(val))
         printf("%d\n", *((int*)val->get_value()));
     else if (dynamic_cast<const DoubleValue*>(val))
@@ -52,6 +52,19 @@ void print_output_list(const ListValue* output)
     }
 }
 
+void print_output_single(const Value* val)
+{
+    if (dynamic_cast<const ErrorValue*>(val))
+    {
+        printf("%s\n", (*((std::string*)val->get_value())).c_str());
+        return;
+    }
+    else if (dynamic_cast<const PrintValue*>(val))
+    {
+        print_output((const Value*)val->get_value());
+    }
+}
+
 int main(int argc, char **argv)
 {
     // open a file handle to a particular file:
@@ -73,7 +86,14 @@ int main(int argc, char **argv)
         printf("%s", (*((std::string*)out->get_value())).c_str());
         return 0;
     }
-	const ListValue* output = dynamic_cast<const ListValue*>(out);	
-    print_output_list(output);
+	const ListValue* output = dynamic_cast<const ListValue*>(out);
+    if (output)
+    {
+        print_output_list(output);
+    }
+    else
+    {
+        print_output_single(out);
+    }
 	return 0;
 }
