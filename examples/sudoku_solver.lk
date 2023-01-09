@@ -11,29 +11,99 @@ list board = [
     [0,4,9,2,0,6,0,0,7]
 ]
 
-void print_board(list board)
+void print_board(list bo)
 {
-    for (int i = 0, i < len(board), i++)
+    for (int i = 0, i < len(bo), i = i + 1)
     {
-        if (i % 3 == 0) and (i != 0)
+        if ((i % 3) == 0) and (i != 0)
         {
-            print("- - - - - - - - - - - - - \n")
+            print("- - - - - - - - - - - - - - - - -")
         }
 
-        for (int j = 0, j < len(board[0]), j++)
+        for (int j = 0, j < len(bo[0]), j = j + 1)
         {
-            if (j % 3 == 0) and (j != 0)
+            if ((j % 3) == 0) and (j != 0)
             {
-                print(" | ")
+                print(" | ", " ")
             }
             if j == 8
             {
-                print(board[i,j] + "\n")
+                print(bo[i,j])
             }
             else
             {
-                print(board[i,j] + " ")
+                print(bo[i,j] + " ", " ")
             }
         }
     }
 }
+
+bool solve(list bo)
+{
+    for (int i = 0, i < len(bo), i = i + 1)
+    {
+        for (int j = 0, j < len(bo[0]), j = j + 1)
+        {
+            if bo[i,j] == 0
+            {
+                //print("At i: " + i + " At j: " + j)
+                for (int k = 1, k < 10, k = k + 1)
+                {
+                    if valid(bo, k, i, j)
+                    {
+                        bo[i,j] = k
+
+                        if solve(bo)
+                        {
+                            board = bo
+                            return true
+                        }
+                        bo[i,j] = 0
+                    }
+                }
+                return false
+            }
+        }
+    }
+
+    
+    return true
+}
+
+bool valid(list bo, int num, int row, int col)
+{
+    for(int i = 0, i < len(bo[0]), i = i + 1)
+    {
+        if (bo[row, i] == num) and (i != col)
+        {
+            return false
+        }
+        if (bo[i, col] == num) and (i != row)
+        {
+            return false
+        }
+    }
+    
+    int start_row = (row / 3) * 3
+    int start_col = (col / 3) * 3
+
+    for (int i = 0, i < 3, i = i + 1)
+    {
+        for(int j = 0, j < 3, j = j + 1)
+        {
+            if (bo[start_row + i,start_col + j] == num)
+            {
+                return false
+            }
+        }
+    }
+    return true
+}
+
+print("Board inputed: ")
+print_board(board)
+solve(board)
+
+print("__________________________________")
+print("Solved:")
+print_board(board)

@@ -104,17 +104,14 @@ union YYSTYPE
 	NExpression *expr;
 	NStatement *stmt;
 	NIdentifier *ident;
-	NInteger *intgr;
-	NDouble *flt;
 	NOperator *op;
 	NVariableDeclaration *var_decl;
 	std::vector<NVariableDeclaration*> *varvec;
 	std::vector<NExpression*> *exprvec;
-	std::vector<NInteger*> *intvec;
 	std::string *string;
 	int token;
 
-#line 118 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.hpp"
+#line 115 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.hpp"
 
 };
 typedef union YYSTYPE YYSTYPE;

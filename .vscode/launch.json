@@ -263,6 +263,110 @@
       ],
       "preLaunchTask": "build",
       "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "Lokus mod",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/home/alfred/Code/Language/new_langauge/Lokus/lokusDebugg",
+      "args": ["examples/mod_test.lk"],
+      "stopAtEntry": false,
+      "cwd": "/home/alfred/Code/Language/new_langauge/Lokus",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "Lokus loop",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/home/alfred/Code/Language/new_langauge/Lokus/lokusDebugg",
+      "args": ["examples/loop_print.lk"],
+      "stopAtEntry": false,
+      "cwd": "/home/alfred/Code/Language/new_langauge/Lokus",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "Lokus sudoku",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/home/alfred/Code/Language/new_langauge/Lokus/lokusDebugg",
+      "args": ["examples/sudoku_solver.lk"],
+      "stopAtEntry": false,
+      "cwd": "/home/alfred/Code/Language/new_langauge/Lokus",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "Lokus valid",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/home/alfred/Code/Language/new_langauge/Lokus/lokusDebugg",
+      "args": ["examples/loop_valid.lk"],
+      "stopAtEntry": false,
+      "cwd": "/home/alfred/Code/Language/new_langauge/Lokus",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build",
+      "miDebuggerPath": "/usr/bin/gdb"
     }
   ]
 }

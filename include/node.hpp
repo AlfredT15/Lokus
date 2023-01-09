@@ -22,7 +22,6 @@ class IdentifierValue;
 
 typedef std::vector<NStatement*> StatementList;
 typedef std::vector<NExpression*> ExpressionList;
-typedef std::vector<NInteger*> IntegerList;
 typedef std::vector<NVariableDeclaration*> VariableList;
 typedef std::map<std::string, OperationType> TypeMap;
 
@@ -169,9 +168,9 @@ public:
 class NListAssignment : public NExpression {
 public:
 	NIdentifier& lhs;
-	IntegerList index;
+	ExpressionList index;
 	NExpression& rhs;
-	NListAssignment(NIdentifier& lhs, IntegerList& index, NExpression& rhs) : 
+	NListAssignment(NIdentifier& lhs, ExpressionList& index, NExpression& rhs) : 
 		lhs(lhs), index(index), rhs(rhs) { }
 
     void Accept(const VisitorVoid *visitor) const override;
@@ -190,8 +189,8 @@ public:
 class NListAccess : public NExpression{
 public:
 	NIdentifier& id;
-	IntegerList index;
-	NListAccess(NIdentifier& id, IntegerList& index) : id(id), index(index) { }
+	ExpressionList index;
+	NListAccess(NIdentifier& id, ExpressionList& index) : id(id), index(index) { }
 
 	void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
@@ -308,7 +307,10 @@ public:
 class NPrintStatement : public NStatement{
 public:
 	NExpression* expr;
+	NExpression* ending_expr;
+	bool ending = false;
 	NPrintStatement(NExpression* expr) : expr(expr) { }
+	NPrintStatement(NExpression* expr, NExpression* ending_expr) : expr(expr), ending(true), ending_expr(ending_expr)  { }
 
 	void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;

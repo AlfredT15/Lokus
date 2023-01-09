@@ -15,3 +15,8 @@ print(test[3])
 print(test2[2,1])
 
 print(len(test))
+
+if [1,2,3] == test2[0]
+{
+    print("Works")
+}

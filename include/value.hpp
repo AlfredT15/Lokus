@@ -522,7 +522,10 @@ class PrintValue : public Value
         const bool isError = false;
         const Value* value;
         const DataType type;
-        PrintValue(const Value* value): value(value), type(value->get_type()) {}
+        const Value* ending_value;
+        const bool ending;
+        PrintValue(const Value* value, const bool ending, const Value* ending_value) : 
+                    value(value), type(value->get_type()), ending_value(ending_value), ending(ending) {}
 
          // Arithmetic
         const Value* added_to(const Value* other) const override

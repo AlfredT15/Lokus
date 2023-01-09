@@ -500,16 +500,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  47
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   375
+#define YYLAST   421
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  38
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  24
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  70
+#define YYNRULES  71
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  125
+#define YYNSTATES  128
 
 /* YYMAXUTOK -- Last valid token kind.  */
 #define YYMAXUTOK   292
@@ -562,14 +562,14 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    75,    75,    79,    80,    84,    84,    84,    84,    84,
-      84,    85,    86,    87,    93,    94,    97,    98,   100,   101,
-     102,   105,   106,   109,   112,   113,   116,   120,   124,   125,
-     126,   129,   132,   135,   136,   139,   140,   143,   144,   147,
-     148,   151,   152,   153,   156,   157,   158,   161,   162,   163,
-     164,   165,   166,   167,   168,   169,   170,   171,   172,   175,
-     176,   177,   178,   179,   180,   181,   182,   183,   186,   187,
-     188
+       0,    69,    69,    73,    74,    79,    79,    79,    79,    79,
+      79,    80,    81,    82,    83,    89,    90,    93,    94,    96,
+      97,    98,   101,   102,   105,   108,   109,   112,   116,   120,
+     121,   122,   125,   128,   131,   132,   135,   136,   139,   140,
+     143,   144,   147,   148,   149,   152,   153,   154,   157,   158,
+     159,   160,   161,   162,   163,   164,   165,   166,   167,   168,
+     171,   172,   173,   174,   175,   176,   177,   178,   179,   182,
+     183,   184
 };
 #endif
 
@@ -604,12 +604,12 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-47)
+#define YYPACT_NINF (-43)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
 
-#define YYTABLE_NINF (-47)
+#define YYTABLE_NINF (-48)
 
 #define yytable_value_is_error(Yyn) \
   0
@@ -618,19 +618,19 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int16 yypact[] =
 {
-     159,   -47,   -47,   -47,   -47,   -47,   -47,    14,    27,   244,
-     244,    18,   244,    35,    31,   244,    38,   244,    56,   159,
-     -47,   -47,   -47,   -47,   -47,   -47,   -47,    17,     1,   -47,
-     -47,   -47,   -47,   356,   -47,   -47,   -47,   296,    21,   356,
-     244,   356,    39,   244,   283,   193,   283,   -47,   -47,   244,
-      35,   244,   244,   215,   -47,   -47,   -47,   -47,   -47,   -47,
-     -47,   -47,   -47,   244,   -47,   -47,   244,   308,    35,   320,
-      91,    16,    36,    42,     0,   -47,   356,   -47,    -2,   356,
-     356,     2,    48,    52,    49,   356,   356,   -47,     8,   -47,
-     -47,   125,   244,    57,   -47,   244,   244,    57,    35,   -47,
-     244,   244,    62,   -47,   -47,   283,   -47,    54,   266,   -47,
-     -47,   356,    58,   244,    16,   244,   244,   356,   -47,   332,
-     344,    57,    57,   -47,   -47
+     161,   -43,   -43,   -43,   -43,   -43,   -43,    -2,    33,   224,
+     224,     2,   224,    35,    12,   224,    30,   224,    20,   161,
+     -43,   -43,   -43,   -43,   -43,   -43,   -43,    27,     4,   -43,
+     -43,   -43,   -43,   402,   -43,   -43,   -43,   342,    23,   402,
+     224,   402,    32,   224,   329,    64,   329,   -43,   -43,   224,
+      35,   224,   224,   195,   -43,   -43,   -43,   -43,   -43,   -43,
+     -43,   -43,   -43,   224,   -43,   -43,   224,     0,    35,   354,
+      93,    26,    28,    38,   246,   -43,   402,   -43,    -1,   402,
+     402,     8,    36,    40,   297,   402,   402,   -43,   224,    10,
+     -43,   -43,   127,   224,    39,   -43,   224,   224,    39,    35,
+     -43,   224,   224,    47,   366,   -43,   -43,   329,   -43,   263,
+     280,   -43,   -43,   402,   313,   224,   -43,    26,   224,   224,
+     402,   -43,   378,   390,    39,    39,   -43,   -43
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -638,35 +638,35 @@ static const yytype_int16 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       0,    55,    35,    37,    39,    40,    32,     0,     0,     0,
-      41,     0,     0,     0,     0,     0,     0,     0,     0,     2,
-       3,     8,     9,    10,     5,     7,     6,    24,    49,    52,
-      33,    34,    53,    11,    31,    36,    38,     0,     0,    42,
+       0,    56,    36,    38,    40,    41,    33,     0,     0,     0,
+      42,     0,     0,     0,     0,     0,     0,     0,     0,     2,
+       3,     8,     9,    10,     5,     7,     6,    25,    50,    53,
+      34,    35,    54,    11,    32,    37,    39,     0,     0,    43,
        0,    12,     0,     0,     0,     0,     0,     1,     4,     0,
-      28,     0,    68,    41,    65,    64,    62,    63,    59,    60,
-      66,    67,    61,     0,    57,    54,     0,     0,    28,     0,
-       0,    16,     0,    24,     0,    23,    25,    29,     0,    47,
-      69,     0,    33,     0,     0,    56,    43,    13,     0,    58,
-      15,     0,     0,     0,    17,     0,     0,     0,     0,    48,
-       0,     0,    50,    26,    14,     0,    20,     0,     0,    27,
-      30,    70,    33,     0,    18,     0,     0,    51,    19,     0,
-       0,     0,     0,    22,    21
+      29,     0,    69,    42,    61,    60,    67,    68,    64,    65,
+      62,    63,    66,     0,    58,    55,     0,     0,    29,     0,
+       0,    17,     0,    25,     0,    24,    26,    30,     0,    48,
+      70,     0,     0,     0,    43,    57,    44,    13,     0,     0,
+      59,    16,     0,     0,     0,    18,     0,     0,     0,     0,
+      49,     0,     0,    51,     0,    27,    15,     0,    21,     0,
+       0,    28,    31,    71,    44,     0,    14,    19,     0,     0,
+      52,    20,     0,     0,     0,     0,    23,    22
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -47,   -47,    15,   -15,   -44,   -47,   -26,   -47,   -47,   -40,
-     -47,   -47,    22,    -4,   -47,   -47,   -46,   -47,   -47,    40,
-     -47,    -9,   -47,   -47
+     -43,   -43,     6,   -17,   -42,   -43,   -37,   -43,   -43,   -40,
+     -43,   -43,     9,    -4,   -43,   -43,   -43,   -43,   -43,    37,
+     -43,    -9,   -43,   -43
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,    18,    19,    20,    71,    21,    94,    22,    23,    24,
+       0,    18,    19,    20,    71,    21,    95,    22,    23,    24,
       25,    26,    78,    27,    28,    29,    30,    31,    32,    38,
-      84,    33,    63,    81
+      83,    33,    63,    81
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -674,71 +674,74 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      37,    39,    75,    41,    48,    72,    44,    82,    46,    42,
+      37,    39,    48,    41,    75,    72,    44,    34,    46,    42,
       77,    54,    55,    56,    57,    58,    59,    60,    61,    62,
-      97,    51,    52,    34,    99,    98,    53,    96,    77,   100,
-     103,    67,    35,    36,    69,    98,    74,    49,    50,    40,
-      76,    73,    79,    80,    39,     7,    73,    65,    66,   106,
-      92,    93,    43,   109,    85,   112,    47,    86,   110,    45,
-      68,   114,    49,    95,    73,    54,    55,    56,    57,    58,
-      59,    60,    61,    62,   -45,   102,    48,   123,   124,   101,
-      70,   115,   113,   105,   -46,    91,   107,   108,   118,     0,
-      88,   111,    86,    83,    73,     1,     2,     3,     4,     5,
-       6,     7,     0,     0,   117,     8,   119,   120,     0,     0,
-       0,     0,     9,     0,     0,    90,    10,     0,     0,     0,
+      47,    98,    87,    40,    51,    52,    99,    88,    77,    53,
+     100,    67,   105,    43,    69,   101,    74,    99,    35,    36,
+      76,    73,    79,    80,    84,     7,    73,    49,    50,    65,
+      66,    45,   108,    68,    85,    96,   111,    86,    49,   112,
+      93,    94,    70,   102,    73,   117,   103,   115,     1,     2,
+       3,     4,     5,     6,     7,    48,    92,    89,     8,   104,
+     121,     0,   126,   127,   107,     9,     0,   109,   110,    10,
+      82,     0,   113,   114,     0,    73,    14,     1,     2,     3,
+       4,     5,     6,     7,     0,     0,   120,     8,     0,   122,
+     123,     0,     0,     0,     9,     0,     0,    91,    10,     0,
+       0,     0,    11,    12,    13,    14,    15,     0,     0,    16,
+      17,     1,     2,     3,     4,     5,     6,     7,     0,     0,
+       0,     8,     0,     0,     0,     0,     0,     0,     9,     0,
+       0,   106,    10,     0,     0,     0,    11,    12,    13,    14,
+      15,     0,     0,    16,    17,     1,     2,     3,     4,     5,
+       6,     7,     0,     0,     0,     8,     0,     0,     0,     0,
+       0,     0,     9,     0,     0,     0,    10,     0,     0,     0,
       11,    12,    13,    14,    15,     0,     0,    16,    17,     1,
-       2,     3,     4,     5,     6,     7,     0,     0,     0,     8,
-       0,     0,     0,     0,     0,     0,     9,     0,     0,   104,
-      10,     0,     0,     0,    11,    12,    13,    14,    15,     0,
-       0,    16,    17,     1,     2,     3,     4,     5,     6,     7,
-       0,     0,     0,     8,     0,     0,     0,     0,     0,     0,
-       9,     0,     0,     0,    10,     0,     0,     0,    11,    12,
-      13,    14,    15,     0,     0,    16,    17,     1,     2,     3,
-       4,     5,     6,     7,     0,     0,     0,     8,     0,     0,
-       0,     0,     0,     0,     9,     0,     0,     0,    10,     1,
-       2,     3,     4,     5,     6,    14,     0,     0,     0,     8,
+       2,     3,     4,     5,     6,     0,     0,     0,     0,     8,
        0,     0,     0,     0,     0,     0,     9,     0,     0,     0,
-      10,   -44,     0,     0,     0,     0,     0,    14,     1,     2,
+      10,   -45,     0,     0,     0,     0,     0,    14,     1,     2,
        3,     4,     5,     6,     0,     0,     0,     0,     8,     0,
        0,     0,     0,     0,     0,     9,     0,     0,     0,    10,
        0,     0,     0,     0,     0,     0,    14,    54,    55,    56,
       57,    58,    59,    60,    61,    62,     0,     0,     0,     0,
-       0,     0,     0,   116,    54,    55,    56,    57,    58,    59,
-      60,    61,    62,     0,     0,     0,    70,    54,    55,    56,
-      57,    58,    59,    60,    61,    62,     0,     0,    64,    54,
+       0,     0,     0,    97,    54,    55,    56,    57,    58,    59,
+      60,    61,    62,     0,     0,     0,     0,     0,     0,     0,
+     118,    54,    55,    56,    57,    58,    59,    60,    61,    62,
+       0,     0,     0,     0,     0,     0,     0,   119,    54,    55,
+      56,    57,    58,    59,    60,    61,    62,     0,     0,     0,
+       0,     0,     0,   -46,    54,    55,    56,    57,    58,    59,
+      60,    61,    62,     0,     0,     0,     0,     0,     0,   -47,
+      54,    55,    56,    57,    58,    59,    60,    61,    62,     0,
+       0,     0,    70,    54,    55,    56,    57,    58,    59,    60,
+      61,    62,     0,     0,    64,    54,    55,    56,    57,    58,
+      59,    60,    61,    62,     0,     0,    90,    54,    55,    56,
+      57,    58,    59,    60,    61,    62,     0,     0,   116,    54,
       55,    56,    57,    58,    59,    60,    61,    62,     0,     0,
-      87,    54,    55,    56,    57,    58,    59,    60,    61,    62,
-       0,     0,    89,    54,    55,    56,    57,    58,    59,    60,
-      61,    62,     0,     0,   121,    54,    55,    56,    57,    58,
-      59,    60,    61,    62,     0,     0,   122,    54,    55,    56,
-      57,    58,    59,    60,    61,    62
+     124,    54,    55,    56,    57,    58,    59,    60,    61,    62,
+       0,     0,   125,    54,    55,    56,    57,    58,    59,    60,
+      61,    62
 };
 
 static const yytype_int8 yycheck[] =
 {
-       9,    10,    46,    12,    19,    45,    15,    53,    17,    13,
+       9,    10,    19,    12,    46,    45,    15,     9,    17,    13,
       50,    11,    12,    13,    14,    15,    16,    17,    18,    19,
-      22,    20,    21,     9,    22,    27,    25,    27,    68,    27,
-      22,    40,     5,     6,    43,    27,    45,    20,    21,    21,
-      49,    45,    51,    52,    53,    10,    50,    26,    27,    93,
-      34,    35,    21,    97,    63,   101,     0,    66,    98,    21,
-      21,   105,    20,    27,    68,    11,    12,    13,    14,    15,
-      16,    17,    18,    19,    26,    26,    91,   121,   122,    27,
-      23,    27,    20,    92,    26,    70,    95,    96,   114,    -1,
-      68,   100,   101,    53,    98,     4,     5,     6,     7,     8,
-       9,    10,    -1,    -1,   113,    14,   115,   116,    -1,    -1,
-      -1,    -1,    21,    -1,    -1,    24,    25,    -1,    -1,    -1,
+       0,    22,    22,    21,    20,    21,    27,    27,    68,    25,
+      22,    40,    22,    21,    43,    27,    45,    27,     5,     6,
+      49,    45,    51,    52,    53,    10,    50,    20,    21,    26,
+      27,    21,    94,    21,    63,    27,    98,    66,    20,    99,
+      34,    35,    23,    27,    68,   107,    26,    20,     4,     5,
+       6,     7,     8,     9,    10,    92,    70,    68,    14,    88,
+     117,    -1,   124,   125,    93,    21,    -1,    96,    97,    25,
+      53,    -1,   101,   102,    -1,    99,    32,     4,     5,     6,
+       7,     8,     9,    10,    -1,    -1,   115,    14,    -1,   118,
+     119,    -1,    -1,    -1,    21,    -1,    -1,    24,    25,    -1,
+      -1,    -1,    29,    30,    31,    32,    33,    -1,    -1,    36,
+      37,     4,     5,     6,     7,     8,     9,    10,    -1,    -1,
+      -1,    14,    -1,    -1,    -1,    -1,    -1,    -1,    21,    -1,
+      -1,    24,    25,    -1,    -1,    -1,    29,    30,    31,    32,
+      33,    -1,    -1,    36,    37,     4,     5,     6,     7,     8,
+       9,    10,    -1,    -1,    -1,    14,    -1,    -1,    -1,    -1,
+      -1,    -1,    21,    -1,    -1,    -1,    25,    -1,    -1,    -1,
       29,    30,    31,    32,    33,    -1,    -1,    36,    37,     4,
-       5,     6,     7,     8,     9,    10,    -1,    -1,    -1,    14,
-      -1,    -1,    -1,    -1,    -1,    -1,    21,    -1,    -1,    24,
-      25,    -1,    -1,    -1,    29,    30,    31,    32,    33,    -1,
-      -1,    36,    37,     4,     5,     6,     7,     8,     9,    10,
-      -1,    -1,    -1,    14,    -1,    -1,    -1,    -1,    -1,    -1,
-      21,    -1,    -1,    -1,    25,    -1,    -1,    -1,    29,    30,
-      31,    32,    33,    -1,    -1,    36,    37,     4,     5,     6,
-       7,     8,     9,    10,    -1,    -1,    -1,    14,    -1,    -1,
-      -1,    -1,    -1,    -1,    21,    -1,    -1,    -1,    25,     4,
-       5,     6,     7,     8,     9,    32,    -1,    -1,    -1,    14,
+       5,     6,     7,     8,     9,    -1,    -1,    -1,    -1,    14,
       -1,    -1,    -1,    -1,    -1,    -1,    21,    -1,    -1,    -1,
       25,    26,    -1,    -1,    -1,    -1,    -1,    32,     4,     5,
        6,     7,     8,     9,    -1,    -1,    -1,    -1,    14,    -1,
@@ -746,14 +749,21 @@ static const yytype_int8 yycheck[] =
       -1,    -1,    -1,    -1,    -1,    -1,    32,    11,    12,    13,
       14,    15,    16,    17,    18,    19,    -1,    -1,    -1,    -1,
       -1,    -1,    -1,    27,    11,    12,    13,    14,    15,    16,
-      17,    18,    19,    -1,    -1,    -1,    23,    11,    12,    13,
+      17,    18,    19,    -1,    -1,    -1,    -1,    -1,    -1,    -1,
+      27,    11,    12,    13,    14,    15,    16,    17,    18,    19,
+      -1,    -1,    -1,    -1,    -1,    -1,    -1,    27,    11,    12,
+      13,    14,    15,    16,    17,    18,    19,    -1,    -1,    -1,
+      -1,    -1,    -1,    26,    11,    12,    13,    14,    15,    16,
+      17,    18,    19,    -1,    -1,    -1,    -1,    -1,    -1,    26,
+      11,    12,    13,    14,    15,    16,    17,    18,    19,    -1,
+      -1,    -1,    23,    11,    12,    13,    14,    15,    16,    17,
+      18,    19,    -1,    -1,    22,    11,    12,    13,    14,    15,
+      16,    17,    18,    19,    -1,    -1,    22,    11,    12,    13,
       14,    15,    16,    17,    18,    19,    -1,    -1,    22,    11,
       12,    13,    14,    15,    16,    17,    18,    19,    -1,    -1,
       22,    11,    12,    13,    14,    15,    16,    17,    18,    19,
       -1,    -1,    22,    11,    12,    13,    14,    15,    16,    17,
-      18,    19,    -1,    -1,    22,    11,    12,    13,    14,    15,
-      16,    17,    18,    19,    -1,    -1,    22,    11,    12,    13,
-      14,    15,    16,    17,    18,    19
+      18,    19
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
@@ -768,37 +778,37 @@ static const yytype_int8 yystos[] =
       21,    20,    21,    25,    11,    12,    13,    14,    15,    16,
       17,    18,    19,    60,    22,    26,    27,    59,    21,    59,
       23,    42,    47,    51,    59,    42,    59,    47,    50,    59,
-      59,    61,    54,    57,    58,    59,    59,    22,    50,    22,
-      24,    40,    34,    35,    44,    27,    27,    22,    27,    22,
-      27,    27,    26,    22,    24,    59,    42,    59,    59,    42,
-      47,    59,    54,    20,    42,    27,    27,    59,    44,    59,
-      59,    22,    22,    42,    42
+      59,    61,    57,    58,    59,    59,    59,    22,    27,    50,
+      22,    24,    40,    34,    35,    44,    27,    27,    22,    27,
+      22,    27,    27,    26,    59,    22,    24,    59,    42,    59,
+      59,    42,    47,    59,    59,    20,    22,    42,    27,    27,
+      59,    44,    59,    59,    22,    22,    42,    42
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
        0,    38,    39,    40,    40,    41,    41,    41,    41,    41,
-      41,    41,    41,    41,    42,    42,    43,    43,    44,    44,
-      44,    45,    45,    46,    47,    47,    48,    49,    50,    50,
-      50,    51,    52,    53,    53,    54,    54,    55,    55,    56,
-      56,    57,    57,    57,    58,    58,    58,    59,    59,    59,
-      59,    59,    59,    59,    59,    59,    59,    59,    59,    60,
-      60,    60,    60,    60,    60,    60,    60,    60,    61,    61,
-      61
+      41,    41,    41,    41,    41,    42,    42,    43,    43,    44,
+      44,    44,    45,    45,    46,    47,    47,    48,    49,    50,
+      50,    50,    51,    52,    53,    53,    54,    54,    55,    55,
+      56,    56,    57,    57,    57,    58,    58,    58,    59,    59,
+      59,    59,    59,    59,    59,    59,    59,    59,    59,    59,
+      60,    60,    60,    60,    60,    60,    60,    60,    60,    61,
+      61,    61
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
        0,     2,     1,     1,     2,     1,     1,     1,     1,     1,
-       1,     1,     2,     4,     3,     2,     3,     4,     3,     4,
-       2,     9,     9,     3,     1,     3,     5,     5,     0,     1,
-       3,     2,     1,     1,     1,     1,     2,     1,     2,     1,
-       1,     0,     1,     3,     0,     1,     3,     3,     4,     1,
-       4,     6,     1,     1,     3,     1,     3,     3,     4,     1,
-       1,     1,     1,     1,     1,     1,     1,     1,     0,     1,
-       3
+       1,     1,     2,     4,     6,     3,     2,     3,     4,     3,
+       4,     2,     9,     9,     3,     1,     3,     5,     5,     0,
+       1,     3,     2,     1,     1,     1,     1,     2,     1,     2,
+       1,     1,     0,     1,     3,     0,     1,     3,     3,     4,
+       1,     4,     6,     1,     1,     3,     1,     3,     3,     4,
+       1,     1,     1,     1,     1,     1,     1,     1,     1,     0,
+       1,     3
 };
 
 
@@ -1262,361 +1272,367 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* program: stmts  */
-#line 75 "syntax.y"
+#line 69 "syntax.y"
                 { programBlock = (yyvsp[0].block); }
-#line 1268 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1278 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
   case 3: /* stmts: stmt  */
-#line 79 "syntax.y"
+#line 73 "syntax.y"
              { (yyval.block) = new NBlock(); (yyval.block)->statements.push_back((yyvsp[0].stmt)); }
-#line 1274 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1284 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
   case 4: /* stmts: stmts stmt  */
-#line 80 "syntax.y"
+#line 74 "syntax.y"
                        { (yyvsp[-1].block)->statements.push_back((yyvsp[0].stmt)); }
-#line 1280 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1290 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
   case 11: /* stmt: expr  */
-#line 85 "syntax.y"
+#line 80 "syntax.y"
                 { (yyval.stmt) = new NExpressionStatement(*(yyvsp[0].expr)); }
-#line 1286 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1296 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
   case 12: /* stmt: RETURN expr  */
-#line 86 "syntax.y"
+#line 81 "syntax.y"
                        { (yyval.stmt) = new NReturnStatement((yyvsp[0].expr)); }
-#line 1292 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1302 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
   case 13: /* stmt: PRINT LPAREN expr RPAREN  */
-#line 87 "syntax.y"
+#line 82 "syntax.y"
                                     { (yyval.stmt) = new NPrintStatement((yyvsp[-1].expr)); }
-#line 1298 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1308 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 14: /* block: LBRACE stmts RBRACE  */
-#line 93 "syntax.y"
+  case 14: /* stmt: PRINT LPAREN expr COMMA expr RPAREN  */
+#line 83 "syntax.y"
+                                               { (yyval.stmt) = new NPrintStatement((yyvsp[-3].expr), (yyvsp[-1].expr)); }
+#line 1314 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+  case 15: /* block: LBRACE stmts RBRACE  */
+#line 89 "syntax.y"
                             { (yyval.block) = (yyvsp[-1].block); }
-#line 1304 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1320 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 15: /* block: LBRACE RBRACE  */
-#line 94 "syntax.y"
+  case 16: /* block: LBRACE RBRACE  */
+#line 90 "syntax.y"
                           { (yyval.block) = new NBlock(); }
-#line 1310 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1326 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 16: /* if_stmt: IF expr block  */
-#line 97 "syntax.y"
+  case 17: /* if_stmt: IF expr block  */
+#line 93 "syntax.y"
                         { (yyval.stmt) = new NIfStatement((yyvsp[-1].expr), *(yyvsp[0].block)); }
-#line 1316 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1332 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 17: /* if_stmt: IF expr block elif_stmt  */
-#line 98 "syntax.y"
+  case 18: /* if_stmt: IF expr block elif_stmt  */
+#line 94 "syntax.y"
                                           { (yyval.stmt) = new NIfStatement((yyvsp[-2].expr), *(yyvsp[-1].block), (yyvsp[0].stmt)); }
-#line 1322 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1338 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 18: /* elif_stmt: ELIF expr block  */
-#line 100 "syntax.y"
+  case 19: /* elif_stmt: ELIF expr block  */
+#line 96 "syntax.y"
                             { (yyval.stmt) = new NIfStatement((yyvsp[-1].expr), *(yyvsp[0].block)); }
-#line 1328 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1344 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 19: /* elif_stmt: ELIF expr block elif_stmt  */
-#line 101 "syntax.y"
+  case 20: /* elif_stmt: ELIF expr block elif_stmt  */
+#line 97 "syntax.y"
                                               { (yyval.stmt) = new NIfStatement((yyvsp[-2].expr), *(yyvsp[-1].block), (yyvsp[0].stmt)); }
-#line 1334 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1350 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 20: /* elif_stmt: ELSE block  */
-#line 102 "syntax.y"
+  case 21: /* elif_stmt: ELSE block  */
+#line 98 "syntax.y"
                                 { (yyval.stmt) = new NIfStatement(*(yyvsp[0].block)); }
-#line 1340 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1356 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 21: /* for_stmt: FOR LPAREN expr COMMA expr COMMA expr RPAREN block  */
-#line 105 "syntax.y"
+  case 22: /* for_stmt: FOR LPAREN expr COMMA expr COMMA expr RPAREN block  */
+#line 101 "syntax.y"
                                                               { (yyval.stmt) = new NForStatement((yyvsp[-6].expr), (yyvsp[-4].expr), (yyvsp[-2].expr), *(yyvsp[0].block)); }
-#line 1346 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1362 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 22: /* for_stmt: FOR LPAREN var_decl COMMA expr COMMA expr RPAREN block  */
-#line 106 "syntax.y"
+  case 23: /* for_stmt: FOR LPAREN var_decl COMMA expr COMMA expr RPAREN block  */
+#line 102 "syntax.y"
                                                                           { (yyval.stmt) = new NForStatement((yyvsp[-6].stmt), (yyvsp[-4].expr), (yyvsp[-2].expr), *(yyvsp[0].block)); }
-#line 1352 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1368 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 23: /* while_stmt: WHILE expr block  */
-#line 109 "syntax.y"
+  case 24: /* while_stmt: WHILE expr block  */
+#line 105 "syntax.y"
                               { (yyval.stmt) = new NWhileStatement((yyvsp[-1].expr), *(yyvsp[0].block)); }
-#line 1358 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1374 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 24: /* var_decl: data_type_and_ident  */
-#line 112 "syntax.y"
+  case 25: /* var_decl: data_type_and_ident  */
+#line 108 "syntax.y"
                                { (yyval.stmt) = new NVariableDeclaration(*(yyvsp[0].ident)); }
-#line 1364 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1380 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 25: /* var_decl: data_type_and_ident EQ expr  */
-#line 113 "syntax.y"
+  case 26: /* var_decl: data_type_and_ident EQ expr  */
+#line 109 "syntax.y"
                                                { (yyval.stmt) = new NVariableDeclaration(*(yyvsp[-2].ident), (yyvsp[0].expr)); }
-#line 1370 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1386 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 26: /* extern_decl: EXTERN data_type_and_ident LPAREN func_decl_args RPAREN  */
-#line 117 "syntax.y"
+  case 27: /* extern_decl: EXTERN data_type_and_ident LPAREN func_decl_args RPAREN  */
+#line 113 "syntax.y"
                 { (yyval.stmt) = new NExternDeclaration(*(yyvsp[-3].ident),*(yyvsp[-1].varvec)); delete (yyvsp[-1].varvec);}
-#line 1376 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1392 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 27: /* func_decl: data_type_and_ident LPAREN func_decl_args RPAREN block  */
-#line 121 "syntax.y"
+  case 28: /* func_decl: data_type_and_ident LPAREN func_decl_args RPAREN block  */
+#line 117 "syntax.y"
                         { (yyval.stmt) = new NFunctionDeclaration(*(yyvsp[-4].ident), *(yyvsp[-2].varvec), *(yyvsp[0].block)); delete (yyvsp[-2].varvec); }
-#line 1382 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1398 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 28: /* func_decl_args: %empty  */
-#line 124 "syntax.y"
+  case 29: /* func_decl_args: %empty  */
+#line 120 "syntax.y"
                             { (yyval.varvec) = new VariableList(); }
-#line 1388 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1404 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 29: /* func_decl_args: var_decl  */
-#line 125 "syntax.y"
+  case 30: /* func_decl_args: var_decl  */
+#line 121 "syntax.y"
                              { (yyval.varvec) = new VariableList(); (yyval.varvec)->push_back((yyvsp[0].var_decl)); }
-#line 1394 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1410 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 30: /* func_decl_args: func_decl_args COMMA var_decl  */
-#line 126 "syntax.y"
+  case 31: /* func_decl_args: func_decl_args COMMA var_decl  */
+#line 122 "syntax.y"
                                                   { (yyvsp[-2].varvec)->push_back((yyvsp[0].var_decl)); }
-#line 1400 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1416 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 31: /* data_type_and_ident: DATA_TYPE IDENTIFIER  */
-#line 129 "syntax.y"
+  case 32: /* data_type_and_ident: DATA_TYPE IDENTIFIER  */
+#line 125 "syntax.y"
                                            { (yyval.ident) = new NIdentifier(*(yyvsp[-1].string), *(yyvsp[0].string)); delete (yyvsp[-1].string); delete (yyvsp[0].string);}
-#line 1406 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1422 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 32: /* ident: IDENTIFIER  */
-#line 132 "syntax.y"
+  case 33: /* ident: IDENTIFIER  */
+#line 128 "syntax.y"
                    { (yyval.ident) = new NIdentifier(*(yyvsp[0].string)); delete (yyvsp[0].string); }
-#line 1412 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1428 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 35: /* integer: INTEGER_VALUE  */
-#line 139 "syntax.y"
+  case 36: /* integer: INTEGER_VALUE  */
+#line 135 "syntax.y"
                         { (yyval.expr) = new NInteger(atol((yyvsp[0].string)->c_str())); delete (yyvsp[0].string); }
-#line 1418 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1434 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 36: /* integer: SUB INTEGER_VALUE  */
-#line 140 "syntax.y"
+  case 37: /* integer: SUB INTEGER_VALUE  */
+#line 136 "syntax.y"
                                     { (yyval.expr) = new NInteger(-atol((yyvsp[0].string)->c_str())); delete (yyvsp[-1].string); }
-#line 1424 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1440 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 37: /* float_val: FLOAT_VALUE  */
-#line 143 "syntax.y"
+  case 38: /* float_val: FLOAT_VALUE  */
+#line 139 "syntax.y"
                         { (yyval.expr) = new NDouble(atof((yyvsp[0].string)->c_str())); delete (yyvsp[0].string); }
-#line 1430 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1446 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 38: /* float_val: SUB FLOAT_VALUE  */
-#line 144 "syntax.y"
+  case 39: /* float_val: SUB FLOAT_VALUE  */
+#line 140 "syntax.y"
                                     { (yyval.expr) = new NDouble(-atof((yyvsp[0].string)->c_str())); delete (yyvsp[-1].string); }
-#line 1436 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1452 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 39: /* boolean: TRUE_VALUE  */
-#line 147 "syntax.y"
+  case 40: /* boolean: TRUE_VALUE  */
+#line 143 "syntax.y"
                      { (yyval.expr) = new NBool((yyvsp[0].string)->c_str()); delete (yyvsp[0].string); }
-#line 1442 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1458 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 40: /* boolean: FALSE_VALUE  */
-#line 148 "syntax.y"
+  case 41: /* boolean: FALSE_VALUE  */
+#line 144 "syntax.y"
                               { (yyval.expr) = new NBool((yyvsp[0].string)->c_str()); delete (yyvsp[0].string); }
-#line 1448 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1464 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 41: /* list: %empty  */
-#line 151 "syntax.y"
+  case 42: /* list: %empty  */
+#line 147 "syntax.y"
                   { (yyval.exprvec) = new ExpressionList(); }
-#line 1454 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1470 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 42: /* list: expr  */
-#line 152 "syntax.y"
+  case 43: /* list: expr  */
+#line 148 "syntax.y"
                 { (yyval.exprvec) = new ExpressionList(); (yyval.exprvec)->push_back((yyvsp[0].expr)); }
-#line 1460 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1476 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 43: /* list: list COMMA expr  */
-#line 153 "syntax.y"
+  case 44: /* list: list COMMA expr  */
+#line 149 "syntax.y"
                             { (yyvsp[-2].exprvec)->push_back((yyvsp[0].expr)); }
-#line 1466 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1482 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 44: /* list_access: %empty  */
-#line 156 "syntax.y"
-                         { (yyval.intvec) = new IntegerList(); }
-#line 1472 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+  case 45: /* list_access: %empty  */
+#line 152 "syntax.y"
+                         { (yyval.exprvec) = new ExpressionList(); }
+#line 1488 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 45: /* list_access: integer  */
+  case 46: /* list_access: expr  */
+#line 153 "syntax.y"
+                               { (yyval.exprvec) = new ExpressionList(); (yyval.exprvec)->push_back((yyvsp[0].expr)); }
+#line 1494 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+  case 47: /* list_access: list COMMA expr  */
+#line 154 "syntax.y"
+                                           { (yyvsp[-2].exprvec)->push_back((yyvsp[0].expr)); }
+#line 1500 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+  case 48: /* expr: ident EQ expr  */
 #line 157 "syntax.y"
-                                  { (yyval.intvec) = new IntegerList(); (yyval.intvec)->push_back((yyvsp[0].intgr)); }
-#line 1478 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
-    break;
-
-  case 46: /* list_access: list COMMA integer  */
-#line 158 "syntax.y"
-                                              { (yyvsp[-2].exprvec)->push_back((yyvsp[0].intgr)); }
-#line 1484 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
-    break;
-
-  case 47: /* expr: ident EQ expr  */
-#line 161 "syntax.y"
                      { (yyval.expr) = new NAssignment(*(yyvsp[-2].ident), *(yyvsp[0].expr)); }
-#line 1490 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1506 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 48: /* expr: ident LPAREN call_args RPAREN  */
-#line 162 "syntax.y"
+  case 49: /* expr: ident LPAREN call_args RPAREN  */
+#line 158 "syntax.y"
                                          { (yyval.expr) = new NMethodCall(*(yyvsp[-3].ident), *(yyvsp[-1].exprvec)); delete (yyvsp[-1].exprvec); }
-#line 1496 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1512 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 49: /* expr: ident  */
-#line 163 "syntax.y"
+  case 50: /* expr: ident  */
+#line 159 "syntax.y"
                  { (yyval.ident) = (yyvsp[0].ident); }
-#line 1502 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1518 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 50: /* expr: ident LBRACKET list_access RBRACKET  */
+  case 51: /* expr: ident LBRACKET list_access RBRACKET  */
+#line 160 "syntax.y"
+                                               { (yyval.expr) = new NListAccess(*(yyvsp[-3].ident), *(yyvsp[-1].exprvec)); delete (yyvsp[-1].exprvec); }
+#line 1524 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+  case 52: /* expr: ident LBRACKET list_access RBRACKET EQ expr  */
+#line 161 "syntax.y"
+                                                       { (yyval.expr) = new NListAssignment(*(yyvsp[-5].ident), *(yyvsp[-3].exprvec), *(yyvsp[0].expr)); delete (yyvsp[-3].exprvec); }
+#line 1530 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+  case 55: /* expr: LBRACKET list RBRACKET  */
 #line 164 "syntax.y"
-                                               { (yyval.expr) = new NListAccess(*(yyvsp[-3].ident), *(yyvsp[-1].intvec)); delete (yyvsp[-1].intvec); }
-#line 1508 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
-    break;
-
-  case 51: /* expr: ident LBRACKET list_access RBRACKET EQ expr  */
-#line 165 "syntax.y"
-                                                       { (yyval.expr) = new NListAssignment(*(yyvsp[-5].ident), *(yyvsp[-3].intvec), *(yyvsp[0].expr)); delete (yyvsp[-3].intvec); }
-#line 1514 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
-    break;
-
-  case 54: /* expr: LBRACKET list RBRACKET  */
-#line 168 "syntax.y"
                                   { (yyval.expr) = new NList(*(yyvsp[-1].exprvec)); delete (yyvsp[-1].exprvec); }
-#line 1520 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1536 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 55: /* expr: STRING_VALUE  */
-#line 169 "syntax.y"
+  case 56: /* expr: STRING_VALUE  */
+#line 165 "syntax.y"
                         { (yyval.expr) = new NString((yyvsp[0].string)->c_str()); delete (yyvsp[0].string);}
-#line 1526 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1542 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 56: /* expr: expr op expr  */
-#line 170 "syntax.y"
+  case 57: /* expr: expr op expr  */
+#line 166 "syntax.y"
                         { (yyval.expr) = new NBinaryOperator(*(yyvsp[-2].expr), *(yyvsp[-1].op), *(yyvsp[0].expr)); }
-#line 1532 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1548 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 57: /* expr: LPAREN expr RPAREN  */
-#line 171 "syntax.y"
+  case 58: /* expr: LPAREN expr RPAREN  */
+#line 167 "syntax.y"
                               { (yyval.expr) = (yyvsp[-1].expr); }
-#line 1538 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1554 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 58: /* expr: LEN LPAREN expr RPAREN  */
-#line 172 "syntax.y"
+  case 59: /* expr: LEN LPAREN expr RPAREN  */
+#line 168 "syntax.y"
                                   { (yyval.expr) = new NLength((yyvsp[-1].expr)); }
-#line 1544 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1560 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 59: /* op: MUL  */
+  case 60: /* op: COMP_OP  */
+#line 171 "syntax.y"
+            { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
+#line 1566 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+  case 61: /* op: EQ_OP  */
+#line 172 "syntax.y"
+                { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
+#line 1572 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+  case 62: /* op: AND  */
+#line 173 "syntax.y"
+                { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
+#line 1578 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+  case 63: /* op: OR  */
+#line 174 "syntax.y"
+                { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
+#line 1584 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+  case 64: /* op: MUL  */
 #line 175 "syntax.y"
                 { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
-#line 1550 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1590 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 60: /* op: DIV  */
+  case 65: /* op: DIV  */
 #line 176 "syntax.y"
                 { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
-#line 1556 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1596 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 61: /* op: MOD  */
+  case 66: /* op: MOD  */
 #line 177 "syntax.y"
                 { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
-#line 1562 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1602 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 62: /* op: ADD  */
+  case 67: /* op: ADD  */
 #line 178 "syntax.y"
                 { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
-#line 1568 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1608 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 63: /* op: SUB  */
+  case 68: /* op: SUB  */
 #line 179 "syntax.y"
                 { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
-#line 1574 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+#line 1614 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
     break;
 
-  case 64: /* op: COMP_OP  */
-#line 180 "syntax.y"
-            { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
-#line 1580 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
-    break;
-
-  case 65: /* op: EQ_OP  */
-#line 181 "syntax.y"
-                { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
-#line 1586 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
-    break;
-
-  case 66: /* op: AND  */
+  case 69: /* call_args: %empty  */
 #line 182 "syntax.y"
-                { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
-#line 1592 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
-    break;
-
-  case 67: /* op: OR  */
-#line 183 "syntax.y"
-                { (yyval.op) = new NOperator(*(yyvsp[0].string)); delete (yyvsp[0].string); }
-#line 1598 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
-    break;
-
-  case 68: /* call_args: %empty  */
-#line 186 "syntax.y"
                        { (yyval.exprvec) = new ExpressionList(); }
-#line 1604 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
-    break;
-
-  case 69: /* call_args: expr  */
-#line 187 "syntax.y"
-                         { (yyval.exprvec) = new ExpressionList(); (yyval.exprvec)->push_back((yyvsp[0].expr)); }
-#line 1610 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
-    break;
-
-  case 70: /* call_args: call_args COMMA expr  */
-#line 188 "syntax.y"
-                                          { (yyvsp[-2].exprvec)->push_back((yyvsp[0].expr)); }
-#line 1616 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
-    break;
-
-
 #line 1620 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+  case 70: /* call_args: expr  */
+#line 183 "syntax.y"
+                         { (yyval.exprvec) = new ExpressionList(); (yyval.exprvec)->push_back((yyvsp[0].expr)); }
+#line 1626 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+  case 71: /* call_args: call_args COMMA expr  */
+#line 184 "syntax.y"
+                                          { (yyvsp[-2].exprvec)->push_back((yyvsp[0].expr)); }
+#line 1632 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
+    break;
+
+
+#line 1636 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.cpp"
 
       default: break;
     }
@@ -1809,4 +1825,4 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 191 "syntax.y"
+#line 187 "syntax.y"

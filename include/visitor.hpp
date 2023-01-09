@@ -129,6 +129,8 @@ class InterpretVisitor: public VisitorType
 {
     private:
         ValueVec setValueVec(ValueVec val, ValueVec idx_list, int idx, const Value* rhs) const;
+        void print_output(const Value* val) const;
+        void print_output(const Value* val, const Value* ending_val) const;
     public:
         const Value* VisitNInteger(const NInteger *element, Context* context) const override;
         const Value* VisitNDouble(const NDouble *element, Context* context) const override;

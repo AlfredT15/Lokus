@@ -21,13 +21,10 @@
 	NExpression *expr;
 	NStatement *stmt;
 	NIdentifier *ident;
-	NInteger *intgr;
-	NDouble *flt;
 	NOperator *op;
 	NVariableDeclaration *var_decl;
 	std::vector<NVariableDeclaration*> *varvec;
 	std::vector<NExpression*> *exprvec;
-	std::vector<NInteger*> *intvec;
 	std::string *string;
 	int token;
 }
@@ -55,16 +52,13 @@
 %type <op> op
 %type <expr> numeric boolean expr integer float_val
 %type <varvec> func_decl_args
-%type <exprvec> call_args list
-%type <intvec> list_access
+%type <exprvec> call_args list list_access
 %type <block> program stmts block
 %type <stmt> stmt var_decl func_decl extern_decl if_stmt elif_stmt for_stmt while_stmt
 
 /* Operator precedence for mathematical operators */
-%precedence EQ_OP 
-%precedence COMP_OP
-%precedence OR
-%precedence AND
+%left EQ_OP COMP_OP
+%left OR AND
 %left ADD SUB
 %left MUL DIV MOD
 
@@ -78,6 +72,7 @@ program : stmts { programBlock = $1; }
 		
 stmts : stmt { $$ = new NBlock(); $$->statements.push_back($<stmt>1); }
 	  | stmts stmt { $1->statements.push_back($<stmt>2); }
+	  
 	  ;
 
 
@@ -85,6 +80,7 @@ stmt : var_decl | func_decl | extern_decl | if_stmt | for_stmt | while_stmt
 	 | expr { $$ = new NExpressionStatement(*$1); }
 	 | RETURN expr { $$ = new NReturnStatement($2); }
 	 | PRINT LPAREN expr RPAREN { $$ = new NPrintStatement($3); }
+	 | PRINT LPAREN expr COMMA expr RPAREN { $$ = new NPrintStatement($3, $5); }
      ;
 
 // print_stmt : PRINT LPAREN expr RPAREN { $$ = new NPrintStatement($3); }
@@ -153,9 +149,9 @@ list : /*blank*/  { $$ = new ExpressionList(); }
 	 | list COMMA expr  { $1->push_back($3); }
 	 ;
 
-list_access : /*blank*/  { $$ = new IntegerList(); }
-			| integer { $$ = new IntegerList(); $$->push_back($<intgr>1); }
-			| list COMMA integer  { $1->push_back($<intgr>3); }
+list_access : /*blank*/  { $$ = new ExpressionList(); }
+			| expr { $$ = new ExpressionList(); $$->push_back($1); }
+			| list COMMA expr  { $1->push_back($3); }
 			;
 	
 expr : ident EQ expr { $$ = new NAssignment(*$<ident>1, *$3); }
@@ -172,15 +168,15 @@ expr : ident EQ expr { $$ = new NAssignment(*$<ident>1, *$3); }
 	 | LEN LPAREN expr RPAREN { $$ = new NLength($3); }
 	 ;
 
-op : MUL	{ $$ = new NOperator(*$1); delete $1; }
+op : COMP_OP{ $$ = new NOperator(*$1); delete $1; }
+   | EQ_OP	{ $$ = new NOperator(*$1); delete $1; }
+   | AND	{ $$ = new NOperator(*$1); delete $1; }
+   | OR		{ $$ = new NOperator(*$1); delete $1; }
+   | MUL	{ $$ = new NOperator(*$1); delete $1; }
    | DIV	{ $$ = new NOperator(*$1); delete $1; }
    | MOD	{ $$ = new NOperator(*$1); delete $1; }
    | ADD	{ $$ = new NOperator(*$1); delete $1; }
    | SUB	{ $$ = new NOperator(*$1); delete $1; }
-   | COMP_OP{ $$ = new NOperator(*$1); delete $1; }
-   | EQ_OP	{ $$ = new NOperator(*$1); delete $1; }
-   | AND	{ $$ = new NOperator(*$1); delete $1; }
-   | OR		{ $$ = new NOperator(*$1); delete $1; }
 
 	
 call_args : /*blank*/  { $$ = new ExpressionList(); }

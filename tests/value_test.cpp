@@ -277,7 +277,7 @@ TEST(value_construction, function_construction)
     Context* func_context = new Context(context);
 
     FunctionValue* function_val = new FunctionValue(&arg_values, func_context, *body, DataType::INT_DTYPE);
-    ASSERT_THAT((int*)((IntValue*)function_val->block.Accept(visitor, context))->get_value(), Pointee(Eq(4)));
+    ASSERT_THAT((int*)((IntValue*)((ReturnValue*)function_val->block.Accept(visitor, context))->get_value())->get_value(), Pointee(Eq(4)));
 };
 
 TEST(value_construction, function_isError_check)

@@ -32,7 +32,7 @@ linefeed        \n
 "while"                                         return TOKEN(WHILE);
 "print"                                         return TOKEN(PRINT);
 "len"                                           return TOKEN(LEN);
-\"[^"]+\"                                       SAVE_TOKEN; return STRING_VALUE;
+\"[^\n"]+\"                                     SAVE_TOKEN; return STRING_VALUE;
 [0-9]+					                        SAVE_TOKEN; return INTEGER_VALUE;
 [0-9]+\.[0-9]* 			                        SAVE_TOKEN; return FLOAT_VALUE;
 
@@ -61,6 +61,7 @@ linefeed        \n
 "/"				          		                SAVE_TOKEN; return DIV;
 "%"                                             SAVE_TOKEN; return MOD;
 
+"//"[^\n]*                                      
 "("	          					                return TOKEN(LPAREN);
 ")"					          	                return TOKEN(RPAREN);
 "{"         						            return TOKEN(LBRACE);
@@ -70,6 +71,7 @@ linefeed        \n
 
 "."         						            return TOKEN(DOT);
 ","				          		                return TOKEN(COMMA);
+
 
 
 {linefeed}                                      {line_num++;}
