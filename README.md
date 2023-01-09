@@ -109,6 +109,81 @@ Less than or equal to | <=
 And | and
 Or | or
 
+### Loops
+
+You can create for loops and while loops
+
+#### For loops
+
+Can create a for loop as follows `for (DECLARATION, CONDITION, CHANGE) { BODY }`. An example is
+
+```
+for (int i = 0, i < 10 i = i + 1)
+{
+  print(i)
+}
+```
+
+#### While loops
+
+Can create a while loop as follows `while EXPRESSION { BODY }`. An example is
+
+```
+int i = 0
+while i < 10
+{
+  print(i)
+  i = i + 1
+}
+```
+
+### Conditionals
+
+#### If Statements
+
+Can create an if statment as follows `if EXPRESSION { BODY }`. An example is
+```
+int i = 0
+if i == 0
+{
+  print("i is 0")
+}
+```
+
+#### Else If Statements
+
+Can create an else if statment as follows `elif EXPRESSION { BODY }`. An example is
+```
+int i = 1
+if i == 0
+{
+  print("i is 0")
+}
+elif i == 1
+{
+  print("i is 1") 
+}
+```
+
+#### Else Statements
+
+Can create an else statment as follows `else { BODY }`. An example is
+```
+int i = 2
+if i == 0
+{
+  print("i is 0")
+}
+elif i == 1
+{
+  print("i is 1") 
+}
+else
+{
+  print("i is neither 0 or 1")
+}
+```
+
 ### Special Functions
 
 - print
