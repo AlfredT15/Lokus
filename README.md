@@ -191,5 +191,5 @@ else
   - the print expression automatically prints your expression with a new line as well
   - you can print a line with your own ending through `print(EXPRESSION, ENDING_EXPRESSION)`
 - len
-  - Can find the length of a list or string
+  - Can find the length of a list or string with `len(VARIABLE)`
 
