@@ -1,0 +1,3521 @@
+Start testing: Jan 08 18:07 EST
+----------------------------------------------------------
+54/130 Testing: basic_node.function_declaration_accept
+54/130 Test: basic_node.function_declaration_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.function_declaration_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.function_declaration_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.function_declaration_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.function_declaration_accept
+/home/alfred/Code/Language/new_langauge/Lokus/tests/node_test.cpp:1218: Failure
+Value of: (int*)((IntValue*)func_val->block.Accept(visitor, context))->get_value()
+Expected: points to a value that is equal to 4
+  Actual: 0x55a3435a5008 (of type int*), which points to 1129998768 (of type int)
+[  FAILED  ] basic_node.function_declaration_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] basic_node.function_declaration_accept
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Failed.
+"basic_node.function_declaration_accept" end time: Jan 08 18:07 EST
+"basic_node.function_declaration_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/130 Testing: basic_node.if_with_else_if_accept
+56/130 Test: basic_node.if_with_else_if_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.if_with_else_if_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.if_with_else_if_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.if_with_else_if_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.if_with_else_if_accept
+[       OK ] basic_node.if_with_else_if_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.if_with_else_if_accept" end time: Jan 08 18:07 EST
+"basic_node.if_with_else_if_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+99/130 Testing: bin_op_node.double_greater_than_or_equal_to_int_greater
+99/130 Test: bin_op_node.double_greater_than_or_equal_to_int_greater
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_greater_than_or_equal_to_int_greater" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_greater_than_or_equal_to_int_greater" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_greater_than_or_equal_to_int_greater
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_greater_than_or_equal_to_int_greater
+[       OK ] bin_op_node.double_greater_than_or_equal_to_int_greater (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_greater_than_or_equal_to_int_greater" end time: Jan 08 18:07 EST
+"bin_op_node.double_greater_than_or_equal_to_int_greater" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/130 Testing: basic_node.if_statement_accept
+55/130 Test: basic_node.if_statement_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.if_statement_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.if_statement_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.if_statement_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.if_statement_accept
+[       OK ] basic_node.if_statement_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.if_statement_accept" end time: Jan 08 18:07 EST
+"basic_node.if_statement_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+107/130 Testing: bin_op_node.double_greater_than_double
+107/130 Test: bin_op_node.double_greater_than_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_greater_than_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_greater_than_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_greater_than_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_greater_than_double
+[       OK ] bin_op_node.double_greater_than_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_greater_than_double" end time: Jan 08 18:07 EST
+"bin_op_node.double_greater_than_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+106/130 Testing: bin_op_node.double_less_than_double
+106/130 Test: bin_op_node.double_less_than_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_less_than_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_less_than_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_less_than_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_less_than_double
+[       OK ] bin_op_node.double_less_than_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_less_than_double" end time: Jan 08 18:07 EST
+"bin_op_node.double_less_than_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/130 Testing: basic_node.variable_declaration_accept_expr
+53/130 Test: basic_node.variable_declaration_accept_expr
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.variable_declaration_accept_expr" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.variable_declaration_accept_expr" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.variable_declaration_accept_expr
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.variable_declaration_accept_expr
+[       OK ] basic_node.variable_declaration_accept_expr (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.variable_declaration_accept_expr" end time: Jan 08 18:07 EST
+"basic_node.variable_declaration_accept_expr" time elapsed: 00:00:00
+----------------------------------------------------------
+
+100/130 Testing: bin_op_node.double_plus_double
+100/130 Test: bin_op_node.double_plus_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_plus_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_plus_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_plus_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_plus_double
+[       OK ] bin_op_node.double_plus_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_plus_double" end time: Jan 08 18:07 EST
+"bin_op_node.double_plus_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/130 Testing: basic_node.if_with_else_if_with_else_accept
+57/130 Test: basic_node.if_with_else_if_with_else_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.if_with_else_if_with_else_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.if_with_else_if_with_else_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.if_with_else_if_with_else_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.if_with_else_if_with_else_accept
+[       OK ] basic_node.if_with_else_if_with_else_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.if_with_else_if_with_else_accept" end time: Jan 08 18:07 EST
+"basic_node.if_with_else_if_with_else_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/130 Testing: basic_node.variable_declaration_accept_null_and_reassignment
+52/130 Test: basic_node.variable_declaration_accept_null_and_reassignment
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.variable_declaration_accept_null_and_reassignment" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.variable_declaration_accept_null_and_reassignment" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.variable_declaration_accept_null_and_reassignment
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.variable_declaration_accept_null_and_reassignment
+[       OK ] basic_node.variable_declaration_accept_null_and_reassignment (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.variable_declaration_accept_null_and_reassignment" end time: Jan 08 18:07 EST
+"basic_node.variable_declaration_accept_null_and_reassignment" time elapsed: 00:00:00
+----------------------------------------------------------
+
+73/130 Testing: bin_op_node.int_less_than_or_equal_to_int_less
+73/130 Test: bin_op_node.int_less_than_or_equal_to_int_less
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_less_than_or_equal_to_int_less" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_less_than_or_equal_to_int_less" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_less_than_or_equal_to_int_less
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_less_than_or_equal_to_int_less
+[       OK ] bin_op_node.int_less_than_or_equal_to_int_less (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_less_than_or_equal_to_int_less" end time: Jan 08 18:07 EST
+"bin_op_node.int_less_than_or_equal_to_int_less" time elapsed: 00:00:00
+----------------------------------------------------------
+
+101/130 Testing: bin_op_node.double_minus_double
+101/130 Test: bin_op_node.double_minus_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_minus_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_minus_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_minus_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_minus_double
+[       OK ] bin_op_node.double_minus_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_minus_double" end time: Jan 08 18:07 EST
+"bin_op_node.double_minus_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/130 Testing: basic_node.for_statement_accept_positive_change
+58/130 Test: basic_node.for_statement_accept_positive_change
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.for_statement_accept_positive_change" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.for_statement_accept_positive_change" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.for_statement_accept_positive_change
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.for_statement_accept_positive_change
+[       OK ] basic_node.for_statement_accept_positive_change (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.for_statement_accept_positive_change" end time: Jan 08 18:07 EST
+"basic_node.for_statement_accept_positive_change" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/130 Testing: basic_node.variable_declaration_accept_null
+51/130 Test: basic_node.variable_declaration_accept_null
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.variable_declaration_accept_null" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.variable_declaration_accept_null" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.variable_declaration_accept_null
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.variable_declaration_accept_null
+[       OK ] basic_node.variable_declaration_accept_null (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.variable_declaration_accept_null" end time: Jan 08 18:07 EST
+"basic_node.variable_declaration_accept_null" time elapsed: 00:00:00
+----------------------------------------------------------
+
+108/130 Testing: bin_op_node.double_less_than_or_equal_to_double_equal
+108/130 Test: bin_op_node.double_less_than_or_equal_to_double_equal
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_less_than_or_equal_to_double_equal" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_less_than_or_equal_to_double_equal" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_less_than_or_equal_to_double_equal
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_less_than_or_equal_to_double_equal
+[       OK ] bin_op_node.double_less_than_or_equal_to_double_equal (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_less_than_or_equal_to_double_equal" end time: Jan 08 18:07 EST
+"bin_op_node.double_less_than_or_equal_to_double_equal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+74/130 Testing: bin_op_node.int_greater_than_or_equal_to_int_equal
+74/130 Test: bin_op_node.int_greater_than_or_equal_to_int_equal
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_greater_than_or_equal_to_int_equal" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_greater_than_or_equal_to_int_equal" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_greater_than_or_equal_to_int_equal
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_greater_than_or_equal_to_int_equal
+[       OK ] bin_op_node.int_greater_than_or_equal_to_int_equal (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_greater_than_or_equal_to_int_equal" end time: Jan 08 18:07 EST
+"bin_op_node.int_greater_than_or_equal_to_int_equal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+102/130 Testing: bin_op_node.double_multiply_double
+102/130 Test: bin_op_node.double_multiply_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_multiply_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_multiply_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_multiply_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_multiply_double
+[       OK ] bin_op_node.double_multiply_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_multiply_double" end time: Jan 08 18:07 EST
+"bin_op_node.double_multiply_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+75/130 Testing: bin_op_node.int_greater_than_or_equal_to_int_greater
+75/130 Test: bin_op_node.int_greater_than_or_equal_to_int_greater
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_greater_than_or_equal_to_int_greater" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_greater_than_or_equal_to_int_greater" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_greater_than_or_equal_to_int_greater
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_greater_than_or_equal_to_int_greater
+[       OK ] bin_op_node.int_greater_than_or_equal_to_int_greater (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_greater_than_or_equal_to_int_greater" end time: Jan 08 18:07 EST
+"bin_op_node.int_greater_than_or_equal_to_int_greater" time elapsed: 00:00:00
+----------------------------------------------------------
+
+76/130 Testing: bin_op_node.int_plus_double
+76/130 Test: bin_op_node.int_plus_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_plus_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_plus_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_plus_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_plus_double
+[       OK ] bin_op_node.int_plus_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_plus_double" end time: Jan 08 18:07 EST
+"bin_op_node.int_plus_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+79/130 Testing: bin_op_node.int_divide_double
+79/130 Test: bin_op_node.int_divide_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_divide_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_divide_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_divide_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_divide_double
+[       OK ] bin_op_node.int_divide_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_divide_double" end time: Jan 08 18:07 EST
+"bin_op_node.int_divide_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+105/130 Testing: bin_op_node.double_not_equal_to_double
+105/130 Test: bin_op_node.double_not_equal_to_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_not_equal_to_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_not_equal_to_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_not_equal_to_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_not_equal_to_double
+[       OK ] bin_op_node.double_not_equal_to_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_not_equal_to_double" end time: Jan 08 18:07 EST
+"bin_op_node.double_not_equal_to_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+77/130 Testing: bin_op_node.int_minus_double
+77/130 Test: bin_op_node.int_minus_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_minus_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_minus_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_minus_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_minus_double
+[       OK ] bin_op_node.int_minus_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_minus_double" end time: Jan 08 18:07 EST
+"bin_op_node.int_minus_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+69/130 Testing: bin_op_node.int_not_equal_to_int
+69/130 Test: bin_op_node.int_not_equal_to_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_not_equal_to_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_not_equal_to_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_not_equal_to_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_not_equal_to_int
+[       OK ] bin_op_node.int_not_equal_to_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_not_equal_to_int" end time: Jan 08 18:07 EST
+"bin_op_node.int_not_equal_to_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/130 Testing: basic_node.return_statement_accept
+50/130 Test: basic_node.return_statement_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.return_statement_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.return_statement_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.return_statement_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.return_statement_accept
+[       OK ] basic_node.return_statement_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.return_statement_accept" end time: Jan 08 18:07 EST
+"basic_node.return_statement_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+78/130 Testing: bin_op_node.int_multiply_double
+78/130 Test: bin_op_node.int_multiply_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_multiply_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_multiply_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_multiply_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_multiply_double
+[       OK ] bin_op_node.int_multiply_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_multiply_double" end time: Jan 08 18:07 EST
+"bin_op_node.int_multiply_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+70/130 Testing: bin_op_node.int_less_than_int
+70/130 Test: bin_op_node.int_less_than_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_less_than_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_less_than_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_less_than_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_less_than_int
+[       OK ] bin_op_node.int_less_than_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_less_than_int" end time: Jan 08 18:07 EST
+"bin_op_node.int_less_than_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+98/130 Testing: bin_op_node.double_greater_than_or_equal_to_int_equal
+98/130 Test: bin_op_node.double_greater_than_or_equal_to_int_equal
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_greater_than_or_equal_to_int_equal" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_greater_than_or_equal_to_int_equal" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_greater_than_or_equal_to_int_equal
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_greater_than_or_equal_to_int_equal
+[       OK ] bin_op_node.double_greater_than_or_equal_to_int_equal (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_greater_than_or_equal_to_int_equal" end time: Jan 08 18:07 EST
+"bin_op_node.double_greater_than_or_equal_to_int_equal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+80/130 Testing: bin_op_node.int_equal_to_double
+80/130 Test: bin_op_node.int_equal_to_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_equal_to_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_equal_to_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_equal_to_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_equal_to_double
+[       OK ] bin_op_node.int_equal_to_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_equal_to_double" end time: Jan 08 18:07 EST
+"bin_op_node.int_equal_to_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+104/130 Testing: bin_op_node.double_equal_to_double
+104/130 Test: bin_op_node.double_equal_to_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_equal_to_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_equal_to_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_equal_to_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_equal_to_double
+[       OK ] bin_op_node.double_equal_to_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_equal_to_double" end time: Jan 08 18:07 EST
+"bin_op_node.double_equal_to_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/130 Testing: basic_node.print_statement
+63/130 Test: basic_node.print_statement
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.print_statement" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.print_statement" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.print_statement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.print_statement
+[       OK ] basic_node.print_statement (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.print_statement" end time: Jan 08 18:07 EST
+"basic_node.print_statement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+72/130 Testing: bin_op_node.int_less_than_or_equal_to_int_equal
+72/130 Test: bin_op_node.int_less_than_or_equal_to_int_equal
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_less_than_or_equal_to_int_equal" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_less_than_or_equal_to_int_equal" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_less_than_or_equal_to_int_equal
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_less_than_or_equal_to_int_equal
+[       OK ] bin_op_node.int_less_than_or_equal_to_int_equal (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_less_than_or_equal_to_int_equal" end time: Jan 08 18:07 EST
+"bin_op_node.int_less_than_or_equal_to_int_equal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/130 Testing: basic_node.expression_statement_accept
+49/130 Test: basic_node.expression_statement_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.expression_statement_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.expression_statement_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.expression_statement_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.expression_statement_accept
+[       OK ] basic_node.expression_statement_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.expression_statement_accept" end time: Jan 08 18:07 EST
+"basic_node.expression_statement_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/130 Testing: basic_node.block_with_return_accept
+48/130 Test: basic_node.block_with_return_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.block_with_return_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.block_with_return_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.block_with_return_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.block_with_return_accept
+[       OK ] basic_node.block_with_return_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.block_with_return_accept" end time: Jan 08 18:07 EST
+"basic_node.block_with_return_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+87/130 Testing: bin_op_node.int_greater_than_or_equal_to_double_greater
+87/130 Test: bin_op_node.int_greater_than_or_equal_to_double_greater
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_greater_than_or_equal_to_double_greater" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_greater_than_or_equal_to_double_greater" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_greater_than_or_equal_to_double_greater
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_greater_than_or_equal_to_double_greater
+[       OK ] bin_op_node.int_greater_than_or_equal_to_double_greater (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_greater_than_or_equal_to_double_greater" end time: Jan 08 18:07 EST
+"bin_op_node.int_greater_than_or_equal_to_double_greater" time elapsed: 00:00:00
+----------------------------------------------------------
+
+82/130 Testing: bin_op_node.int_less_than_double
+82/130 Test: bin_op_node.int_less_than_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_less_than_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_less_than_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_less_than_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_less_than_double
+[       OK ] bin_op_node.int_less_than_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_less_than_double" end time: Jan 08 18:07 EST
+"bin_op_node.int_less_than_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+67/130 Testing: bin_op_node.int_divide_int
+67/130 Test: bin_op_node.int_divide_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_divide_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_divide_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_divide_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_divide_int
+[       OK ] bin_op_node.int_divide_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_divide_int" end time: Jan 08 18:07 EST
+"bin_op_node.int_divide_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+68/130 Testing: bin_op_node.int_equal_to_int
+68/130 Test: bin_op_node.int_equal_to_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_equal_to_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_equal_to_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_equal_to_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_equal_to_int
+[       OK ] bin_op_node.int_equal_to_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_equal_to_int" end time: Jan 08 18:07 EST
+"bin_op_node.int_equal_to_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+103/130 Testing: bin_op_node.double_divide_double
+103/130 Test: bin_op_node.double_divide_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_divide_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_divide_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_divide_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_divide_double
+[       OK ] bin_op_node.double_divide_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_divide_double" end time: Jan 08 18:07 EST
+"bin_op_node.double_divide_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+85/130 Testing: bin_op_node.int_less_than_or_equal_to_double_less
+85/130 Test: bin_op_node.int_less_than_or_equal_to_double_less
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_less_than_or_equal_to_double_less" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_less_than_or_equal_to_double_less" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_less_than_or_equal_to_double_less
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_less_than_or_equal_to_double_less
+[       OK ] bin_op_node.int_less_than_or_equal_to_double_less (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_less_than_or_equal_to_double_less" end time: Jan 08 18:07 EST
+"bin_op_node.int_less_than_or_equal_to_double_less" time elapsed: 00:00:00
+----------------------------------------------------------
+
+81/130 Testing: bin_op_node.int_not_equal_to_double
+81/130 Test: bin_op_node.int_not_equal_to_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_not_equal_to_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_not_equal_to_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_not_equal_to_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_not_equal_to_double
+[       OK ] bin_op_node.int_not_equal_to_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_not_equal_to_double" end time: Jan 08 18:07 EST
+"bin_op_node.int_not_equal_to_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+65/130 Testing: bin_op_node.int_minus_int
+65/130 Test: bin_op_node.int_minus_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_minus_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_minus_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_minus_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_minus_int
+[       OK ] bin_op_node.int_minus_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_minus_int" end time: Jan 08 18:07 EST
+"bin_op_node.int_minus_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+84/130 Testing: bin_op_node.int_less_than_or_equal_to_double_equal
+84/130 Test: bin_op_node.int_less_than_or_equal_to_double_equal
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_less_than_or_equal_to_double_equal" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_less_than_or_equal_to_double_equal" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_less_than_or_equal_to_double_equal
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_less_than_or_equal_to_double_equal
+[       OK ] bin_op_node.int_less_than_or_equal_to_double_equal (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_less_than_or_equal_to_double_equal" end time: Jan 08 18:07 EST
+"bin_op_node.int_less_than_or_equal_to_double_equal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+83/130 Testing: bin_op_node.int_greater_than_double
+83/130 Test: bin_op_node.int_greater_than_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_greater_than_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_greater_than_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_greater_than_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_greater_than_double
+[       OK ] bin_op_node.int_greater_than_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_greater_than_double" end time: Jan 08 18:07 EST
+"bin_op_node.int_greater_than_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+71/130 Testing: bin_op_node.int_greater_than_int
+71/130 Test: bin_op_node.int_greater_than_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_greater_than_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_greater_than_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_greater_than_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_greater_than_int
+[       OK ] bin_op_node.int_greater_than_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_greater_than_int" end time: Jan 08 18:07 EST
+"bin_op_node.int_greater_than_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+66/130 Testing: bin_op_node.int_multiply_int
+66/130 Test: bin_op_node.int_multiply_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_multiply_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_multiply_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_multiply_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_multiply_int
+[       OK ] bin_op_node.int_multiply_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_multiply_int" end time: Jan 08 18:07 EST
+"bin_op_node.int_multiply_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+64/130 Testing: bin_op_node.int_plus_int
+64/130 Test: bin_op_node.int_plus_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_plus_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_plus_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_plus_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_plus_int
+[       OK ] bin_op_node.int_plus_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_plus_int" end time: Jan 08 18:07 EST
+"bin_op_node.int_plus_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+86/130 Testing: bin_op_node.int_greater_than_or_equal_to_double_equal
+86/130 Test: bin_op_node.int_greater_than_or_equal_to_double_equal
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.int_greater_than_or_equal_to_double_equal" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.int_greater_than_or_equal_to_double_equal" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.int_greater_than_or_equal_to_double_equal
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.int_greater_than_or_equal_to_double_equal
+[       OK ] bin_op_node.int_greater_than_or_equal_to_double_equal (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.int_greater_than_or_equal_to_double_equal" end time: Jan 08 18:07 EST
+"bin_op_node.int_greater_than_or_equal_to_double_equal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+109/130 Testing: bin_op_node.double_less_than_or_equal_to_double_less
+109/130 Test: bin_op_node.double_less_than_or_equal_to_double_less
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_less_than_or_equal_to_double_less" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_less_than_or_equal_to_double_less" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_less_than_or_equal_to_double_less
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_less_than_or_equal_to_double_less
+[       OK ] bin_op_node.double_less_than_or_equal_to_double_less (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_less_than_or_equal_to_double_less" end time: Jan 08 18:07 EST
+"bin_op_node.double_less_than_or_equal_to_double_less" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/130 Testing: basic_node.for_statement_accept_negative_change
+59/130 Test: basic_node.for_statement_accept_negative_change
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.for_statement_accept_negative_change" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.for_statement_accept_negative_change" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.for_statement_accept_negative_change
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.for_statement_accept_negative_change
+[       OK ] basic_node.for_statement_accept_negative_change (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.for_statement_accept_negative_change" end time: Jan 08 18:07 EST
+"basic_node.for_statement_accept_negative_change" time elapsed: 00:00:00
+----------------------------------------------------------
+
+97/130 Testing: bin_op_node.double_less_than_or_equal_to_int_less
+97/130 Test: bin_op_node.double_less_than_or_equal_to_int_less
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_less_than_or_equal_to_int_less" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_less_than_or_equal_to_int_less" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_less_than_or_equal_to_int_less
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_less_than_or_equal_to_int_less
+[       OK ] bin_op_node.double_less_than_or_equal_to_int_less (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_less_than_or_equal_to_int_less" end time: Jan 08 18:07 EST
+"bin_op_node.double_less_than_or_equal_to_int_less" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/130 Testing: value_construction.list_check
+29/130 Test: value_construction.list_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.list_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.list_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.list_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.list_check
+[       OK ] value_construction.list_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.list_check" end time: Jan 08 18:07 EST
+"value_construction.list_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/130 Testing: value_construction.int_check
+9/130 Test: value_construction.int_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.int_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.int_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.int_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.int_check
+[       OK ] value_construction.int_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.int_check" end time: Jan 08 18:07 EST
+"value_construction.int_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/130 Testing: basic_node.block_accept
+47/130 Test: basic_node.block_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.block_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.block_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.block_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.block_accept
+[       OK ] basic_node.block_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.block_accept" end time: Jan 08 18:07 EST
+"basic_node.block_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/130 Testing: value_construction.list_isError_check
+30/130 Test: value_construction.list_isError_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.list_isError_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.list_isError_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.list_isError_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.list_isError_check
+[       OK ] value_construction.list_isError_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.list_isError_check" end time: Jan 08 18:07 EST
+"value_construction.list_isError_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/130 Testing: value_construction.function_construction
+32/130 Test: value_construction.function_construction
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.function_construction" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.function_construction" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.function_construction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.function_construction
+[       OK ] value_construction.function_construction (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.function_construction" end time: Jan 08 18:07 EST
+"value_construction.function_construction" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/130 Testing: value_construction.int_isError_check
+10/130 Test: value_construction.int_isError_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.int_isError_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.int_isError_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.int_isError_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.int_isError_check
+[       OK ] value_construction.int_isError_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.int_isError_check" end time: Jan 08 18:07 EST
+"value_construction.int_isError_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+96/130 Testing: bin_op_node.double_less_than_or_equal_to_int_equal
+96/130 Test: bin_op_node.double_less_than_or_equal_to_int_equal
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_less_than_or_equal_to_int_equal" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_less_than_or_equal_to_int_equal" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_less_than_or_equal_to_int_equal
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_less_than_or_equal_to_int_equal
+[       OK ] bin_op_node.double_less_than_or_equal_to_int_equal (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_less_than_or_equal_to_int_equal" end time: Jan 08 18:07 EST
+"bin_op_node.double_less_than_or_equal_to_int_equal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/130 Testing: value_construction.double_check_double
+13/130 Test: value_construction.double_check_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.double_check_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.double_check_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.double_check_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.double_check_double
+[       OK ] value_construction.double_check_double (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.double_check_double" end time: Jan 08 18:07 EST
+"value_construction.double_check_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+95/130 Testing: bin_op_node.double_greater_than_int
+95/130 Test: bin_op_node.double_greater_than_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_greater_than_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_greater_than_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_greater_than_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_greater_than_int
+[       OK ] bin_op_node.double_greater_than_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_greater_than_int" end time: Jan 08 18:07 EST
+"bin_op_node.double_greater_than_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/130 Testing: value_construction.operator_type_check
+28/130 Test: value_construction.operator_type_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.operator_type_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.operator_type_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.operator_type_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.operator_type_check
+[       OK ] value_construction.operator_type_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.operator_type_check" end time: Jan 08 18:07 EST
+"value_construction.operator_type_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/130 Testing: basic_node.string_accept
+41/130 Test: basic_node.string_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.string_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.string_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.string_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.string_accept
+[       OK ] basic_node.string_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.string_accept" end time: Jan 08 18:07 EST
+"basic_node.string_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/130 Testing: value_construction.string_type_check
+22/130 Test: value_construction.string_type_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.string_type_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.string_type_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.string_type_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.string_type_check
+[       OK ] value_construction.string_type_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.string_type_check" end time: Jan 08 18:07 EST
+"value_construction.string_type_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/130 Testing: basic_node.while_statement_accept_double_loop
+62/130 Test: basic_node.while_statement_accept_double_loop
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.while_statement_accept_double_loop" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.while_statement_accept_double_loop" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.while_statement_accept_double_loop
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.while_statement_accept_double_loop
+[       OK ] basic_node.while_statement_accept_double_loop (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.while_statement_accept_double_loop" end time: Jan 08 18:07 EST
+"basic_node.while_statement_accept_double_loop" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/130 Testing: value_construction.double_check_pi
+14/130 Test: value_construction.double_check_pi
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.double_check_pi" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.double_check_pi" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.double_check_pi
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.double_check_pi
+[       OK ] value_construction.double_check_pi (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.double_check_pi" end time: Jan 08 18:07 EST
+"value_construction.double_check_pi" time elapsed: 00:00:00
+----------------------------------------------------------
+
+91/130 Testing: bin_op_node.double_divide_int
+91/130 Test: bin_op_node.double_divide_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_divide_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_divide_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_divide_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_divide_int
+[       OK ] bin_op_node.double_divide_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_divide_int" end time: Jan 08 18:07 EST
+"bin_op_node.double_divide_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/130 Testing: basic_node.identifier_accept_val
+42/130 Test: basic_node.identifier_accept_val
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.identifier_accept_val" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.identifier_accept_val" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.identifier_accept_val
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.identifier_accept_val
+[       OK ] basic_node.identifier_accept_val (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.identifier_accept_val" end time: Jan 08 18:07 EST
+"basic_node.identifier_accept_val" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/130 Testing: value_construction.string_isError_check
+21/130 Test: value_construction.string_isError_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.string_isError_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.string_isError_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.string_isError_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.string_isError_check
+[       OK ] value_construction.string_isError_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.string_isError_check" end time: Jan 08 18:07 EST
+"value_construction.string_isError_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+88/130 Testing: bin_op_node.double_plus_int
+88/130 Test: bin_op_node.double_plus_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_plus_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_plus_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_plus_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_plus_int
+[       OK ] bin_op_node.double_plus_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_plus_int" end time: Jan 08 18:07 EST
+"bin_op_node.double_plus_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/130 Testing: value_construction.bool_type_check
+19/130 Test: value_construction.bool_type_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.bool_type_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.bool_type_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.bool_type_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.bool_type_check
+[       OK ] value_construction.bool_type_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.bool_type_check" end time: Jan 08 18:07 EST
+"value_construction.bool_type_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+94/130 Testing: bin_op_node.double_less_than_int
+94/130 Test: bin_op_node.double_less_than_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_less_than_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_less_than_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_less_than_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_less_than_int
+[       OK ] bin_op_node.double_less_than_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_less_than_int" end time: Jan 08 18:07 EST
+"bin_op_node.double_less_than_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/130 Testing: value_construction.int_type_check
+11/130 Test: value_construction.int_type_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.int_type_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.int_type_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.int_type_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.int_type_check
+[       OK ] value_construction.int_type_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.int_type_check" end time: Jan 08 18:07 EST
+"value_construction.int_type_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/130 Testing: basic_node.identifier_accept_type
+43/130 Test: basic_node.identifier_accept_type
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.identifier_accept_type" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.identifier_accept_type" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.identifier_accept_type
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.identifier_accept_type
+[       OK ] basic_node.identifier_accept_type (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.identifier_accept_type" end time: Jan 08 18:07 EST
+"basic_node.identifier_accept_type" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/130 Testing: value_construction.list_type_check
+31/130 Test: value_construction.list_type_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.list_type_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.list_type_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.list_type_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.list_type_check
+[       OK ] value_construction.list_type_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.list_type_check" end time: Jan 08 18:07 EST
+"value_construction.list_type_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/130 Testing: value_construction.operator_isError_check
+27/130 Test: value_construction.operator_isError_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.operator_isError_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.operator_isError_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.operator_isError_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.operator_isError_check
+[       OK ] value_construction.operator_isError_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.operator_isError_check" end time: Jan 08 18:07 EST
+"value_construction.operator_isError_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+93/130 Testing: bin_op_node.double_not_equal_to_int
+93/130 Test: bin_op_node.double_not_equal_to_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_not_equal_to_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_not_equal_to_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_not_equal_to_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_not_equal_to_int
+[       OK ] bin_op_node.double_not_equal_to_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_not_equal_to_int" end time: Jan 08 18:07 EST
+"bin_op_node.double_not_equal_to_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/130 Testing: basic_node.assignment_accept
+46/130 Test: basic_node.assignment_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.assignment_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.assignment_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.assignment_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.assignment_accept
+[       OK ] basic_node.assignment_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.assignment_accept" end time: Jan 08 18:07 EST
+"basic_node.assignment_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/130 Testing: value_construction.double_check_int
+12/130 Test: value_construction.double_check_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.double_check_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.double_check_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.double_check_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.double_check_int
+[       OK ] value_construction.double_check_int (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.double_check_int" end time: Jan 08 18:07 EST
+"value_construction.double_check_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/130 Testing: basic_node.for_statement_accept_double_loop
+60/130 Test: basic_node.for_statement_accept_double_loop
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.for_statement_accept_double_loop" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.for_statement_accept_double_loop" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.for_statement_accept_double_loop
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.for_statement_accept_double_loop
+[       OK ] basic_node.for_statement_accept_double_loop (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.for_statement_accept_double_loop" end time: Jan 08 18:07 EST
+"basic_node.for_statement_accept_double_loop" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/130 Testing: value_construction.bool_check
+17/130 Test: value_construction.bool_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.bool_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.bool_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.bool_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.bool_check
+[       OK ] value_construction.bool_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.bool_check" end time: Jan 08 18:07 EST
+"value_construction.bool_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+111/130 Testing: bin_op_node.double_greater_than_or_equal_to_double_greater
+111/130 Test: bin_op_node.double_greater_than_or_equal_to_double_greater
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_greater_than_or_equal_to_double_greater" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_greater_than_or_equal_to_double_greater" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_greater_than_or_equal_to_double_greater
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_greater_than_or_equal_to_double_greater
+[       OK ] bin_op_node.double_greater_than_or_equal_to_double_greater (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_greater_than_or_equal_to_double_greater" end time: Jan 08 18:07 EST
+"bin_op_node.double_greater_than_or_equal_to_double_greater" time elapsed: 00:00:00
+----------------------------------------------------------
+
+89/130 Testing: bin_op_node.double_minus_int
+89/130 Test: bin_op_node.double_minus_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_minus_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_minus_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_minus_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_minus_int
+[       OK ] bin_op_node.double_minus_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_minus_int" end time: Jan 08 18:07 EST
+"bin_op_node.double_minus_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/130 Testing: value_construction.bool_isError_check
+18/130 Test: value_construction.bool_isError_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.bool_isError_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.bool_isError_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.bool_isError_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.bool_isError_check
+[       OK ] value_construction.bool_isError_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.bool_isError_check" end time: Jan 08 18:07 EST
+"value_construction.bool_isError_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/130 Testing: value_construction.double_isError_check
+15/130 Test: value_construction.double_isError_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.double_isError_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.double_isError_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.double_isError_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.double_isError_check
+[       OK ] value_construction.double_isError_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.double_isError_check" end time: Jan 08 18:07 EST
+"value_construction.double_isError_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+110/130 Testing: bin_op_node.double_greater_than_or_equal_to_double_equal
+110/130 Test: bin_op_node.double_greater_than_or_equal_to_double_equal
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_greater_than_or_equal_to_double_equal" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_greater_than_or_equal_to_double_equal" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_greater_than_or_equal_to_double_equal
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_greater_than_or_equal_to_double_equal
+[       OK ] bin_op_node.double_greater_than_or_equal_to_double_equal (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_greater_than_or_equal_to_double_equal" end time: Jan 08 18:07 EST
+"bin_op_node.double_greater_than_or_equal_to_double_equal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/130 Testing: value_construction.void_type_check
+8/130 Test: value_construction.void_type_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.void_type_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.void_type_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.void_type_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.void_type_check
+[       OK ] value_construction.void_type_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.void_type_check" end time: Jan 08 18:07 EST
+"value_construction.void_type_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/130 Testing: basic_node.while_statement_accept
+61/130 Test: basic_node.while_statement_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.while_statement_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.while_statement_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.while_statement_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.while_statement_accept
+[       OK ] basic_node.while_statement_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.while_statement_accept" end time: Jan 08 18:07 EST
+"basic_node.while_statement_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/130 Testing: value_construction.double_type_check
+16/130 Test: value_construction.double_type_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.double_type_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.double_type_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.double_type_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.double_type_check
+[       OK ] value_construction.double_type_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.double_type_check" end time: Jan 08 18:07 EST
+"value_construction.double_type_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+92/130 Testing: bin_op_node.double_equal_to_int
+92/130 Test: bin_op_node.double_equal_to_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_equal_to_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_equal_to_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_equal_to_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_equal_to_int
+[       OK ] bin_op_node.double_equal_to_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_equal_to_int" end time: Jan 08 18:07 EST
+"bin_op_node.double_equal_to_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+90/130 Testing: bin_op_node.double_multiply_int
+90/130 Test: bin_op_node.double_multiply_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.double_multiply_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.double_multiply_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.double_multiply_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.double_multiply_int
+[       OK ] bin_op_node.double_multiply_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.double_multiply_int" end time: Jan 08 18:07 EST
+"bin_op_node.double_multiply_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/130 Testing: value_construction.string_check
+20/130 Test: value_construction.string_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.string_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.string_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.string_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.string_check
+[       OK ] value_construction.string_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.string_check" end time: Jan 08 18:07 EST
+"value_construction.string_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/130 Testing: basic_node.method_accept
+45/130 Test: basic_node.method_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.method_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.method_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.method_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.method_accept
+[       OK ] basic_node.method_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.method_accept" end time: Jan 08 18:07 EST
+"basic_node.method_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+112/130 Testing: bin_op_node.bool_equal_to_bool
+112/130 Test: bin_op_node.bool_equal_to_bool
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.bool_equal_to_bool" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.bool_equal_to_bool" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.bool_equal_to_bool
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.bool_equal_to_bool
+[       OK ] bin_op_node.bool_equal_to_bool (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.bool_equal_to_bool" end time: Jan 08 18:07 EST
+"bin_op_node.bool_equal_to_bool" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/130 Testing: basic_node.operator_accept
+44/130 Test: basic_node.operator_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.operator_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.operator_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.operator_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.operator_accept
+[       OK ] basic_node.operator_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.operator_accept" end time: Jan 08 18:07 EST
+"basic_node.operator_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/130 Testing: value_construction.identifier_isError_check
+24/130 Test: value_construction.identifier_isError_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.identifier_isError_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.identifier_isError_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.identifier_isError_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.identifier_isError_check
+[       OK ] value_construction.identifier_isError_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.identifier_isError_check" end time: Jan 08 18:07 EST
+"value_construction.identifier_isError_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/130 Testing: value_construction.identifier_type_check
+25/130 Test: value_construction.identifier_type_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.identifier_type_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.identifier_type_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.identifier_type_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.identifier_type_check
+[       OK ] value_construction.identifier_type_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.identifier_type_check" end time: Jan 08 18:07 EST
+"value_construction.identifier_type_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/130 Testing: value_construction.void_isError_check
+7/130 Test: value_construction.void_isError_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.void_isError_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.void_isError_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.void_isError_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.void_isError_check
+[       OK ] value_construction.void_isError_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.void_isError_check" end time: Jan 08 18:07 EST
+"value_construction.void_isError_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/130 Testing: value_construction.identifier_check
+23/130 Test: value_construction.identifier_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.identifier_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.identifier_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.identifier_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.identifier_check
+[       OK ] value_construction.identifier_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.identifier_check" end time: Jan 08 18:07 EST
+"value_construction.identifier_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/130 Testing: value_construction.operator_check
+26/130 Test: value_construction.operator_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.operator_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.operator_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.operator_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.operator_check
+[       OK ] value_construction.operator_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.operator_check" end time: Jan 08 18:07 EST
+"value_construction.operator_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/130 Testing: value_construction.function_isError_check
+33/130 Test: value_construction.function_isError_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.function_isError_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.function_isError_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.function_isError_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.function_isError_check
+[       OK ] value_construction.function_isError_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.function_isError_check" end time: Jan 08 18:07 EST
+"value_construction.function_isError_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/130 Testing: basic_node.double_accept
+39/130 Test: basic_node.double_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.double_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.double_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.double_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.double_accept
+[       OK ] basic_node.double_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.double_accept" end time: Jan 08 18:07 EST
+"basic_node.double_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/130 Testing: basic_node.bool_accept
+40/130 Test: basic_node.bool_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.bool_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.bool_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.bool_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.bool_accept
+[       OK ] basic_node.bool_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.bool_accept" end time: Jan 08 18:07 EST
+"basic_node.bool_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/130 Testing: value_construction.function_type_check
+34/130 Test: value_construction.function_type_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.function_type_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.function_type_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.function_type_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.function_type_check
+[       OK ] value_construction.function_type_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.function_type_check" end time: Jan 08 18:07 EST
+"value_construction.function_type_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/130 Testing: value_construction.void_check
+6/130 Test: value_construction.void_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.void_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.void_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.void_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.void_check
+[       OK ] value_construction.void_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.void_check" end time: Jan 08 18:07 EST
+"value_construction.void_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/130 Testing: value_construction.error_type_check
+5/130 Test: value_construction.error_type_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.error_type_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.error_type_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.error_type_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.error_type_check
+[       OK ] value_construction.error_type_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.error_type_check" end time: Jan 08 18:07 EST
+"value_construction.error_type_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/130 Testing: value_construction.return_check
+35/130 Test: value_construction.return_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.return_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.return_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.return_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.return_check
+[       OK ] value_construction.return_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.return_check" end time: Jan 08 18:07 EST
+"value_construction.return_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/130 Testing: basic_node.int_accept
+38/130 Test: basic_node.int_accept
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=basic_node.int_accept" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"basic_node.int_accept" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = basic_node.int_accept
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from basic_node
+[ RUN      ] basic_node.int_accept
+[       OK ] basic_node.int_accept (0 ms)
+[----------] 1 test from basic_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"basic_node.int_accept" end time: Jan 08 18:07 EST
+"basic_node.int_accept" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/130 Testing: value_construction.return_isError_check
+36/130 Test: value_construction.return_isError_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.return_isError_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.return_isError_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.return_isError_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.return_isError_check
+[       OK ] value_construction.return_isError_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.return_isError_check" end time: Jan 08 18:07 EST
+"value_construction.return_isError_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/130 Testing: value_construction.return_type_check
+37/130 Test: value_construction.return_type_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.return_type_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.return_type_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.return_type_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.return_type_check
+[       OK ] value_construction.return_type_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.return_type_check" end time: Jan 08 18:07 EST
+"value_construction.return_type_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/130 Testing: value_construction.error_check
+3/130 Test: value_construction.error_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.error_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.error_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.error_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.error_check
+[       OK ] value_construction.error_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.error_check" end time: Jan 08 18:07 EST
+"value_construction.error_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/130 Testing: value_construction.error_isError_check
+4/130 Test: value_construction.error_isError_check
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=value_construction.error_isError_check" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"value_construction.error_isError_check" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = value_construction.error_isError_check
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from value_construction
+[ RUN      ] value_construction.error_isError_check
+[       OK ] value_construction.error_isError_check (0 ms)
+[----------] 1 test from value_construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"value_construction.error_isError_check" end time: Jan 08 18:07 EST
+"value_construction.error_isError_check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/130 Testing: bin_op.creation
+2/130 Test: bin_op.creation
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op.creation" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op.creation" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op.creation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op
+[ RUN      ] bin_op.creation
+[       OK ] bin_op.creation (0 ms)
+[----------] 1 test from bin_op (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op.creation" end time: Jan 08 18:07 EST
+"bin_op.creation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+1/130 Testing: Loop_Construction.counter
+1/130 Test: Loop_Construction.counter
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=Loop_Construction.counter" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"Loop_Construction.counter" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Loop_Construction.counter
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Loop_Construction
+[ RUN      ] Loop_Construction.counter
+[       OK ] Loop_Construction.counter (0 ms)
+[----------] 1 test from Loop_Construction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"Loop_Construction.counter" end time: Jan 08 18:07 EST
+"Loop_Construction.counter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+113/130 Testing: bin_op_node.bool_not_equal_to_bool
+113/130 Test: bin_op_node.bool_not_equal_to_bool
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.bool_not_equal_to_bool" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.bool_not_equal_to_bool" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.bool_not_equal_to_bool
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.bool_not_equal_to_bool
+[       OK ] bin_op_node.bool_not_equal_to_bool (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.bool_not_equal_to_bool" end time: Jan 08 18:07 EST
+"bin_op_node.bool_not_equal_to_bool" time elapsed: 00:00:00
+----------------------------------------------------------
+
+114/130 Testing: bin_op_node.string_plus_string
+114/130 Test: bin_op_node.string_plus_string
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.string_plus_string" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.string_plus_string" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.string_plus_string
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.string_plus_string
+[       OK ] bin_op_node.string_plus_string (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.string_plus_string" end time: Jan 08 18:07 EST
+"bin_op_node.string_plus_string" time elapsed: 00:00:00
+----------------------------------------------------------
+
+115/130 Testing: bin_op_node.string_multiplied_int
+115/130 Test: bin_op_node.string_multiplied_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.string_multiplied_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.string_multiplied_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.string_multiplied_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.string_multiplied_int
+[       OK ] bin_op_node.string_multiplied_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.string_multiplied_int" end time: Jan 08 18:07 EST
+"bin_op_node.string_multiplied_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+116/130 Testing: bin_op_node.string_equal_to_string
+116/130 Test: bin_op_node.string_equal_to_string
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.string_equal_to_string" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.string_equal_to_string" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.string_equal_to_string
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.string_equal_to_string
+[       OK ] bin_op_node.string_equal_to_string (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.string_equal_to_string" end time: Jan 08 18:07 EST
+"bin_op_node.string_equal_to_string" time elapsed: 00:00:00
+----------------------------------------------------------
+
+117/130 Testing: bin_op_node.string_not_equal_to_string
+117/130 Test: bin_op_node.string_not_equal_to_string
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.string_not_equal_to_string" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.string_not_equal_to_string" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.string_not_equal_to_string
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.string_not_equal_to_string
+[       OK ] bin_op_node.string_not_equal_to_string (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.string_not_equal_to_string" end time: Jan 08 18:07 EST
+"bin_op_node.string_not_equal_to_string" time elapsed: 00:00:00
+----------------------------------------------------------
+
+118/130 Testing: bin_op_node.list_plus_list
+118/130 Test: bin_op_node.list_plus_list
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_plus_list" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_plus_list" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_plus_list
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_plus_list
+[       OK ] bin_op_node.list_plus_list (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_plus_list" end time: Jan 08 18:07 EST
+"bin_op_node.list_plus_list" time elapsed: 00:00:00
+----------------------------------------------------------
+
+119/130 Testing: bin_op_node.list_minus_list
+119/130 Test: bin_op_node.list_minus_list
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_minus_list" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_minus_list" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_minus_list
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_minus_list
+[       OK ] bin_op_node.list_minus_list (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_minus_list" end time: Jan 08 18:07 EST
+"bin_op_node.list_minus_list" time elapsed: 00:00:00
+----------------------------------------------------------
+
+120/130 Testing: bin_op_node.list_multiply_list
+120/130 Test: bin_op_node.list_multiply_list
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_multiply_list" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_multiply_list" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_multiply_list
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_multiply_list
+[       OK ] bin_op_node.list_multiply_list (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_multiply_list" end time: Jan 08 18:07 EST
+"bin_op_node.list_multiply_list" time elapsed: 00:00:00
+----------------------------------------------------------
+
+121/130 Testing: bin_op_node.list_divide_list
+121/130 Test: bin_op_node.list_divide_list
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_divide_list" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_divide_list" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_divide_list
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_divide_list
+[       OK ] bin_op_node.list_divide_list (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_divide_list" end time: Jan 08 18:07 EST
+"bin_op_node.list_divide_list" time elapsed: 00:00:00
+----------------------------------------------------------
+
+122/130 Testing: bin_op_node.list_plus_int
+122/130 Test: bin_op_node.list_plus_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_plus_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_plus_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_plus_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_plus_int
+[       OK ] bin_op_node.list_plus_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_plus_int" end time: Jan 08 18:07 EST
+"bin_op_node.list_plus_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+123/130 Testing: bin_op_node.list_minus_int
+123/130 Test: bin_op_node.list_minus_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_minus_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_minus_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_minus_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_minus_int
+[       OK ] bin_op_node.list_minus_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_minus_int" end time: Jan 08 18:07 EST
+"bin_op_node.list_minus_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+124/130 Testing: bin_op_node.list_multiply_int
+124/130 Test: bin_op_node.list_multiply_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_multiply_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_multiply_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_multiply_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_multiply_int
+[       OK ] bin_op_node.list_multiply_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_multiply_int" end time: Jan 08 18:07 EST
+"bin_op_node.list_multiply_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+125/130 Testing: bin_op_node.list_divide_int
+125/130 Test: bin_op_node.list_divide_int
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_divide_int" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_divide_int" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_divide_int
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_divide_int
+[       OK ] bin_op_node.list_divide_int (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_divide_int" end time: Jan 08 18:07 EST
+"bin_op_node.list_divide_int" time elapsed: 00:00:00
+----------------------------------------------------------
+
+126/130 Testing: bin_op_node.list_plus_double
+126/130 Test: bin_op_node.list_plus_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_plus_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_plus_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_plus_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_plus_double
+[       OK ] bin_op_node.list_plus_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_plus_double" end time: Jan 08 18:07 EST
+"bin_op_node.list_plus_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+127/130 Testing: bin_op_node.list_minus_double
+127/130 Test: bin_op_node.list_minus_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_minus_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_minus_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_minus_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_minus_double
+[       OK ] bin_op_node.list_minus_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_minus_double" end time: Jan 08 18:07 EST
+"bin_op_node.list_minus_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+128/130 Testing: bin_op_node.list_multiply_double
+128/130 Test: bin_op_node.list_multiply_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_multiply_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_multiply_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_multiply_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_multiply_double
+[       OK ] bin_op_node.list_multiply_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_multiply_double" end time: Jan 08 18:07 EST
+"bin_op_node.list_multiply_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+129/130 Testing: bin_op_node.list_divide_double
+129/130 Test: bin_op_node.list_divide_double
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_divide_double" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_divide_double" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_divide_double
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_divide_double
+[       OK ] bin_op_node.list_divide_double (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_divide_double" end time: Jan 08 18:07 EST
+"bin_op_node.list_divide_double" time elapsed: 00:00:00
+----------------------------------------------------------
+
+130/130 Testing: bin_op_node.list_plus_string
+130/130 Test: bin_op_node.list_plus_string
+Command: "/home/alfred/Code/Language/new_langauge/Lokus/build/tests/tests" "--gtest_filter=bin_op_node.list_plus_string" "--gtest_also_run_disabled_tests"
+Directory: /home/alfred/Code/Language/new_langauge/Lokus/build/tests
+"bin_op_node.list_plus_string" start time: Jan 08 18:07 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/alfred/Code/Language/new_langauge/Lokus/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = bin_op_node.list_plus_string
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from bin_op_node
+[ RUN      ] bin_op_node.list_plus_string
+[       OK ] bin_op_node.list_plus_string (0 ms)
+[----------] 1 test from bin_op_node (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"bin_op_node.list_plus_string" end time: Jan 08 18:07 EST
+"bin_op_node.list_plus_string" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 08 18:07 EST

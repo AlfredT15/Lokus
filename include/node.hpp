@@ -14,6 +14,7 @@ class Value;
 class NStatement;
 class NExpression;
 class NVariableDeclaration;
+class NInteger;
 
 class IntValue;
 class DoubleValue;
@@ -54,6 +55,15 @@ public:
 	NDouble(const double &value) : value(new DoubleValue(value)) { }
 
     void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
+class NList : public NExpression {
+public:
+	ExpressionList value;
+	NList(ExpressionList& value) : value(value) {}
+
+	void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
@@ -102,12 +112,15 @@ private:
 	{"-", OperationType::SUB_TYPE},
 	{"*", OperationType::MUL_TYPE},
 	{"/", OperationType::DIV_TYPE},
+	{"%", OperationType::MOD_TYPE},
 	{"==", OperationType::EE_TYPE},
 	{"!=", OperationType::NE_TYPE},
 	{">", OperationType::GT_TYPE},
 	{"<", OperationType::LT_TYPE},
 	{">=", OperationType::GTE_TYPE},
-	{"<=", OperationType::LTE_TYPE}
+	{"<=", OperationType::LTE_TYPE},
+	{"and", OperationType::AND_TYPE},
+	{"or", OperationType::OR_TYPE}
 	};
 public:
 	OperatorValue* value;
@@ -152,12 +165,43 @@ public:
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
+class NListAssignment : public NExpression {
+public:
+	NIdentifier& lhs;
+	ExpressionList index;
+	NExpression& rhs;
+	NListAssignment(NIdentifier& lhs, ExpressionList& index, NExpression& rhs) : 
+		lhs(lhs), index(index), rhs(rhs) { }
+
+    void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
 class NBlock : public NExpression {
 public:
 	StatementList statements;
 	NBlock() { }
 
     void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
+class NListAccess : public NExpression{
+public:
+	NIdentifier& id;
+	ExpressionList index;
+	NListAccess(NIdentifier& id, ExpressionList& index) : id(id), index(index) { }
+
+	void Accept(const VisitorVoid *visitor) const override;
+	const Value* Accept(const VisitorType *visitor, Context *context) const override;
+};
+
+class NLength : public NExpression{
+public:
+	NExpression* expr;
+	NLength(NExpression* expr) : expr(expr) { }
+
+	void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;
 };
 
@@ -263,7 +307,10 @@ public:
 class NPrintStatement : public NStatement{
 public:
 	NExpression* expr;
+	NExpression* ending_expr;
+	bool ending = false;
 	NPrintStatement(NExpression* expr) : expr(expr) { }
+	NPrintStatement(NExpression* expr, NExpression* ending_expr) : expr(expr), ending(true), ending_expr(ending_expr)  { }
 
 	void Accept(const VisitorVoid *visitor) const override;
 	const Value* Accept(const VisitorType *visitor, Context *context) const override;

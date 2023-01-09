@@ -16,11 +16,11 @@ bool Context::set_value(const IdentifierValue* ident_val, const Value* val)
 {
     if (this->parent)
     {
-        bool result = this->parent->set_value(ident_val, val);
+        bool result = this->parent->defined_in_parent(ident_val->value);
         if (result)
-            return result;
+            return this->parent->set_value(ident_val,val);
     }
-    else if (this->sym_table.find(ident_val->value) == this->sym_table.end())
+    if (this->sym_table.find(ident_val->value) == this->sym_table.end())
     {
         this->sym_table[ident_val->value] = val;
         return true;
@@ -31,4 +31,16 @@ bool Context::set_value(const IdentifierValue* ident_val, const Value* val)
         return true;
     }
     return false;
+}
+
+bool Context::defined_in_parent(const std::string& name)
+{
+    if (this->sym_table.find(name) == this->sym_table.end())
+    {
+        if (this->parent)
+            return this->parent->defined_in_parent(name);
+        else
+            return false;
+    }
+    return true;
 }

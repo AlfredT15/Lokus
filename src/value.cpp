@@ -33,7 +33,11 @@ const Value* IntValue::added_to(const Value* other) const
     {
         return new DoubleValue(this->value + *((double*)other->get_value()));
     }
-    return new ErrorValue("'+' is not defined between the two types");
+    else if (dynamic_cast<const StringValue*>(other))
+    {
+        return new StringValue(std::to_string(this->value) + *((std::string*)other->get_value()));
+    }
+    return new ErrorValue("'+' is not defined between int and " + std::to_string(other->get_type()));
 }
 const Value* IntValue::subbed_by(const Value* other) const
 {
@@ -71,7 +75,29 @@ const Value* IntValue::divided_by(const Value* other) const
     }
     return new ErrorValue("'/' is not defined between the two types");
 }
+const Value* IntValue::modded_by(const Value* other) const
+{
+    if (dynamic_cast<const IntValue*>(other))
+    {
+        return new IntValue(this->value % *((int*)other->get_value()));
+    }
+    return new ErrorValue("'/' is not defined between the two types");
+}
 // Comparison
+const Value* IntValue::anded_by(const Value* other) const
+{
+    if (dynamic_cast<const BoolValue*>(other) || dynamic_cast<const DoubleValue*>(other) 
+        || dynamic_cast<const IntValue*>(other))
+        return new BoolValue(this->value && *((bool*)other->get_value()));
+    return new ErrorValue("and is not defined between the two types");
+}
+const Value* IntValue::ored_by(const Value* other) const
+{
+    if (dynamic_cast<const BoolValue*>(other) || dynamic_cast<const DoubleValue*>(other) 
+        || dynamic_cast<const IntValue*>(other))
+        return new BoolValue(this->value || *((bool*)other->get_value()));
+    return new ErrorValue("or is not defined between the two types");
+}
 const Value* IntValue::equal_to(const Value* other) const
 {
     if (dynamic_cast<const IntValue*>(other))
@@ -132,6 +158,8 @@ const Value* DoubleValue::added_to(const Value* other) const
         return new DoubleValue(this->value + *((double*)other->get_value()));
     else if (dynamic_cast<const IntValue*>(other))
         return new DoubleValue(this->value + *((int*)other->get_value()));
+    else if (dynamic_cast<const StringValue*>(other))
+        return new StringValue(std::to_string(this->value) + *((std::string*)other->get_value()));
     return new ErrorValue("'+' is not defined between the two types");
 }
 const Value* DoubleValue::subbed_by(const Value* other) const
@@ -159,6 +187,20 @@ const Value* DoubleValue::divided_by(const Value* other) const
     return new ErrorValue("'/' is not defined between the two types");
 }
 // Comparison
+const Value* DoubleValue::anded_by(const Value* other) const
+{
+    if (dynamic_cast<const BoolValue*>(other) || dynamic_cast<const DoubleValue*>(other) 
+        || dynamic_cast<const IntValue*>(other))
+        return new BoolValue(this->value && *((bool*)other->get_value()));
+    return new ErrorValue("and is not defined between the two types");
+}
+const Value* DoubleValue::ored_by(const Value* other) const
+{
+    if (dynamic_cast<const BoolValue*>(other) || dynamic_cast<const DoubleValue*>(other) 
+        || dynamic_cast<const IntValue*>(other))
+        return new BoolValue(this->value || *((bool*)other->get_value()));
+    return new ErrorValue("or is not defined between the two types");
+}
 const Value* DoubleValue::equal_to(const Value* other) const
 {
     if (dynamic_cast<const DoubleValue*>(other))
@@ -214,6 +256,20 @@ const DataType& DoubleValue::get_type() const
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 
 //Comparison
+const Value* BoolValue::anded_by(const Value* other) const
+{
+    if (dynamic_cast<const BoolValue*>(other) || dynamic_cast<const DoubleValue*>(other) 
+        || dynamic_cast<const IntValue*>(other))
+        return new BoolValue(this->value && *((bool*)other->get_value()));
+    return new ErrorValue("and is not defined between the two types");
+}
+const Value* BoolValue::ored_by(const Value* other) const
+{
+    if (dynamic_cast<const BoolValue*>(other) || dynamic_cast<const DoubleValue*>(other) 
+        || dynamic_cast<const IntValue*>(other))
+        return new BoolValue(this->value || *((bool*)other->get_value()));
+    return new ErrorValue("or is not defined between the two types");
+}
 const Value* BoolValue::equal_to(const Value* other) const
 {
     if (dynamic_cast<const BoolValue*>(other))
@@ -248,6 +304,10 @@ const Value* StringValue::added_to(const Value* other) const
 {
     if (dynamic_cast<const StringValue*>(other))
         return new StringValue(this->value + *((std::string*)other->get_value()));
+    else if (dynamic_cast<const IntValue*>(other))
+        return new StringValue(this->value + std::to_string(*((int*)other->get_value())));
+    else if (dynamic_cast<const DoubleValue*>(other))
+        return new StringValue(this->value + std::to_string(*((double*)other->get_value())));
     return new ErrorValue("'+' is not defined between the two types");
 }
 const Value* StringValue::multiplied_by(const Value* other) const

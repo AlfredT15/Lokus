@@ -1,5 +1,5 @@
 src/CMakeFiles/LokusLib.dir/semantics.cpp.o: \
-  /home/alfred/Code/Language/new_langauge/Lokus/build/src/semantics.cpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/src/semantics.cpp \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h /usr/include/features-time64.h \
@@ -191,7 +191,7 @@ src/CMakeFiles/LokusLib.dir/semantics.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/erase_if.h \
   /home/alfred/Code/Language/new_langauge/Lokus/include/context.hpp \
   /home/alfred/Code/Language/new_langauge/Lokus/include/enum.hpp \
-  /home/alfred/Code/Language/new_langauge/Lokus/build/src/syntax.hpp \
+  /home/alfred/Code/Language/new_langauge/Lokus/src/syntax.hpp \
   /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \

@@ -20,6 +20,7 @@ linefeed        \n
 "char"      |
 "bool"      |
 "string"    |
+"list"      |
 "float"                                         SAVE_TOKEN; return DATA_TYPE;
 
 "extern"                                        return TOKEN(EXTERN);
@@ -29,13 +30,17 @@ linefeed        \n
 "elif"                                          return TOKEN(ELIF);
 "for"                                           return TOKEN(FOR);
 "while"                                         return TOKEN(WHILE);
-"print"                                         return TOKEN(PRINTING);
-\"[^"]+\"                                       SAVE_TOKEN; return STRING_VALUE;
-[0-9]+\.[0-9]* 			                        SAVE_TOKEN; return FLOAT_VALUE;
+"print"                                         return TOKEN(PRINT);
+"len"                                           return TOKEN(LEN);
+\"[^\n"]+\"                                     SAVE_TOKEN; return STRING_VALUE;
 [0-9]+					                        SAVE_TOKEN; return INTEGER_VALUE;
+[0-9]+\.[0-9]* 			                        SAVE_TOKEN; return FLOAT_VALUE;
 
 "true"				                            SAVE_TOKEN; return TRUE_VALUE;
 "false"					                        SAVE_TOKEN; return FALSE_VALUE;
+
+"or"                                            SAVE_TOKEN; return OR;
+"and"                                           SAVE_TOKEN; return AND;
 
 [a-zA-Z_][a-zA-Z0-9_]*                          SAVE_TOKEN; return IDENTIFIER;
 
@@ -54,14 +59,19 @@ linefeed        \n
 
 "*"		         				                SAVE_TOKEN; return MUL;
 "/"				          		                SAVE_TOKEN; return DIV;
+"%"                                             SAVE_TOKEN; return MOD;
 
+"//"[^\n]*                                      
 "("	          					                return TOKEN(LPAREN);
 ")"					          	                return TOKEN(RPAREN);
 "{"         						            return TOKEN(LBRACE);
 "}"					          	                return TOKEN(RBRACE);
+"["                                             return TOKEN(LBRACKET);
+"]"                                             return TOKEN(RBRACKET);
 
 "."         						            return TOKEN(DOT);
 ","				          		                return TOKEN(COMMA);
+
 
 
 {linefeed}                                      {line_num++;}

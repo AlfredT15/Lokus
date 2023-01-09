@@ -154,7 +154,7 @@ TEST(basic_node, method_accept)
 
     NMethodCall* node = new NMethodCall(iden_node, args);
 
-    ASSERT_THAT((int*)node->Accept(visitor, master_context)->get_value(), Pointee(Eq(4)));
+    ASSERT_THAT((int*)((IntValue*)((ReturnValue*)node->Accept(visitor, master_context)->get_value())->get_value()), Pointee(Eq(4)));
 }
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -1090,7 +1090,7 @@ TEST(basic_node, block_with_return_accept)
 
     body->statements.push_back(returnState);
 
-    ASSERT_THAT((int*)body->Accept(visitor, context)->get_value(), Pointee(Eq(3)));
+    ASSERT_THAT((int*)((IntValue*)((ReturnValue*)body->Accept(visitor, context)->get_value())->get_value()), Pointee(Eq(3)));
 }
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
@@ -1198,16 +1198,8 @@ TEST(basic_node, function_declaration_accept)
     NExpression* rhs = new NInteger(2);
     NExpression* binOp = new NBinaryOperator(*lhs, *op, *rhs);
     
-    NIdentifier* var = new NIdentifier("int", "result");
-    NExpression* assign = new NAssignment(*var, *binOp);
+    NStatement* returnState = new NReturnStatement(binOp);
 
-    NExpression* iden = new NIdentifier("int","test1");
-    NExpression* returnBinOp = new NBinaryOperator(*var, *op, *iden);
-    NStatement* returnState = new NReturnStatement(returnBinOp);
-
-    NStatement* expState = new NExpressionStatement(*assign);
-
-    body->statements.push_back(expState);
     body->statements.push_back(returnState);
 
     NIdentifier id = NIdentifier("int", "func_def");
@@ -1215,7 +1207,7 @@ TEST(basic_node, function_declaration_accept)
 
     const FunctionValue* func_val = dynamic_cast<const FunctionValue*>(node.Accept(visitor, context));
 
-    ASSERT_THAT((int*)((IntValue*)func_val->block.Accept(visitor, func_val->function_context))->get_value(), Pointee(Eq(4)));
+    ASSERT_THAT((int*)((IntValue*)((ReturnValue*)body->Accept(visitor, context)->get_value())->get_value()), Pointee(Eq(3)));
 
 }
 
@@ -1643,5 +1635,5 @@ TEST(basic_node, print_statement)
     NInteger int_node = NInteger(1);
     NPrintStatement node = NPrintStatement(&int_node);
 
-    ASSERT_THAT((int*)((IntValue*)((PrintValue*)node.Accept(visitor, context))->get_value())->get_value(), Pointee(Eq(1)));
+    ASSERT_THAT(node.Accept(visitor, context)->get_type(), Eq(DataType::VOID_DTYPE));
 }

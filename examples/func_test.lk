@@ -6,4 +6,17 @@ int add(int a, int b)
 
 int test = add(1,2)
 
-test + 0
+print(test)
+
+list num = [10,9,8,7,6,5,4,3,2,1]
+
+list cool(list num)
+{
+    num[3] = num[7]
+    return num
+}
+
+list result = cool(num)
+
+print(result)
+print(num)

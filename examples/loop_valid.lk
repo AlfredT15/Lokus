@@ -1,0 +1,47 @@
+list board = [
+    [7,8,0,4,0,0,1,2,0],
+    [6,0,0,0,7,5,0,0,9],
+    [0,0,0,6,0,1,0,7,8],
+    [0,0,7,0,4,0,2,6,0],
+    [0,0,1,0,5,0,9,3,0],
+    [9,0,4,0,6,0,0,0,5],
+    [0,7,0,3,0,0,0,1,2],
+    [1,2,0,0,0,7,4,0,0],
+    [0,4,9,2,0,6,0,0,7]
+]
+
+bool valid(list board, int num, int row, int col)
+{
+    for(int i = 0, i < len(board[0]), i = i + 1)
+    {
+        if (board[row, i] == num) and (i != col)
+        {
+            print("false")
+            return false
+        }
+        if (board[i, col] == num) and (i != row)
+        {
+            print("false")
+            return false
+        }
+    }
+    
+    int start_row = (row / 3) * 3
+    int start_col = (col / 3) * 3
+
+    for (int i = 0, i < 3, i = i + 1)
+    {
+        for(int j = 0, j < 3, j = j + 1)
+        {
+            if (board[start_row + i,start_col + j] == num)
+            {
+                print("false")
+                return false
+            }
+        }
+    }
+    print("true")
+    return true
+}
+
+print(valid(board,3,0,2))

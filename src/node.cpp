@@ -12,6 +12,10 @@ void NDouble::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNDouble(this);
 };
+void NList::Accept(const VisitorVoid *visitor) const
+{
+    visitor->VisitNList(this);
+};
 void NBool::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNBool(this);
@@ -40,9 +44,17 @@ void NAssignment::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNAssignment(this);
 };
+void NListAssignment::Accept(const VisitorVoid *visitor) const
+{
+    visitor->VisitNListAssignment(this);
+};
 void NBlock::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNBlock(this);
+};
+void NListAccess::Accept(const VisitorVoid *visitor) const
+{
+    visitor->VisitNListAccess(this);
 };
 void NExpressionStatement::Accept(const VisitorVoid *visitor) const
 {
@@ -80,6 +92,10 @@ void NPrintStatement::Accept(const VisitorVoid *visitor) const
 {
     visitor->VisitNPrintStatement(this);
 };
+void NLength::Accept(const VisitorVoid *visitor) const
+{
+    visitor->VisitNLength(this);
+};
 
 // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 // VisitorType Methods
@@ -91,6 +107,10 @@ const Value* NInteger::Accept(const VisitorType *visitor, Context *context) cons
 const Value* NDouble::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNDouble(this, context);
+};
+const Value* NList::Accept(const VisitorType *visitor, Context *context) const
+{
+    return visitor->VisitNList(this, context);
 };
 const Value* NBool::Accept(const VisitorType *visitor, Context *context) const
 {
@@ -120,9 +140,17 @@ const Value* NAssignment::Accept(const VisitorType *visitor, Context *context) c
 {
     return visitor->VisitNAssignment(this, context);
 };
+const Value* NListAssignment::Accept(const VisitorType *visitor, Context *context) const
+{
+    return visitor->VisitNListAssignment(this, context);
+};
 const Value* NBlock::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNBlock(this, context);
+};
+const Value* NListAccess::Accept(const VisitorType *visitor, Context *context) const
+{
+    return visitor->VisitNListAccess(this, context);
 };
 const Value* NExpressionStatement::Accept(const VisitorType *visitor, Context *context) const
 {
@@ -159,4 +187,8 @@ const Value* NWhileStatement::Accept(const VisitorType *visitor, Context *contex
 const Value* NPrintStatement::Accept(const VisitorType *visitor, Context *context) const
 {
     return visitor->VisitNPrintStatement(this, context);
+};
+const Value* NLength::Accept(const VisitorType *visitor, Context *context) const
+{
+    return visitor->VisitNLength(this, context);
 };

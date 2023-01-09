@@ -2,19 +2,23 @@
 int one = 1
 int two = 2
 
+if one == 1
+{
+    print("hey")
+}
 if one == two
 {
-    one + 0
+    print(one)
 }
 elif (one+2)==two
 {
-    one + two
+    print(one + two)
 }
 elif (one-2)==two
 {
-    one - two
+    print(one - two)
 }
 else
 {
-    two + 0
+    print(two)
 }

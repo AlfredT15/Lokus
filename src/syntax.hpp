@@ -35,11 +35,11 @@
    especially those whose name start with YY_ or yy_.  They are
    private implementation details that can be changed or removed.  */
 
-#ifndef YY_YY_SRC_SYNTAX_HPP_INCLUDED
-# define YY_YY_SRC_SYNTAX_HPP_INCLUDED
+#ifndef YY_YY_HOME_ALFRED_CODE_LANGUAGE_NEW_LANGAUGE_LOKUS_SRC_SYNTAX_HPP_INCLUDED
+# define YY_YY_HOME_ALFRED_CODE_LANGUAGE_NEW_LANGAUGE_LOKUS_SRC_SYNTAX_HPP_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
-# define YYDEBUG 1
+# define YYDEBUG 0
 #endif
 #if YYDEBUG
 extern int yydebug;
@@ -68,21 +68,27 @@ extern int yydebug;
     SUB = 269,                     /* SUB  */
     MUL = 270,                     /* MUL  */
     DIV = 271,                     /* DIV  */
-    EQ = 272,                      /* EQ  */
-    LPAREN = 273,                  /* LPAREN  */
-    RPAREN = 274,                  /* RPAREN  */
-    LBRACE = 275,                  /* LBRACE  */
-    RBRACE = 276,                  /* RBRACE  */
-    COMMA = 277,                   /* COMMA  */
-    DOT = 278,                     /* DOT  */
-    RETURN = 279,                  /* RETURN  */
-    EXTERN = 280,                  /* EXTERN  */
-    IF = 281,                      /* IF  */
-    ELIF = 282,                    /* ELIF  */
-    ELSE = 283,                    /* ELSE  */
-    FOR = 284,                     /* FOR  */
-    WHILE = 285,                   /* WHILE  */
-    PRINT = 286                    /* PRINT  */
+    AND = 272,                     /* AND  */
+    OR = 273,                      /* OR  */
+    MOD = 274,                     /* MOD  */
+    EQ = 275,                      /* EQ  */
+    LPAREN = 276,                  /* LPAREN  */
+    RPAREN = 277,                  /* RPAREN  */
+    LBRACE = 278,                  /* LBRACE  */
+    RBRACE = 279,                  /* RBRACE  */
+    LBRACKET = 280,                /* LBRACKET  */
+    RBRACKET = 281,                /* RBRACKET  */
+    COMMA = 282,                   /* COMMA  */
+    DOT = 283,                     /* DOT  */
+    PRINT = 284,                   /* PRINT  */
+    RETURN = 285,                  /* RETURN  */
+    EXTERN = 286,                  /* EXTERN  */
+    LEN = 287,                     /* LEN  */
+    IF = 288,                      /* IF  */
+    ELIF = 289,                    /* ELIF  */
+    ELSE = 290,                    /* ELSE  */
+    FOR = 291,                     /* FOR  */
+    WHILE = 292                    /* WHILE  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -91,7 +97,7 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 18 "src/syntax.y"
+#line 18 "syntax.y"
 
 	Node *node;
 	NBlock *block;
@@ -105,7 +111,7 @@ union YYSTYPE
 	std::string *string;
 	int token;
 
-#line 109 "src/syntax.hpp"
+#line 115 "/home/alfred/Code/Language/new_langauge/Lokus/src/syntax.hpp"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -120,4 +126,4 @@ extern YYSTYPE yylval;
 int yyparse (void);
 
 
-#endif /* !YY_YY_SRC_SYNTAX_HPP_INCLUDED  */
+#endif /* !YY_YY_HOME_ALFRED_CODE_LANGUAGE_NEW_LANGAUGE_LOKUS_SRC_SYNTAX_HPP_INCLUDED  */
